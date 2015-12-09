@@ -34,6 +34,8 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'Map' => ['Pod/Assets/*.png']
   }
+ 
+  s.resources = ["*.storyboard"] 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
    s.frameworks = 'UIKit', 'MapKit'

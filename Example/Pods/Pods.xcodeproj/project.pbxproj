@@ -12,6 +12,7 @@
 		59E62666E9FF42B7E1488E2E82D5AF77 /* Pods-Map_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 163A86755B8177FC8C0D90579E238C0F /* Pods-Map_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		704E3B61ECD600E6DC5A331A917792A2 /* Map.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD1006D52F6F85BEB934D1C80FEC8E62 /* Map.bundle */; };
 		7F5753F2C997D69784E976624A49D644 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		9003D77E1C18E2CA008A3AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9003D77D1C18E2CA008A3AF0 /* Main.storyboard */; };
 		901F13731C18C8A300F8B0D9 /* MKUserTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13701C18C8A300F8B0D9 /* MKUserTracker.h */; };
 		901F13741C18C8A300F8B0D9 /* MKUserTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13711C18C8A300F8B0D9 /* MKUserTracker.m */; };
 		901F13751C18C8A300F8B0D9 /* MKUserTrackerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13721C18C8A300F8B0D9 /* MKUserTrackerDelegate.h */; };
@@ -84,6 +85,7 @@
 		7BEF95FF875668168027C6614CEB9089 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87B9532EC3F8CC250B42CE3533828CAD /* Pods-Map_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Map_Tests-dummy.m"; sourceTree = "<group>"; };
 		8D353755EFEE6F9AF57996EB4B7C9EF8 /* Map-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Map-prefix.pch"; sourceTree = "<group>"; };
+		9003D77D1C18E2CA008A3AF0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		901F13701C18C8A300F8B0D9 /* MKUserTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTracker.h; sourceTree = "<group>"; };
 		901F13711C18C8A300F8B0D9 /* MKUserTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUserTracker.m; sourceTree = "<group>"; };
 		901F13721C18C8A300F8B0D9 /* MKUserTrackerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTrackerDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		08674E3392C85DE17AB6CDA747824A66 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				9003D77D1C18E2CA008A3AF0 /* Main.storyboard */,
 				A7193BA73EEEE97D67CC052BF854EC2B /* Pod */,
 				CA00560BDFC919DCC86A511C1BEBD91D /* Support Files */,
 			);
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				704E3B61ECD600E6DC5A331A917792A2 /* Map.bundle in Resources */,
+				9003D77E1C18E2CA008A3AF0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

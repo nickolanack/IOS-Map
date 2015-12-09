@@ -10,8 +10,8 @@
 
 @interface MapOverlayListViewController : UIViewController
 
-@property (nonatomic) id<UITableViewDataSource> dataSource;
-@property (nonatomic) id<UITableViewDelegate> delegate;
+@property (strong, nonatomic) id<UITableViewDataSource> dataSource;
+@property (strong, nonatomic) id<UITableViewDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

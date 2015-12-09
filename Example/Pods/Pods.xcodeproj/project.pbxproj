@@ -36,24 +36,6 @@
 		901F139D1C18C8BB00F8B0D9 /* SaxKmlParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F139A1C18C8BB00F8B0D9 /* SaxKmlParser.h */; };
 		901F139E1C18C8BB00F8B0D9 /* SaxKmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F139B1C18C8BB00F8B0D9 /* SaxKmlParser.m */; };
 		901F139F1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F139C1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h */; };
-		901F13A51C18C8C300F8B0D9 /* waypoint-default-25x28.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A01C18C8C300F8B0D9 /* waypoint-default-25x28.png */; };
-		901F13A61C18C8C300F8B0D9 /* waypoint-offscreen-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A11C18C8C300F8B0D9 /* waypoint-offscreen-15.png */; };
-		901F13A71C18C8C300F8B0D9 /* userlocation-offscreen-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A21C18C8C300F8B0D9 /* userlocation-offscreen-15.png */; };
-		901F13A81C18C8C300F8B0D9 /* waypoints.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A31C18C8C300F8B0D9 /* waypoints.xcf */; };
-		901F13A91C18C8C300F8B0D9 /* offscreen.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A41C18C8C300F8B0D9 /* offscreen.xcf */; };
-		901F13B91C18C8DB00F8B0D9 /* xsm_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AA1C18C8DB00F8B0D9 /* xsm_edit.png */; };
-		901F13BA1C18C8DB00F8B0D9 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AB1C18C8DB00F8B0D9 /* close.png */; };
-		901F13BB1C18C8DB00F8B0D9 /* icon-layers-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AC1C18C8DB00F8B0D9 /* icon-layers-100.png */; };
-		901F13BC1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AD1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png */; };
-		901F13BD1C18C8DB00F8B0D9 /* icon-layers-list-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AE1C18C8DB00F8B0D9 /* icon-layers-list-100.png */; };
-		901F13BE1C18C8DB00F8B0D9 /* icon-track-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AF1C18C8DB00F8B0D9 /* icon-track-100.png */; };
-		901F13BF1C18C8DB00F8B0D9 /* icon-waypointadd-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B01C18C8DB00F8B0D9 /* icon-waypointadd-100.png */; };
-		901F13C01C18C8DB00F8B0D9 /* icon-waypointdrop-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B11C18C8DB00F8B0D9 /* icon-waypointdrop-100.png */; };
-		901F13C11C18C8DB00F8B0D9 /* icon-waypointcamera-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B21C18C8DB00F8B0D9 /* icon-waypointcamera-100.png */; };
-		901F13C21C18C8DB00F8B0D9 /* icon-userlocation-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B31C18C8DB00F8B0D9 /* icon-userlocation-100.png */; };
-		901F13C31C18C8DB00F8B0D9 /* icon-userlocationlock-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B41C18C8DB00F8B0D9 /* icon-userlocationlock-100.png */; };
-		901F13C41C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B51C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png */; };
-		901F13C51C18C8DB00F8B0D9 /* buttons.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B61C18C8DB00F8B0D9 /* buttons.xcf */; };
 		901F13C61C18C8DB00F8B0D9 /* StyleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13B71C18C8DB00F8B0D9 /* StyleButton.h */; };
 		901F13C71C18C8DB00F8B0D9 /* StyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13B81C18C8DB00F8B0D9 /* StyleButton.m */; };
 		901F13D11C18C8E600F8B0D9 /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13C81C18C8E600F8B0D9 /* ViewController.h */; };
@@ -64,7 +46,6 @@
 		901F13D61C18C8E600F8B0D9 /* DismissView.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CD1C18C8E600F8B0D9 /* DismissView.m */; };
 		901F13D71C18C8E600F8B0D9 /* OverlayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */; };
 		901F13D81C18C8E600F8B0D9 /* OverlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */; };
-		901F13D91C18C8E600F8B0D9 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 901F13D01C18C8E600F8B0D9 /* Map.storyboard */; };
 		9074A1161C18A81D0050C945 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9074A1151C18A81D0050C945 /* MapKit.framework */; };
 		C2338B54FD2596A886203ED84A48A6E5 /* Pods-Map_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B9532EC3F8CC250B42CE3533828CAD /* Pods-Map_Tests-dummy.m */; };
 		DC86D22AFDFC831075E8F61105AD35F8 /* Map-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 275C6D90C56AE99FD0437CE177AEF790 /* Map-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -127,24 +108,6 @@
 		901F139A1C18C8BB00F8B0D9 /* SaxKmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaxKmlParser.h; sourceTree = "<group>"; };
 		901F139B1C18C8BB00F8B0D9 /* SaxKmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaxKmlParser.m; sourceTree = "<group>"; };
 		901F139C1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaxKmlParserDelegate.h; sourceTree = "<group>"; };
-		901F13A01C18C8C300F8B0D9 /* waypoint-default-25x28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "waypoint-default-25x28.png"; sourceTree = "<group>"; };
-		901F13A11C18C8C300F8B0D9 /* waypoint-offscreen-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "waypoint-offscreen-15.png"; sourceTree = "<group>"; };
-		901F13A21C18C8C300F8B0D9 /* userlocation-offscreen-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userlocation-offscreen-15.png"; sourceTree = "<group>"; };
-		901F13A31C18C8C300F8B0D9 /* waypoints.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = waypoints.xcf; sourceTree = "<group>"; };
-		901F13A41C18C8C300F8B0D9 /* offscreen.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = offscreen.xcf; sourceTree = "<group>"; };
-		901F13AA1C18C8DB00F8B0D9 /* xsm_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xsm_edit.png; sourceTree = "<group>"; };
-		901F13AB1C18C8DB00F8B0D9 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
-		901F13AC1C18C8DB00F8B0D9 /* icon-layers-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-layers-100.png"; sourceTree = "<group>"; };
-		901F13AD1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-layers-userlayers-100.png"; sourceTree = "<group>"; };
-		901F13AE1C18C8DB00F8B0D9 /* icon-layers-list-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-layers-list-100.png"; sourceTree = "<group>"; };
-		901F13AF1C18C8DB00F8B0D9 /* icon-track-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-track-100.png"; sourceTree = "<group>"; };
-		901F13B01C18C8DB00F8B0D9 /* icon-waypointadd-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-waypointadd-100.png"; sourceTree = "<group>"; };
-		901F13B11C18C8DB00F8B0D9 /* icon-waypointdrop-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-waypointdrop-100.png"; sourceTree = "<group>"; };
-		901F13B21C18C8DB00F8B0D9 /* icon-waypointcamera-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-waypointcamera-100.png"; sourceTree = "<group>"; };
-		901F13B31C18C8DB00F8B0D9 /* icon-userlocation-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-userlocation-100.png"; sourceTree = "<group>"; };
-		901F13B41C18C8DB00F8B0D9 /* icon-userlocationlock-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-userlocationlock-100.png"; sourceTree = "<group>"; };
-		901F13B51C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-userlocation-add-user-100.png"; sourceTree = "<group>"; };
-		901F13B61C18C8DB00F8B0D9 /* buttons.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttons.xcf; sourceTree = "<group>"; };
 		901F13B71C18C8DB00F8B0D9 /* StyleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleButton.h; sourceTree = "<group>"; };
 		901F13B81C18C8DB00F8B0D9 /* StyleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleButton.m; sourceTree = "<group>"; };
 		901F13C81C18C8E600F8B0D9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -155,7 +118,6 @@
 		901F13CD1C18C8E600F8B0D9 /* DismissView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissView.m; sourceTree = "<group>"; };
 		901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayCell.h; sourceTree = "<group>"; };
 		901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayCell.m; sourceTree = "<group>"; };
-		901F13D01C18C8E600F8B0D9 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		9074A1151C18A81D0050C945 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		A66F375FA295E973564421D2814604CE /* Pods-Map_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Map_Tests-resources.sh"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -266,24 +228,6 @@
 				901F139A1C18C8BB00F8B0D9 /* SaxKmlParser.h */,
 				901F139B1C18C8BB00F8B0D9 /* SaxKmlParser.m */,
 				901F139C1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h */,
-				901F13A01C18C8C300F8B0D9 /* waypoint-default-25x28.png */,
-				901F13A11C18C8C300F8B0D9 /* waypoint-offscreen-15.png */,
-				901F13A21C18C8C300F8B0D9 /* userlocation-offscreen-15.png */,
-				901F13A31C18C8C300F8B0D9 /* waypoints.xcf */,
-				901F13A41C18C8C300F8B0D9 /* offscreen.xcf */,
-				901F13AA1C18C8DB00F8B0D9 /* xsm_edit.png */,
-				901F13AB1C18C8DB00F8B0D9 /* close.png */,
-				901F13AC1C18C8DB00F8B0D9 /* icon-layers-100.png */,
-				901F13AD1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png */,
-				901F13AE1C18C8DB00F8B0D9 /* icon-layers-list-100.png */,
-				901F13AF1C18C8DB00F8B0D9 /* icon-track-100.png */,
-				901F13B01C18C8DB00F8B0D9 /* icon-waypointadd-100.png */,
-				901F13B11C18C8DB00F8B0D9 /* icon-waypointdrop-100.png */,
-				901F13B21C18C8DB00F8B0D9 /* icon-waypointcamera-100.png */,
-				901F13B31C18C8DB00F8B0D9 /* icon-userlocation-100.png */,
-				901F13B41C18C8DB00F8B0D9 /* icon-userlocationlock-100.png */,
-				901F13B51C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png */,
-				901F13B61C18C8DB00F8B0D9 /* buttons.xcf */,
 				901F13B71C18C8DB00F8B0D9 /* StyleButton.h */,
 				901F13B81C18C8DB00F8B0D9 /* StyleButton.m */,
 				901F13C81C18C8E600F8B0D9 /* ViewController.h */,
@@ -294,7 +238,6 @@
 				901F13CD1C18C8E600F8B0D9 /* DismissView.m */,
 				901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */,
 				901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */,
-				901F13D01C18C8E600F8B0D9 /* Map.storyboard */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -485,26 +428,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				901F13BD1C18C8DB00F8B0D9 /* icon-layers-list-100.png in Resources */,
-				901F13A61C18C8C300F8B0D9 /* waypoint-offscreen-15.png in Resources */,
-				901F13BE1C18C8DB00F8B0D9 /* icon-track-100.png in Resources */,
-				901F13A51C18C8C300F8B0D9 /* waypoint-default-25x28.png in Resources */,
-				901F13BF1C18C8DB00F8B0D9 /* icon-waypointadd-100.png in Resources */,
-				901F13C41C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png in Resources */,
-				901F13BA1C18C8DB00F8B0D9 /* close.png in Resources */,
-				901F13C11C18C8DB00F8B0D9 /* icon-waypointcamera-100.png in Resources */,
-				901F13C51C18C8DB00F8B0D9 /* buttons.xcf in Resources */,
 				704E3B61ECD600E6DC5A331A917792A2 /* Map.bundle in Resources */,
-				901F13C21C18C8DB00F8B0D9 /* icon-userlocation-100.png in Resources */,
-				901F13D91C18C8E600F8B0D9 /* Map.storyboard in Resources */,
-				901F13A91C18C8C300F8B0D9 /* offscreen.xcf in Resources */,
-				901F13C31C18C8DB00F8B0D9 /* icon-userlocationlock-100.png in Resources */,
-				901F13B91C18C8DB00F8B0D9 /* xsm_edit.png in Resources */,
-				901F13A81C18C8C300F8B0D9 /* waypoints.xcf in Resources */,
-				901F13C01C18C8DB00F8B0D9 /* icon-waypointdrop-100.png in Resources */,
-				901F13BB1C18C8DB00F8B0D9 /* icon-layers-100.png in Resources */,
-				901F13A71C18C8C300F8B0D9 /* userlocation-offscreen-15.png in Resources */,
-				901F13BC1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

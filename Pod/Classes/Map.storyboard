@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9527.1" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9525.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Unknown constraint types" minToolsVersion="5.1"/>
     </dependencies>
@@ -21,11 +21,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-53-MLp" userLabel="MK Map View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vta-YT-fw7" userLabel="Top Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="3cp-Hb-r5V"/>
@@ -33,7 +31,6 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ4-k9-cVt" customClass="StyleButton">
                                 <rect key="frame" x="5" y="38" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.38715277777777674" green="0.75010382620370364" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-track-100.png"/>
@@ -43,7 +40,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su8-lV-cRb" userLabel="Waypoint Button" customClass="StyleButton">
                                 <rect key="frame" x="5" y="81" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.38715277777777674" green="0.55140590953703705" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-waypointadd-100.png"/>
@@ -53,7 +49,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJd-ou-Cad" userLabel="Drop Marker Button" customClass="StyleButton">
                                 <rect key="frame" x="48" y="81" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.38715277777777674" green="0.55140590953703705" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-waypointdrop-100.png"/>
@@ -63,7 +58,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiY-MZ-Toz" userLabel="Take Photo Button" customClass="StyleButton">
                                 <rect key="frame" x="91" y="81" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.38715277777777674" green="0.55140590953703705" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-waypointcamera-100.png"/>
@@ -73,7 +67,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcD-p5-tzU" userLabel="Overlays Button" customClass="StyleButton">
                                 <rect key="frame" x="5" y="124" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.73532986111111009" green="0.55140590953703705" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-layers-100.png"/>
@@ -83,7 +76,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQJ-Yr-2k7" userLabel="Overlays Button" customClass="StyleButton">
                                 <rect key="frame" x="48" y="124" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.73532986109999998" green="0.55140590950000001" blue="0.96808449070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-layers-userlayers-100.png"/>
@@ -93,7 +85,6 @@
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiB-st-2Hp" userLabel="Overlays Button" customClass="StyleButton">
                                 <rect key="frame" x="91" y="124" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.73532986109999998" green="0.55140590950000001" blue="0.96808449070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-layers-list-100.png"/>
@@ -104,7 +95,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H8-EG-aEN" userLabel="Goto Userlocation Button" customClass="StyleButton">
                                 <rect key="frame" x="5" y="167" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.28561921296296189" green="0.86998229842592589" blue="0.6308449074074074" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-userlocation-100.png"/>
@@ -114,7 +104,6 @@
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GX-aX-Ftr" userLabel="Add Userlocation Button" customClass="StyleButton">
                                 <rect key="frame" x="91" y="167" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.28561921299999998" green="0.86998229839999996" blue="0.63084490739999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-userlocation-add-user-100.png"/>
@@ -127,7 +116,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEg-bL-JQE">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                        <animations/>
                                         <gestureRecognizers/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -135,7 +123,6 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coI-gc-NuY" userLabel="Track Distance">
                                         <rect key="frame" x="227" y="0.0" width="146" height="44"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="1qe-3S-1mY"/>
                                             <constraint firstAttribute="width" constant="146" id="ocP-qH-ti7"/>
@@ -146,7 +133,6 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Path 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a3-hB-ctw" userLabel="Path Name">
                                         <rect key="frame" x="43" y="0.0" width="90" height="44"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="A8f-CU-5TD"/>
                                             <constraint firstAttribute="height" constant="44" id="DAx-ym-lWc"/>
@@ -157,7 +143,6 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lg-ve-j8s">
                                         <rect key="frame" x="463" y="0.0" width="129" height="44"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="GF0-wa-xGB"/>
                                             <constraint firstAttribute="width" constant="129" id="R9V-1J-Lsl"/>
@@ -167,7 +152,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4UZ-Sm-O6H"/>
@@ -181,7 +165,6 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMG-p8-6Yi" userLabel="Lock Userlocation Button" customClass="StyleButton">
                                 <rect key="frame" x="48" y="167" width="35" height="35"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.28561921296296189" green="0.86998229842592589" blue="0.6308449074074074" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <state key="normal" image="icon-userlocationlock-100.png"/>
@@ -190,7 +173,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tFz-53-MLp" secondAttribute="bottom" id="281-51-oKb"/>
@@ -243,7 +225,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiV-CF-m3a" userLabel="Top Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="JY7-7i-gc6"/>
@@ -254,7 +235,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4U-eI-TTs">
                                         <rect key="frame" x="556" y="0.0" width="44" height="44"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="1kh-B5-M7s"/>
                                             <constraint firstAttribute="height" constant="44" id="j8x-wJ-hfJ"/>
@@ -266,7 +246,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="J4U-eI-TTs" secondAttribute="trailing" id="4u6-oh-Puk"/>
@@ -277,7 +256,6 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OW2-SC-fqC">
                                 <rect key="frame" x="0.0" y="20" width="600" height="538"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -291,7 +269,6 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j3F-WH-uH7">
                                                     <rect key="frame" x="15" y="15" width="91" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -299,20 +276,17 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YF9-Yx-Tvq">
                                                     <rect key="frame" x="112" y="15" width="33" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="leading" secondAttribute="trailing" constant="8" id="EuZ-tH-VlS"/>
                                                 <constraint firstAttribute="leading" secondAttribute="trailing" constant="8" id="RYC-gt-v4E"/>
                                                 <constraint firstAttribute="centerY" secondItem="yRa-hY-Z6F" secondAttribute="centerY" id="ay3-FB-NuO"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -322,7 +296,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eEp-vz-PIW" firstAttribute="leading" secondItem="khk-W3-C1F" secondAttribute="leadingMargin" constant="-20" id="58w-5X-qOY"/>

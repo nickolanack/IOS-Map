@@ -20,7 +20,7 @@
 		9074A0B31C18A3F20050C945 /* DismissView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0A81C18A3F20050C945 /* DismissView.m */; };
 		9074A0B41C18A3F20050C945 /* OverlayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0A91C18A3F20050C945 /* OverlayCell.h */; };
 		9074A0B51C18A3F20050C945 /* OverlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0AA1C18A3F20050C945 /* OverlayCell.m */; };
-		9074A0B61C18A3F20050C945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0AB1C18A3F20050C945 /* Main.storyboard */; };
+		9074A0B61C18A3F20050C945 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0AB1C18A3F20050C945 /* Map.storyboard */; };
 		9074A0BA1C18A49F0050C945 /* MKUserTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0B71C18A49F0050C945 /* MKUserTracker.h */; };
 		9074A0BB1C18A49F0050C945 /* MKUserTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0B81C18A49F0050C945 /* MKUserTracker.m */; };
 		9074A0BC1C18A49F0050C945 /* MKUserTrackerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0B91C18A49F0050C945 /* MKUserTrackerDelegate.h */; };
@@ -111,7 +111,7 @@
 		9074A0A81C18A3F20050C945 /* DismissView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissView.m; sourceTree = "<group>"; };
 		9074A0A91C18A3F20050C945 /* OverlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayCell.h; sourceTree = "<group>"; };
 		9074A0AA1C18A3F20050C945 /* OverlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayCell.m; sourceTree = "<group>"; };
-		9074A0AB1C18A3F20050C945 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9074A0AB1C18A3F20050C945 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		9074A0B71C18A49F0050C945 /* MKUserTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTracker.h; sourceTree = "<group>"; };
 		9074A0B81C18A49F0050C945 /* MKUserTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUserTracker.m; sourceTree = "<group>"; };
 		9074A0B91C18A49F0050C945 /* MKUserTrackerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTrackerDelegate.h; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 				9074A0A81C18A3F20050C945 /* DismissView.m */,
 				9074A0A91C18A3F20050C945 /* OverlayCell.h */,
 				9074A0AA1C18A3F20050C945 /* OverlayCell.m */,
-				9074A0AB1C18A3F20050C945 /* Main.storyboard */,
+				9074A0AB1C18A3F20050C945 /* Map.storyboard */,
 				9074A1141C18A58D0050C945 /* buttons */,
 				9074A0F51C18A5680050C945 /* waypoints */,
 			);
@@ -544,7 +544,7 @@
 				9074A1051C18A5860050C945 /* xsm_edit.png in Resources */,
 				9074A1071C18A5860050C945 /* icon-layers-100.png in Resources */,
 				9074A0F11C18A5630050C945 /* waypoint-offscreen-15.png in Resources */,
-				9074A0B61C18A3F20050C945 /* Main.storyboard in Resources */,
+				9074A0B61C18A3F20050C945 /* Map.storyboard in Resources */,
 				9074A10C1C18A5860050C945 /* icon-waypointdrop-100.png in Resources */,
 				9074A1111C18A5860050C945 /* buttons.xcf in Resources */,
 				9074A1081C18A5860050C945 /* icon-layers-userlayers-100.png in Resources */,

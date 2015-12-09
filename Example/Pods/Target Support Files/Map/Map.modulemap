@@ -1,0 +1,6 @@
+framework module Map {
+  umbrella header "Map-umbrella.h"
+
+  export *
+  module * { export * }
+}

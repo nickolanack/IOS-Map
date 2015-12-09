@@ -1,0 +1,14 @@
+PODS:
+  - Map (0.1.0)
+
+DEPENDENCIES:
+  - Map (from `../`)
+
+EXTERNAL SOURCES:
+  Map:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Map: 105a02907800deef8320f9f8116c4839811f7692
+
+COCOAPODS: 0.39.0

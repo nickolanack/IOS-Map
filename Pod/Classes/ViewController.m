@@ -490,9 +490,9 @@
     UIViewController *vc=[segue destinationViewController];
     if([vc isKindOfClass:[MapOverlayListViewController class]]){
         
-        //MapOverlayListViewController *mOverlayvc=(MapOverlayListViewController *)vc;
-        //[mOverlayvc setDelegate:self];
-        //[mOverlayvc setDataSource:self];
+        MapOverlayListViewController *mOverlayvc=(MapOverlayListViewController *)vc;
+        [mOverlayvc setDelegate:self];
+        [mOverlayvc setDataSource:self];
         
     }
     

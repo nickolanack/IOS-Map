@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CF6F42EAC50F213D50976BEB29188CE1E98593A0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "CF6F42EAC50F213D50976BEB29188CE1E98593A0" : 0,
+    "9E38FCE184C0D4A98ABAD727E9F951C210943CE4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A5AFBF76-D6AE-4B78-B0A1-F31D6548A271",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "CF6F42EAC50F213D50976BEB29188CE1E98593A0" : "Map\/",
+    "9E38FCE184C0D4A98ABAD727E9F951C210943CE4" : "..\/ios-maptracker"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pods",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/Pods\/Pods.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nickolanack\/ios-maptracker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9E38FCE184C0D4A98ABAD727E9F951C210943CE4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nickolanack\/IOS-Map.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CF6F42EAC50F213D50976BEB29188CE1E98593A0"
+    }
+  ]
+}

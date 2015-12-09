@@ -12,59 +12,59 @@
 		59E62666E9FF42B7E1488E2E82D5AF77 /* Pods-Map_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 163A86755B8177FC8C0D90579E238C0F /* Pods-Map_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		704E3B61ECD600E6DC5A331A917792A2 /* Map.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD1006D52F6F85BEB934D1C80FEC8E62 /* Map.bundle */; };
 		7F5753F2C997D69784E976624A49D644 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		9074A0AE1C18A3F20050C945 /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0A31C18A3F20050C945 /* ViewController.h */; };
-		9074A0AF1C18A3F20050C945 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0A41C18A3F20050C945 /* ViewController.m */; };
-		9074A0B01C18A3F20050C945 /* MapOverlayListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0A51C18A3F20050C945 /* MapOverlayListViewController.h */; };
-		9074A0B11C18A3F20050C945 /* MapOverlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0A61C18A3F20050C945 /* MapOverlayListViewController.m */; };
-		9074A0B21C18A3F20050C945 /* DismissView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0A71C18A3F20050C945 /* DismissView.h */; };
-		9074A0B31C18A3F20050C945 /* DismissView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0A81C18A3F20050C945 /* DismissView.m */; };
-		9074A0B41C18A3F20050C945 /* OverlayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0A91C18A3F20050C945 /* OverlayCell.h */; };
-		9074A0B51C18A3F20050C945 /* OverlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0AA1C18A3F20050C945 /* OverlayCell.m */; };
-		9074A0B61C18A3F20050C945 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0AB1C18A3F20050C945 /* Map.storyboard */; };
-		9074A0BA1C18A49F0050C945 /* MKUserTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0B71C18A49F0050C945 /* MKUserTracker.h */; };
-		9074A0BB1C18A49F0050C945 /* MKUserTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0B81C18A49F0050C945 /* MKUserTracker.m */; };
-		9074A0BC1C18A49F0050C945 /* MKUserTrackerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0B91C18A49F0050C945 /* MKUserTrackerDelegate.h */; };
-		9074A0C11C18A4B70050C945 /* MKOffscreenFeatureRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0BE1C18A4B70050C945 /* MKOffscreenFeatureRenderer.h */; };
-		9074A0C21C18A4B70050C945 /* MKOffscreenFeatureRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0BF1C18A4B70050C945 /* MKOffscreenFeatureRenderer.m */; };
-		9074A0C31C18A4B70050C945 /* MKOffscreenFeatureRendererDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0C01C18A4B70050C945 /* MKOffscreenFeatureRendererDelegate.h */; };
-		9074A0D41C18A4D90050C945 /* MKImageOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0C51C18A4D90050C945 /* MKImageOverlay.h */; };
-		9074A0D51C18A4D90050C945 /* MKImageOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0C61C18A4D90050C945 /* MKImageOverlay.m */; };
-		9074A0D61C18A4D90050C945 /* MKImageOverlayRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0C71C18A4D90050C945 /* MKImageOverlayRenderer.h */; };
-		9074A0D71C18A4D90050C945 /* MKImageOverlayRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0C81C18A4D90050C945 /* MKImageOverlayRenderer.m */; };
-		9074A0D81C18A4D90050C945 /* MKPhotoAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0C91C18A4D90050C945 /* MKPhotoAnnotation.h */; };
-		9074A0D91C18A4D90050C945 /* MKPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0CA1C18A4D90050C945 /* MKPhotoAnnotation.m */; };
-		9074A0DA1C18A4D90050C945 /* MKPlacemarkAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0CB1C18A4D90050C945 /* MKPlacemarkAnnotation.h */; };
-		9074A0DB1C18A4D90050C945 /* MKPlacemarkAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0CC1C18A4D90050C945 /* MKPlacemarkAnnotation.m */; };
-		9074A0DC1C18A4D90050C945 /* MKStyledPolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0CD1C18A4D90050C945 /* MKStyledPolyline.h */; };
-		9074A0DD1C18A4D90050C945 /* MKStyledPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0CE1C18A4D90050C945 /* MKStyledPolyline.m */; };
-		9074A0DE1C18A4D90050C945 /* MKPolylineTapDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0CF1C18A4D90050C945 /* MKPolylineTapDetector.h */; };
-		9074A0DF1C18A4D90050C945 /* MKPolylineTapDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0D01C18A4D90050C945 /* MKPolylineTapDetector.m */; };
-		9074A0E01C18A4D90050C945 /* MKPolylineTapDetectorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0D11C18A4D90050C945 /* MKPolylineTapDetectorDelegate.h */; };
-		9074A0E11C18A4D90050C945 /* MockPolylineRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0D21C18A4D90050C945 /* MockPolylineRenderer.h */; };
-		9074A0E21C18A4D90050C945 /* MockPolylineRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0D31C18A4D90050C945 /* MockPolylineRenderer.m */; };
-		9074A0E71C18A5470050C945 /* SaxKmlParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0E41C18A5470050C945 /* SaxKmlParser.h */; };
-		9074A0E81C18A5470050C945 /* SaxKmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A0E51C18A5470050C945 /* SaxKmlParser.m */; };
-		9074A0E91C18A5470050C945 /* SaxKmlParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A0E61C18A5470050C945 /* SaxKmlParserDelegate.h */; };
-		9074A0F01C18A5630050C945 /* waypoint-default-25x28.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0EB1C18A5630050C945 /* waypoint-default-25x28.png */; };
-		9074A0F11C18A5630050C945 /* waypoint-offscreen-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0EC1C18A5630050C945 /* waypoint-offscreen-15.png */; };
-		9074A0F21C18A5630050C945 /* userlocation-offscreen-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0ED1C18A5630050C945 /* userlocation-offscreen-15.png */; };
-		9074A0F31C18A5630050C945 /* waypoints.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0EE1C18A5630050C945 /* waypoints.xcf */; };
-		9074A0F41C18A5630050C945 /* offscreen.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0EF1C18A5630050C945 /* offscreen.xcf */; };
-		9074A1051C18A5860050C945 /* xsm_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0F61C18A5860050C945 /* xsm_edit.png */; };
-		9074A1061C18A5860050C945 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0F71C18A5860050C945 /* close.png */; };
-		9074A1071C18A5860050C945 /* icon-layers-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0F81C18A5860050C945 /* icon-layers-100.png */; };
-		9074A1081C18A5860050C945 /* icon-layers-userlayers-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0F91C18A5860050C945 /* icon-layers-userlayers-100.png */; };
-		9074A1091C18A5860050C945 /* icon-layers-list-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0FA1C18A5860050C945 /* icon-layers-list-100.png */; };
-		9074A10A1C18A5860050C945 /* icon-track-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0FB1C18A5860050C945 /* icon-track-100.png */; };
-		9074A10B1C18A5860050C945 /* icon-waypointadd-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0FC1C18A5860050C945 /* icon-waypointadd-100.png */; };
-		9074A10C1C18A5860050C945 /* icon-waypointdrop-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0FD1C18A5860050C945 /* icon-waypointdrop-100.png */; };
-		9074A10D1C18A5860050C945 /* icon-waypointcamera-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0FE1C18A5860050C945 /* icon-waypointcamera-100.png */; };
-		9074A10E1C18A5860050C945 /* icon-userlocation-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A0FF1C18A5860050C945 /* icon-userlocation-100.png */; };
-		9074A10F1C18A5860050C945 /* icon-userlocationlock-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A1001C18A5860050C945 /* icon-userlocationlock-100.png */; };
-		9074A1101C18A5860050C945 /* icon-userlocation-add-user-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9074A1011C18A5860050C945 /* icon-userlocation-add-user-100.png */; };
-		9074A1111C18A5860050C945 /* buttons.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 9074A1021C18A5860050C945 /* buttons.xcf */; };
-		9074A1121C18A5860050C945 /* StyleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9074A1031C18A5860050C945 /* StyleButton.h */; };
-		9074A1131C18A5860050C945 /* StyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9074A1041C18A5860050C945 /* StyleButton.m */; };
+		901F13731C18C8A300F8B0D9 /* MKUserTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13701C18C8A300F8B0D9 /* MKUserTracker.h */; };
+		901F13741C18C8A300F8B0D9 /* MKUserTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13711C18C8A300F8B0D9 /* MKUserTracker.m */; };
+		901F13751C18C8A300F8B0D9 /* MKUserTrackerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13721C18C8A300F8B0D9 /* MKUserTrackerDelegate.h */; };
+		901F13791C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13761C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.h */; };
+		901F137A1C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13771C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.m */; };
+		901F137B1C18C8A900F8B0D9 /* MKOffscreenFeatureRendererDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13781C18C8A900F8B0D9 /* MKOffscreenFeatureRendererDelegate.h */; };
+		901F138B1C18C8B200F8B0D9 /* MKImageOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F137C1C18C8B200F8B0D9 /* MKImageOverlay.h */; };
+		901F138C1C18C8B200F8B0D9 /* MKImageOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F137D1C18C8B200F8B0D9 /* MKImageOverlay.m */; };
+		901F138D1C18C8B200F8B0D9 /* MKImageOverlayRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F137E1C18C8B200F8B0D9 /* MKImageOverlayRenderer.h */; };
+		901F138E1C18C8B200F8B0D9 /* MKImageOverlayRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F137F1C18C8B200F8B0D9 /* MKImageOverlayRenderer.m */; };
+		901F138F1C18C8B200F8B0D9 /* MKPhotoAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13801C18C8B200F8B0D9 /* MKPhotoAnnotation.h */; };
+		901F13901C18C8B200F8B0D9 /* MKPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13811C18C8B200F8B0D9 /* MKPhotoAnnotation.m */; };
+		901F13911C18C8B200F8B0D9 /* MKPlacemarkAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13821C18C8B200F8B0D9 /* MKPlacemarkAnnotation.h */; };
+		901F13921C18C8B200F8B0D9 /* MKPlacemarkAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13831C18C8B200F8B0D9 /* MKPlacemarkAnnotation.m */; };
+		901F13931C18C8B200F8B0D9 /* MKStyledPolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13841C18C8B200F8B0D9 /* MKStyledPolyline.h */; };
+		901F13941C18C8B200F8B0D9 /* MKStyledPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13851C18C8B200F8B0D9 /* MKStyledPolyline.m */; };
+		901F13951C18C8B200F8B0D9 /* MKPolylineTapDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13861C18C8B200F8B0D9 /* MKPolylineTapDetector.h */; };
+		901F13961C18C8B200F8B0D9 /* MKPolylineTapDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13871C18C8B200F8B0D9 /* MKPolylineTapDetector.m */; };
+		901F13971C18C8B200F8B0D9 /* MKPolylineTapDetectorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13881C18C8B200F8B0D9 /* MKPolylineTapDetectorDelegate.h */; };
+		901F13981C18C8B200F8B0D9 /* MockPolylineRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13891C18C8B200F8B0D9 /* MockPolylineRenderer.h */; };
+		901F13991C18C8B200F8B0D9 /* MockPolylineRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F138A1C18C8B200F8B0D9 /* MockPolylineRenderer.m */; };
+		901F139D1C18C8BB00F8B0D9 /* SaxKmlParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F139A1C18C8BB00F8B0D9 /* SaxKmlParser.h */; };
+		901F139E1C18C8BB00F8B0D9 /* SaxKmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F139B1C18C8BB00F8B0D9 /* SaxKmlParser.m */; };
+		901F139F1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F139C1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h */; };
+		901F13A51C18C8C300F8B0D9 /* waypoint-default-25x28.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A01C18C8C300F8B0D9 /* waypoint-default-25x28.png */; };
+		901F13A61C18C8C300F8B0D9 /* waypoint-offscreen-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A11C18C8C300F8B0D9 /* waypoint-offscreen-15.png */; };
+		901F13A71C18C8C300F8B0D9 /* userlocation-offscreen-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A21C18C8C300F8B0D9 /* userlocation-offscreen-15.png */; };
+		901F13A81C18C8C300F8B0D9 /* waypoints.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A31C18C8C300F8B0D9 /* waypoints.xcf */; };
+		901F13A91C18C8C300F8B0D9 /* offscreen.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 901F13A41C18C8C300F8B0D9 /* offscreen.xcf */; };
+		901F13B91C18C8DB00F8B0D9 /* xsm_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AA1C18C8DB00F8B0D9 /* xsm_edit.png */; };
+		901F13BA1C18C8DB00F8B0D9 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AB1C18C8DB00F8B0D9 /* close.png */; };
+		901F13BB1C18C8DB00F8B0D9 /* icon-layers-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AC1C18C8DB00F8B0D9 /* icon-layers-100.png */; };
+		901F13BC1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AD1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png */; };
+		901F13BD1C18C8DB00F8B0D9 /* icon-layers-list-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AE1C18C8DB00F8B0D9 /* icon-layers-list-100.png */; };
+		901F13BE1C18C8DB00F8B0D9 /* icon-track-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13AF1C18C8DB00F8B0D9 /* icon-track-100.png */; };
+		901F13BF1C18C8DB00F8B0D9 /* icon-waypointadd-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B01C18C8DB00F8B0D9 /* icon-waypointadd-100.png */; };
+		901F13C01C18C8DB00F8B0D9 /* icon-waypointdrop-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B11C18C8DB00F8B0D9 /* icon-waypointdrop-100.png */; };
+		901F13C11C18C8DB00F8B0D9 /* icon-waypointcamera-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B21C18C8DB00F8B0D9 /* icon-waypointcamera-100.png */; };
+		901F13C21C18C8DB00F8B0D9 /* icon-userlocation-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B31C18C8DB00F8B0D9 /* icon-userlocation-100.png */; };
+		901F13C31C18C8DB00F8B0D9 /* icon-userlocationlock-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B41C18C8DB00F8B0D9 /* icon-userlocationlock-100.png */; };
+		901F13C41C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B51C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png */; };
+		901F13C51C18C8DB00F8B0D9 /* buttons.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 901F13B61C18C8DB00F8B0D9 /* buttons.xcf */; };
+		901F13C61C18C8DB00F8B0D9 /* StyleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13B71C18C8DB00F8B0D9 /* StyleButton.h */; };
+		901F13C71C18C8DB00F8B0D9 /* StyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13B81C18C8DB00F8B0D9 /* StyleButton.m */; };
+		901F13D11C18C8E600F8B0D9 /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13C81C18C8E600F8B0D9 /* ViewController.h */; };
+		901F13D21C18C8E600F8B0D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13C91C18C8E600F8B0D9 /* ViewController.m */; };
+		901F13D31C18C8E600F8B0D9 /* MapOverlayListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13CA1C18C8E600F8B0D9 /* MapOverlayListViewController.h */; };
+		901F13D41C18C8E600F8B0D9 /* MapOverlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CB1C18C8E600F8B0D9 /* MapOverlayListViewController.m */; };
+		901F13D51C18C8E600F8B0D9 /* DismissView.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13CC1C18C8E600F8B0D9 /* DismissView.h */; };
+		901F13D61C18C8E600F8B0D9 /* DismissView.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CD1C18C8E600F8B0D9 /* DismissView.m */; };
+		901F13D71C18C8E600F8B0D9 /* OverlayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */; };
+		901F13D81C18C8E600F8B0D9 /* OverlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */; };
+		901F13D91C18C8E600F8B0D9 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 901F13D01C18C8E600F8B0D9 /* Map.storyboard */; };
 		9074A1161C18A81D0050C945 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9074A1151C18A81D0050C945 /* MapKit.framework */; };
 		C2338B54FD2596A886203ED84A48A6E5 /* Pods-Map_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B9532EC3F8CC250B42CE3533828CAD /* Pods-Map_Tests-dummy.m */; };
 		DC86D22AFDFC831075E8F61105AD35F8 /* Map-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 275C6D90C56AE99FD0437CE177AEF790 /* Map-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,59 +103,59 @@
 		7BEF95FF875668168027C6614CEB9089 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87B9532EC3F8CC250B42CE3533828CAD /* Pods-Map_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Map_Tests-dummy.m"; sourceTree = "<group>"; };
 		8D353755EFEE6F9AF57996EB4B7C9EF8 /* Map-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Map-prefix.pch"; sourceTree = "<group>"; };
-		9074A0A31C18A3F20050C945 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9074A0A41C18A3F20050C945 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9074A0A51C18A3F20050C945 /* MapOverlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlayListViewController.h; sourceTree = "<group>"; };
-		9074A0A61C18A3F20050C945 /* MapOverlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOverlayListViewController.m; sourceTree = "<group>"; };
-		9074A0A71C18A3F20050C945 /* DismissView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissView.h; sourceTree = "<group>"; };
-		9074A0A81C18A3F20050C945 /* DismissView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissView.m; sourceTree = "<group>"; };
-		9074A0A91C18A3F20050C945 /* OverlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayCell.h; sourceTree = "<group>"; };
-		9074A0AA1C18A3F20050C945 /* OverlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayCell.m; sourceTree = "<group>"; };
-		9074A0AB1C18A3F20050C945 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		9074A0B71C18A49F0050C945 /* MKUserTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTracker.h; sourceTree = "<group>"; };
-		9074A0B81C18A49F0050C945 /* MKUserTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUserTracker.m; sourceTree = "<group>"; };
-		9074A0B91C18A49F0050C945 /* MKUserTrackerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTrackerDelegate.h; sourceTree = "<group>"; };
-		9074A0BE1C18A4B70050C945 /* MKOffscreenFeatureRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKOffscreenFeatureRenderer.h; sourceTree = "<group>"; };
-		9074A0BF1C18A4B70050C945 /* MKOffscreenFeatureRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKOffscreenFeatureRenderer.m; sourceTree = "<group>"; };
-		9074A0C01C18A4B70050C945 /* MKOffscreenFeatureRendererDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKOffscreenFeatureRendererDelegate.h; sourceTree = "<group>"; };
-		9074A0C51C18A4D90050C945 /* MKImageOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKImageOverlay.h; sourceTree = "<group>"; };
-		9074A0C61C18A4D90050C945 /* MKImageOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKImageOverlay.m; sourceTree = "<group>"; };
-		9074A0C71C18A4D90050C945 /* MKImageOverlayRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKImageOverlayRenderer.h; sourceTree = "<group>"; };
-		9074A0C81C18A4D90050C945 /* MKImageOverlayRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKImageOverlayRenderer.m; sourceTree = "<group>"; };
-		9074A0C91C18A4D90050C945 /* MKPhotoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPhotoAnnotation.h; sourceTree = "<group>"; };
-		9074A0CA1C18A4D90050C945 /* MKPhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPhotoAnnotation.m; sourceTree = "<group>"; };
-		9074A0CB1C18A4D90050C945 /* MKPlacemarkAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPlacemarkAnnotation.h; sourceTree = "<group>"; };
-		9074A0CC1C18A4D90050C945 /* MKPlacemarkAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPlacemarkAnnotation.m; sourceTree = "<group>"; };
-		9074A0CD1C18A4D90050C945 /* MKStyledPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStyledPolyline.h; sourceTree = "<group>"; };
-		9074A0CE1C18A4D90050C945 /* MKStyledPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStyledPolyline.m; sourceTree = "<group>"; };
-		9074A0CF1C18A4D90050C945 /* MKPolylineTapDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPolylineTapDetector.h; sourceTree = "<group>"; };
-		9074A0D01C18A4D90050C945 /* MKPolylineTapDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPolylineTapDetector.m; sourceTree = "<group>"; };
-		9074A0D11C18A4D90050C945 /* MKPolylineTapDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPolylineTapDetectorDelegate.h; sourceTree = "<group>"; };
-		9074A0D21C18A4D90050C945 /* MockPolylineRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockPolylineRenderer.h; sourceTree = "<group>"; };
-		9074A0D31C18A4D90050C945 /* MockPolylineRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockPolylineRenderer.m; sourceTree = "<group>"; };
-		9074A0E41C18A5470050C945 /* SaxKmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaxKmlParser.h; sourceTree = "<group>"; };
-		9074A0E51C18A5470050C945 /* SaxKmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaxKmlParser.m; sourceTree = "<group>"; };
-		9074A0E61C18A5470050C945 /* SaxKmlParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaxKmlParserDelegate.h; sourceTree = "<group>"; };
-		9074A0EB1C18A5630050C945 /* waypoint-default-25x28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "waypoint-default-25x28.png"; sourceTree = "<group>"; };
-		9074A0EC1C18A5630050C945 /* waypoint-offscreen-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "waypoint-offscreen-15.png"; sourceTree = "<group>"; };
-		9074A0ED1C18A5630050C945 /* userlocation-offscreen-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userlocation-offscreen-15.png"; sourceTree = "<group>"; };
-		9074A0EE1C18A5630050C945 /* waypoints.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = waypoints.xcf; sourceTree = "<group>"; };
-		9074A0EF1C18A5630050C945 /* offscreen.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = offscreen.xcf; sourceTree = "<group>"; };
-		9074A0F61C18A5860050C945 /* xsm_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xsm_edit.png; sourceTree = "<group>"; };
-		9074A0F71C18A5860050C945 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
-		9074A0F81C18A5860050C945 /* icon-layers-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-layers-100.png"; sourceTree = "<group>"; };
-		9074A0F91C18A5860050C945 /* icon-layers-userlayers-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-layers-userlayers-100.png"; sourceTree = "<group>"; };
-		9074A0FA1C18A5860050C945 /* icon-layers-list-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-layers-list-100.png"; sourceTree = "<group>"; };
-		9074A0FB1C18A5860050C945 /* icon-track-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-track-100.png"; sourceTree = "<group>"; };
-		9074A0FC1C18A5860050C945 /* icon-waypointadd-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-waypointadd-100.png"; sourceTree = "<group>"; };
-		9074A0FD1C18A5860050C945 /* icon-waypointdrop-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-waypointdrop-100.png"; sourceTree = "<group>"; };
-		9074A0FE1C18A5860050C945 /* icon-waypointcamera-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-waypointcamera-100.png"; sourceTree = "<group>"; };
-		9074A0FF1C18A5860050C945 /* icon-userlocation-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-userlocation-100.png"; sourceTree = "<group>"; };
-		9074A1001C18A5860050C945 /* icon-userlocationlock-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-userlocationlock-100.png"; sourceTree = "<group>"; };
-		9074A1011C18A5860050C945 /* icon-userlocation-add-user-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-userlocation-add-user-100.png"; sourceTree = "<group>"; };
-		9074A1021C18A5860050C945 /* buttons.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttons.xcf; sourceTree = "<group>"; };
-		9074A1031C18A5860050C945 /* StyleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleButton.h; sourceTree = "<group>"; };
-		9074A1041C18A5860050C945 /* StyleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleButton.m; sourceTree = "<group>"; };
+		901F13701C18C8A300F8B0D9 /* MKUserTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTracker.h; sourceTree = "<group>"; };
+		901F13711C18C8A300F8B0D9 /* MKUserTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUserTracker.m; sourceTree = "<group>"; };
+		901F13721C18C8A300F8B0D9 /* MKUserTrackerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTrackerDelegate.h; sourceTree = "<group>"; };
+		901F13761C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKOffscreenFeatureRenderer.h; sourceTree = "<group>"; };
+		901F13771C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKOffscreenFeatureRenderer.m; sourceTree = "<group>"; };
+		901F13781C18C8A900F8B0D9 /* MKOffscreenFeatureRendererDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKOffscreenFeatureRendererDelegate.h; sourceTree = "<group>"; };
+		901F137C1C18C8B200F8B0D9 /* MKImageOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKImageOverlay.h; sourceTree = "<group>"; };
+		901F137D1C18C8B200F8B0D9 /* MKImageOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKImageOverlay.m; sourceTree = "<group>"; };
+		901F137E1C18C8B200F8B0D9 /* MKImageOverlayRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKImageOverlayRenderer.h; sourceTree = "<group>"; };
+		901F137F1C18C8B200F8B0D9 /* MKImageOverlayRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKImageOverlayRenderer.m; sourceTree = "<group>"; };
+		901F13801C18C8B200F8B0D9 /* MKPhotoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPhotoAnnotation.h; sourceTree = "<group>"; };
+		901F13811C18C8B200F8B0D9 /* MKPhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPhotoAnnotation.m; sourceTree = "<group>"; };
+		901F13821C18C8B200F8B0D9 /* MKPlacemarkAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPlacemarkAnnotation.h; sourceTree = "<group>"; };
+		901F13831C18C8B200F8B0D9 /* MKPlacemarkAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPlacemarkAnnotation.m; sourceTree = "<group>"; };
+		901F13841C18C8B200F8B0D9 /* MKStyledPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStyledPolyline.h; sourceTree = "<group>"; };
+		901F13851C18C8B200F8B0D9 /* MKStyledPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStyledPolyline.m; sourceTree = "<group>"; };
+		901F13861C18C8B200F8B0D9 /* MKPolylineTapDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPolylineTapDetector.h; sourceTree = "<group>"; };
+		901F13871C18C8B200F8B0D9 /* MKPolylineTapDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPolylineTapDetector.m; sourceTree = "<group>"; };
+		901F13881C18C8B200F8B0D9 /* MKPolylineTapDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPolylineTapDetectorDelegate.h; sourceTree = "<group>"; };
+		901F13891C18C8B200F8B0D9 /* MockPolylineRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockPolylineRenderer.h; sourceTree = "<group>"; };
+		901F138A1C18C8B200F8B0D9 /* MockPolylineRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockPolylineRenderer.m; sourceTree = "<group>"; };
+		901F139A1C18C8BB00F8B0D9 /* SaxKmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaxKmlParser.h; sourceTree = "<group>"; };
+		901F139B1C18C8BB00F8B0D9 /* SaxKmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaxKmlParser.m; sourceTree = "<group>"; };
+		901F139C1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaxKmlParserDelegate.h; sourceTree = "<group>"; };
+		901F13A01C18C8C300F8B0D9 /* waypoint-default-25x28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "waypoint-default-25x28.png"; sourceTree = "<group>"; };
+		901F13A11C18C8C300F8B0D9 /* waypoint-offscreen-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "waypoint-offscreen-15.png"; sourceTree = "<group>"; };
+		901F13A21C18C8C300F8B0D9 /* userlocation-offscreen-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userlocation-offscreen-15.png"; sourceTree = "<group>"; };
+		901F13A31C18C8C300F8B0D9 /* waypoints.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = waypoints.xcf; sourceTree = "<group>"; };
+		901F13A41C18C8C300F8B0D9 /* offscreen.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = offscreen.xcf; sourceTree = "<group>"; };
+		901F13AA1C18C8DB00F8B0D9 /* xsm_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xsm_edit.png; sourceTree = "<group>"; };
+		901F13AB1C18C8DB00F8B0D9 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		901F13AC1C18C8DB00F8B0D9 /* icon-layers-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-layers-100.png"; sourceTree = "<group>"; };
+		901F13AD1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-layers-userlayers-100.png"; sourceTree = "<group>"; };
+		901F13AE1C18C8DB00F8B0D9 /* icon-layers-list-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-layers-list-100.png"; sourceTree = "<group>"; };
+		901F13AF1C18C8DB00F8B0D9 /* icon-track-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-track-100.png"; sourceTree = "<group>"; };
+		901F13B01C18C8DB00F8B0D9 /* icon-waypointadd-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-waypointadd-100.png"; sourceTree = "<group>"; };
+		901F13B11C18C8DB00F8B0D9 /* icon-waypointdrop-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-waypointdrop-100.png"; sourceTree = "<group>"; };
+		901F13B21C18C8DB00F8B0D9 /* icon-waypointcamera-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-waypointcamera-100.png"; sourceTree = "<group>"; };
+		901F13B31C18C8DB00F8B0D9 /* icon-userlocation-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-userlocation-100.png"; sourceTree = "<group>"; };
+		901F13B41C18C8DB00F8B0D9 /* icon-userlocationlock-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-userlocationlock-100.png"; sourceTree = "<group>"; };
+		901F13B51C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-userlocation-add-user-100.png"; sourceTree = "<group>"; };
+		901F13B61C18C8DB00F8B0D9 /* buttons.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttons.xcf; sourceTree = "<group>"; };
+		901F13B71C18C8DB00F8B0D9 /* StyleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleButton.h; sourceTree = "<group>"; };
+		901F13B81C18C8DB00F8B0D9 /* StyleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleButton.m; sourceTree = "<group>"; };
+		901F13C81C18C8E600F8B0D9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		901F13C91C18C8E600F8B0D9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		901F13CA1C18C8E600F8B0D9 /* MapOverlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlayListViewController.h; sourceTree = "<group>"; };
+		901F13CB1C18C8E600F8B0D9 /* MapOverlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOverlayListViewController.m; sourceTree = "<group>"; };
+		901F13CC1C18C8E600F8B0D9 /* DismissView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissView.h; sourceTree = "<group>"; };
+		901F13CD1C18C8E600F8B0D9 /* DismissView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissView.m; sourceTree = "<group>"; };
+		901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayCell.h; sourceTree = "<group>"; };
+		901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayCell.m; sourceTree = "<group>"; };
+		901F13D01C18C8E600F8B0D9 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		9074A1151C18A81D0050C945 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		A66F375FA295E973564421D2814604CE /* Pods-Map_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Map_Tests-resources.sh"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -242,21 +242,59 @@
 		4F73C0375FB02D04DB95CACCF66791E0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9074A0BD1C18A4A30050C945 /* userTracker */,
-				9074A0C41C18A4BB0050C945 /* offscreenFeatures */,
-				9074A0E31C18A50D0050C945 /* overlays */,
-				9074A0EA1C18A54B0050C945 /* parser */,
-				9074A0A31C18A3F20050C945 /* ViewController.h */,
-				9074A0A41C18A3F20050C945 /* ViewController.m */,
-				9074A0A51C18A3F20050C945 /* MapOverlayListViewController.h */,
-				9074A0A61C18A3F20050C945 /* MapOverlayListViewController.m */,
-				9074A0A71C18A3F20050C945 /* DismissView.h */,
-				9074A0A81C18A3F20050C945 /* DismissView.m */,
-				9074A0A91C18A3F20050C945 /* OverlayCell.h */,
-				9074A0AA1C18A3F20050C945 /* OverlayCell.m */,
-				9074A0AB1C18A3F20050C945 /* Map.storyboard */,
-				9074A1141C18A58D0050C945 /* buttons */,
-				9074A0F51C18A5680050C945 /* waypoints */,
+				901F13701C18C8A300F8B0D9 /* MKUserTracker.h */,
+				901F13711C18C8A300F8B0D9 /* MKUserTracker.m */,
+				901F13721C18C8A300F8B0D9 /* MKUserTrackerDelegate.h */,
+				901F13761C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.h */,
+				901F13771C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.m */,
+				901F13781C18C8A900F8B0D9 /* MKOffscreenFeatureRendererDelegate.h */,
+				901F137C1C18C8B200F8B0D9 /* MKImageOverlay.h */,
+				901F137D1C18C8B200F8B0D9 /* MKImageOverlay.m */,
+				901F137E1C18C8B200F8B0D9 /* MKImageOverlayRenderer.h */,
+				901F137F1C18C8B200F8B0D9 /* MKImageOverlayRenderer.m */,
+				901F13801C18C8B200F8B0D9 /* MKPhotoAnnotation.h */,
+				901F13811C18C8B200F8B0D9 /* MKPhotoAnnotation.m */,
+				901F13821C18C8B200F8B0D9 /* MKPlacemarkAnnotation.h */,
+				901F13831C18C8B200F8B0D9 /* MKPlacemarkAnnotation.m */,
+				901F13841C18C8B200F8B0D9 /* MKStyledPolyline.h */,
+				901F13851C18C8B200F8B0D9 /* MKStyledPolyline.m */,
+				901F13861C18C8B200F8B0D9 /* MKPolylineTapDetector.h */,
+				901F13871C18C8B200F8B0D9 /* MKPolylineTapDetector.m */,
+				901F13881C18C8B200F8B0D9 /* MKPolylineTapDetectorDelegate.h */,
+				901F13891C18C8B200F8B0D9 /* MockPolylineRenderer.h */,
+				901F138A1C18C8B200F8B0D9 /* MockPolylineRenderer.m */,
+				901F139A1C18C8BB00F8B0D9 /* SaxKmlParser.h */,
+				901F139B1C18C8BB00F8B0D9 /* SaxKmlParser.m */,
+				901F139C1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h */,
+				901F13A01C18C8C300F8B0D9 /* waypoint-default-25x28.png */,
+				901F13A11C18C8C300F8B0D9 /* waypoint-offscreen-15.png */,
+				901F13A21C18C8C300F8B0D9 /* userlocation-offscreen-15.png */,
+				901F13A31C18C8C300F8B0D9 /* waypoints.xcf */,
+				901F13A41C18C8C300F8B0D9 /* offscreen.xcf */,
+				901F13AA1C18C8DB00F8B0D9 /* xsm_edit.png */,
+				901F13AB1C18C8DB00F8B0D9 /* close.png */,
+				901F13AC1C18C8DB00F8B0D9 /* icon-layers-100.png */,
+				901F13AD1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png */,
+				901F13AE1C18C8DB00F8B0D9 /* icon-layers-list-100.png */,
+				901F13AF1C18C8DB00F8B0D9 /* icon-track-100.png */,
+				901F13B01C18C8DB00F8B0D9 /* icon-waypointadd-100.png */,
+				901F13B11C18C8DB00F8B0D9 /* icon-waypointdrop-100.png */,
+				901F13B21C18C8DB00F8B0D9 /* icon-waypointcamera-100.png */,
+				901F13B31C18C8DB00F8B0D9 /* icon-userlocation-100.png */,
+				901F13B41C18C8DB00F8B0D9 /* icon-userlocationlock-100.png */,
+				901F13B51C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png */,
+				901F13B61C18C8DB00F8B0D9 /* buttons.xcf */,
+				901F13B71C18C8DB00F8B0D9 /* StyleButton.h */,
+				901F13B81C18C8DB00F8B0D9 /* StyleButton.m */,
+				901F13C81C18C8E600F8B0D9 /* ViewController.h */,
+				901F13C91C18C8E600F8B0D9 /* ViewController.m */,
+				901F13CA1C18C8E600F8B0D9 /* MapOverlayListViewController.h */,
+				901F13CB1C18C8E600F8B0D9 /* MapOverlayListViewController.m */,
+				901F13CC1C18C8E600F8B0D9 /* DismissView.h */,
+				901F13CD1C18C8E600F8B0D9 /* DismissView.m */,
+				901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */,
+				901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */,
+				901F13D01C18C8E600F8B0D9 /* Map.storyboard */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -270,92 +308,6 @@
 				329D0EBD15D3C74CEC66347CA7AA4FF8 /* Products */,
 				92657D33F235A73EF0696B1535A06C79 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		9074A0BD1C18A4A30050C945 /* userTracker */ = {
-			isa = PBXGroup;
-			children = (
-				9074A0B71C18A49F0050C945 /* MKUserTracker.h */,
-				9074A0B81C18A49F0050C945 /* MKUserTracker.m */,
-				9074A0B91C18A49F0050C945 /* MKUserTrackerDelegate.h */,
-			);
-			name = userTracker;
-			sourceTree = "<group>";
-		};
-		9074A0C41C18A4BB0050C945 /* offscreenFeatures */ = {
-			isa = PBXGroup;
-			children = (
-				9074A0BE1C18A4B70050C945 /* MKOffscreenFeatureRenderer.h */,
-				9074A0BF1C18A4B70050C945 /* MKOffscreenFeatureRenderer.m */,
-				9074A0C01C18A4B70050C945 /* MKOffscreenFeatureRendererDelegate.h */,
-			);
-			name = offscreenFeatures;
-			sourceTree = "<group>";
-		};
-		9074A0E31C18A50D0050C945 /* overlays */ = {
-			isa = PBXGroup;
-			children = (
-				9074A0C51C18A4D90050C945 /* MKImageOverlay.h */,
-				9074A0C61C18A4D90050C945 /* MKImageOverlay.m */,
-				9074A0C71C18A4D90050C945 /* MKImageOverlayRenderer.h */,
-				9074A0C81C18A4D90050C945 /* MKImageOverlayRenderer.m */,
-				9074A0C91C18A4D90050C945 /* MKPhotoAnnotation.h */,
-				9074A0CA1C18A4D90050C945 /* MKPhotoAnnotation.m */,
-				9074A0CB1C18A4D90050C945 /* MKPlacemarkAnnotation.h */,
-				9074A0CC1C18A4D90050C945 /* MKPlacemarkAnnotation.m */,
-				9074A0CD1C18A4D90050C945 /* MKStyledPolyline.h */,
-				9074A0CE1C18A4D90050C945 /* MKStyledPolyline.m */,
-				9074A0CF1C18A4D90050C945 /* MKPolylineTapDetector.h */,
-				9074A0D01C18A4D90050C945 /* MKPolylineTapDetector.m */,
-				9074A0D11C18A4D90050C945 /* MKPolylineTapDetectorDelegate.h */,
-				9074A0D21C18A4D90050C945 /* MockPolylineRenderer.h */,
-				9074A0D31C18A4D90050C945 /* MockPolylineRenderer.m */,
-			);
-			name = overlays;
-			sourceTree = "<group>";
-		};
-		9074A0EA1C18A54B0050C945 /* parser */ = {
-			isa = PBXGroup;
-			children = (
-				9074A0E41C18A5470050C945 /* SaxKmlParser.h */,
-				9074A0E51C18A5470050C945 /* SaxKmlParser.m */,
-				9074A0E61C18A5470050C945 /* SaxKmlParserDelegate.h */,
-			);
-			name = parser;
-			sourceTree = "<group>";
-		};
-		9074A0F51C18A5680050C945 /* waypoints */ = {
-			isa = PBXGroup;
-			children = (
-				9074A0EB1C18A5630050C945 /* waypoint-default-25x28.png */,
-				9074A0EC1C18A5630050C945 /* waypoint-offscreen-15.png */,
-				9074A0ED1C18A5630050C945 /* userlocation-offscreen-15.png */,
-				9074A0EE1C18A5630050C945 /* waypoints.xcf */,
-				9074A0EF1C18A5630050C945 /* offscreen.xcf */,
-			);
-			name = waypoints;
-			sourceTree = "<group>";
-		};
-		9074A1141C18A58D0050C945 /* buttons */ = {
-			isa = PBXGroup;
-			children = (
-				9074A0F61C18A5860050C945 /* xsm_edit.png */,
-				9074A0F71C18A5860050C945 /* close.png */,
-				9074A0F81C18A5860050C945 /* icon-layers-100.png */,
-				9074A0F91C18A5860050C945 /* icon-layers-userlayers-100.png */,
-				9074A0FA1C18A5860050C945 /* icon-layers-list-100.png */,
-				9074A0FB1C18A5860050C945 /* icon-track-100.png */,
-				9074A0FC1C18A5860050C945 /* icon-waypointadd-100.png */,
-				9074A0FD1C18A5860050C945 /* icon-waypointdrop-100.png */,
-				9074A0FE1C18A5860050C945 /* icon-waypointcamera-100.png */,
-				9074A0FF1C18A5860050C945 /* icon-userlocation-100.png */,
-				9074A1001C18A5860050C945 /* icon-userlocationlock-100.png */,
-				9074A1011C18A5860050C945 /* icon-userlocation-add-user-100.png */,
-				9074A1021C18A5860050C945 /* buttons.xcf */,
-				9074A1031C18A5860050C945 /* StyleButton.h */,
-				9074A1041C18A5860050C945 /* StyleButton.m */,
-			);
-			name = buttons;
 			sourceTree = "<group>";
 		};
 		92657D33F235A73EF0696B1535A06C79 /* Targets Support Files */ = {
@@ -420,26 +372,26 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9074A1121C18A5860050C945 /* StyleButton.h in Headers */,
-				9074A0E01C18A4D90050C945 /* MKPolylineTapDetectorDelegate.h in Headers */,
-				9074A0DE1C18A4D90050C945 /* MKPolylineTapDetector.h in Headers */,
+				901F13C61C18C8DB00F8B0D9 /* StyleButton.h in Headers */,
+				901F13791C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.h in Headers */,
+				901F139D1C18C8BB00F8B0D9 /* SaxKmlParser.h in Headers */,
+				901F13931C18C8B200F8B0D9 /* MKStyledPolyline.h in Headers */,
+				901F13911C18C8B200F8B0D9 /* MKPlacemarkAnnotation.h in Headers */,
+				901F13D71C18C8E600F8B0D9 /* OverlayCell.h in Headers */,
+				901F138D1C18C8B200F8B0D9 /* MKImageOverlayRenderer.h in Headers */,
+				901F137B1C18C8A900F8B0D9 /* MKOffscreenFeatureRendererDelegate.h in Headers */,
+				901F13D11C18C8E600F8B0D9 /* ViewController.h in Headers */,
+				901F13731C18C8A300F8B0D9 /* MKUserTracker.h in Headers */,
+				901F13D51C18C8E600F8B0D9 /* DismissView.h in Headers */,
+				901F138B1C18C8B200F8B0D9 /* MKImageOverlay.h in Headers */,
+				901F13751C18C8A300F8B0D9 /* MKUserTrackerDelegate.h in Headers */,
+				901F138F1C18C8B200F8B0D9 /* MKPhotoAnnotation.h in Headers */,
 				DC86D22AFDFC831075E8F61105AD35F8 /* Map-umbrella.h in Headers */,
-				9074A0C31C18A4B70050C945 /* MKOffscreenFeatureRendererDelegate.h in Headers */,
-				9074A0DA1C18A4D90050C945 /* MKPlacemarkAnnotation.h in Headers */,
-				9074A0D61C18A4D90050C945 /* MKImageOverlayRenderer.h in Headers */,
-				9074A0B41C18A3F20050C945 /* OverlayCell.h in Headers */,
-				9074A0E91C18A5470050C945 /* SaxKmlParserDelegate.h in Headers */,
-				9074A0DC1C18A4D90050C945 /* MKStyledPolyline.h in Headers */,
-				9074A0E11C18A4D90050C945 /* MockPolylineRenderer.h in Headers */,
-				9074A0D81C18A4D90050C945 /* MKPhotoAnnotation.h in Headers */,
-				9074A0BC1C18A49F0050C945 /* MKUserTrackerDelegate.h in Headers */,
-				9074A0B21C18A3F20050C945 /* DismissView.h in Headers */,
-				9074A0B01C18A3F20050C945 /* MapOverlayListViewController.h in Headers */,
-				9074A0D41C18A4D90050C945 /* MKImageOverlay.h in Headers */,
-				9074A0BA1C18A49F0050C945 /* MKUserTracker.h in Headers */,
-				9074A0E71C18A5470050C945 /* SaxKmlParser.h in Headers */,
-				9074A0AE1C18A3F20050C945 /* ViewController.h in Headers */,
-				9074A0C11C18A4B70050C945 /* MKOffscreenFeatureRenderer.h in Headers */,
+				901F13951C18C8B200F8B0D9 /* MKPolylineTapDetector.h in Headers */,
+				901F13971C18C8B200F8B0D9 /* MKPolylineTapDetectorDelegate.h in Headers */,
+				901F139F1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h in Headers */,
+				901F13981C18C8B200F8B0D9 /* MockPolylineRenderer.h in Headers */,
+				901F13D31C18C8E600F8B0D9 /* MapOverlayListViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,26 +485,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9074A1061C18A5860050C945 /* close.png in Resources */,
-				9074A0F31C18A5630050C945 /* waypoints.xcf in Resources */,
+				901F13BD1C18C8DB00F8B0D9 /* icon-layers-list-100.png in Resources */,
+				901F13A61C18C8C300F8B0D9 /* waypoint-offscreen-15.png in Resources */,
+				901F13BE1C18C8DB00F8B0D9 /* icon-track-100.png in Resources */,
+				901F13A51C18C8C300F8B0D9 /* waypoint-default-25x28.png in Resources */,
+				901F13BF1C18C8DB00F8B0D9 /* icon-waypointadd-100.png in Resources */,
+				901F13C41C18C8DB00F8B0D9 /* icon-userlocation-add-user-100.png in Resources */,
+				901F13BA1C18C8DB00F8B0D9 /* close.png in Resources */,
+				901F13C11C18C8DB00F8B0D9 /* icon-waypointcamera-100.png in Resources */,
+				901F13C51C18C8DB00F8B0D9 /* buttons.xcf in Resources */,
 				704E3B61ECD600E6DC5A331A917792A2 /* Map.bundle in Resources */,
-				9074A0F01C18A5630050C945 /* waypoint-default-25x28.png in Resources */,
-				9074A1091C18A5860050C945 /* icon-layers-list-100.png in Resources */,
-				9074A10E1C18A5860050C945 /* icon-userlocation-100.png in Resources */,
-				9074A0F41C18A5630050C945 /* offscreen.xcf in Resources */,
-				9074A10D1C18A5860050C945 /* icon-waypointcamera-100.png in Resources */,
-				9074A1051C18A5860050C945 /* xsm_edit.png in Resources */,
-				9074A1071C18A5860050C945 /* icon-layers-100.png in Resources */,
-				9074A0F11C18A5630050C945 /* waypoint-offscreen-15.png in Resources */,
-				9074A0B61C18A3F20050C945 /* Map.storyboard in Resources */,
-				9074A10C1C18A5860050C945 /* icon-waypointdrop-100.png in Resources */,
-				9074A1111C18A5860050C945 /* buttons.xcf in Resources */,
-				9074A1081C18A5860050C945 /* icon-layers-userlayers-100.png in Resources */,
-				9074A10B1C18A5860050C945 /* icon-waypointadd-100.png in Resources */,
-				9074A10F1C18A5860050C945 /* icon-userlocationlock-100.png in Resources */,
-				9074A10A1C18A5860050C945 /* icon-track-100.png in Resources */,
-				9074A0F21C18A5630050C945 /* userlocation-offscreen-15.png in Resources */,
-				9074A1101C18A5860050C945 /* icon-userlocation-add-user-100.png in Resources */,
+				901F13C21C18C8DB00F8B0D9 /* icon-userlocation-100.png in Resources */,
+				901F13D91C18C8E600F8B0D9 /* Map.storyboard in Resources */,
+				901F13A91C18C8C300F8B0D9 /* offscreen.xcf in Resources */,
+				901F13C31C18C8DB00F8B0D9 /* icon-userlocationlock-100.png in Resources */,
+				901F13B91C18C8DB00F8B0D9 /* xsm_edit.png in Resources */,
+				901F13A81C18C8C300F8B0D9 /* waypoints.xcf in Resources */,
+				901F13C01C18C8DB00F8B0D9 /* icon-waypointdrop-100.png in Resources */,
+				901F13BB1C18C8DB00F8B0D9 /* icon-layers-100.png in Resources */,
+				901F13A71C18C8C300F8B0D9 /* userlocation-offscreen-15.png in Resources */,
+				901F13BC1C18C8DB00F8B0D9 /* icon-layers-userlayers-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,22 +537,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9074A0DD1C18A4D90050C945 /* MKStyledPolyline.m in Sources */,
+				901F138C1C18C8B200F8B0D9 /* MKImageOverlay.m in Sources */,
+				901F137A1C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.m in Sources */,
+				901F138E1C18C8B200F8B0D9 /* MKImageOverlayRenderer.m in Sources */,
 				407095119C654AD16568EB3BCAC96D7B /* Map-dummy.m in Sources */,
-				9074A0DB1C18A4D90050C945 /* MKPlacemarkAnnotation.m in Sources */,
-				9074A0BB1C18A49F0050C945 /* MKUserTracker.m in Sources */,
-				9074A0E21C18A4D90050C945 /* MockPolylineRenderer.m in Sources */,
-				9074A0AF1C18A3F20050C945 /* ViewController.m in Sources */,
-				9074A0E81C18A5470050C945 /* SaxKmlParser.m in Sources */,
-				9074A0DF1C18A4D90050C945 /* MKPolylineTapDetector.m in Sources */,
-				9074A0B51C18A3F20050C945 /* OverlayCell.m in Sources */,
-				9074A0B31C18A3F20050C945 /* DismissView.m in Sources */,
-				9074A1131C18A5860050C945 /* StyleButton.m in Sources */,
-				9074A0C21C18A4B70050C945 /* MKOffscreenFeatureRenderer.m in Sources */,
-				9074A0B11C18A3F20050C945 /* MapOverlayListViewController.m in Sources */,
-				9074A0D71C18A4D90050C945 /* MKImageOverlayRenderer.m in Sources */,
-				9074A0D91C18A4D90050C945 /* MKPhotoAnnotation.m in Sources */,
-				9074A0D51C18A4D90050C945 /* MKImageOverlay.m in Sources */,
+				901F13991C18C8B200F8B0D9 /* MockPolylineRenderer.m in Sources */,
+				901F13741C18C8A300F8B0D9 /* MKUserTracker.m in Sources */,
+				901F13D21C18C8E600F8B0D9 /* ViewController.m in Sources */,
+				901F13961C18C8B200F8B0D9 /* MKPolylineTapDetector.m in Sources */,
+				901F13901C18C8B200F8B0D9 /* MKPhotoAnnotation.m in Sources */,
+				901F13941C18C8B200F8B0D9 /* MKStyledPolyline.m in Sources */,
+				901F13D81C18C8E600F8B0D9 /* OverlayCell.m in Sources */,
+				901F13D41C18C8E600F8B0D9 /* MapOverlayListViewController.m in Sources */,
+				901F13C71C18C8DB00F8B0D9 /* StyleButton.m in Sources */,
+				901F13D61C18C8E600F8B0D9 /* DismissView.m in Sources */,
+				901F13921C18C8B200F8B0D9 /* MKPlacemarkAnnotation.m in Sources */,
+				901F139E1C18C8BB00F8B0D9 /* SaxKmlParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

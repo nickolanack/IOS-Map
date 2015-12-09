@@ -12,7 +12,7 @@
 		59E62666E9FF42B7E1488E2E82D5AF77 /* Pods-Map_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 163A86755B8177FC8C0D90579E238C0F /* Pods-Map_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		704E3B61ECD600E6DC5A331A917792A2 /* Map.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD1006D52F6F85BEB934D1C80FEC8E62 /* Map.bundle */; };
 		7F5753F2C997D69784E976624A49D644 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		9003D77E1C18E2CA008A3AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9003D77D1C18E2CA008A3AF0 /* Main.storyboard */; };
+		9003D77E1C18E2CA008A3AF0 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9003D77D1C18E2CA008A3AF0 /* Map.storyboard */; };
 		901F13731C18C8A300F8B0D9 /* MKUserTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13701C18C8A300F8B0D9 /* MKUserTracker.h */; };
 		901F13741C18C8A300F8B0D9 /* MKUserTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13711C18C8A300F8B0D9 /* MKUserTracker.m */; };
 		901F13751C18C8A300F8B0D9 /* MKUserTrackerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13721C18C8A300F8B0D9 /* MKUserTrackerDelegate.h */; };
@@ -39,8 +39,8 @@
 		901F139F1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F139C1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h */; };
 		901F13C61C18C8DB00F8B0D9 /* StyleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13B71C18C8DB00F8B0D9 /* StyleButton.h */; };
 		901F13C71C18C8DB00F8B0D9 /* StyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13B81C18C8DB00F8B0D9 /* StyleButton.m */; };
-		901F13D11C18C8E600F8B0D9 /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13C81C18C8E600F8B0D9 /* ViewController.h */; };
-		901F13D21C18C8E600F8B0D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13C91C18C8E600F8B0D9 /* ViewController.m */; };
+		901F13D11C18C8E600F8B0D9 /* MapViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13C81C18C8E600F8B0D9 /* MapViewController.h */; };
+		901F13D21C18C8E600F8B0D9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13C91C18C8E600F8B0D9 /* MapViewController.m */; };
 		901F13D31C18C8E600F8B0D9 /* MapOverlayListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13CA1C18C8E600F8B0D9 /* MapOverlayListViewController.h */; };
 		901F13D41C18C8E600F8B0D9 /* MapOverlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CB1C18C8E600F8B0D9 /* MapOverlayListViewController.m */; };
 		901F13D51C18C8E600F8B0D9 /* DismissView.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13CC1C18C8E600F8B0D9 /* DismissView.h */; };
@@ -85,7 +85,7 @@
 		7BEF95FF875668168027C6614CEB9089 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87B9532EC3F8CC250B42CE3533828CAD /* Pods-Map_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Map_Tests-dummy.m"; sourceTree = "<group>"; };
 		8D353755EFEE6F9AF57996EB4B7C9EF8 /* Map-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Map-prefix.pch"; sourceTree = "<group>"; };
-		9003D77D1C18E2CA008A3AF0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9003D77D1C18E2CA008A3AF0 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		901F13701C18C8A300F8B0D9 /* MKUserTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTracker.h; sourceTree = "<group>"; };
 		901F13711C18C8A300F8B0D9 /* MKUserTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUserTracker.m; sourceTree = "<group>"; };
 		901F13721C18C8A300F8B0D9 /* MKUserTrackerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTrackerDelegate.h; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		901F139C1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaxKmlParserDelegate.h; sourceTree = "<group>"; };
 		901F13B71C18C8DB00F8B0D9 /* StyleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleButton.h; sourceTree = "<group>"; };
 		901F13B81C18C8DB00F8B0D9 /* StyleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleButton.m; sourceTree = "<group>"; };
-		901F13C81C18C8E600F8B0D9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		901F13C91C18C8E600F8B0D9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		901F13C81C18C8E600F8B0D9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		901F13C91C18C8E600F8B0D9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		901F13CA1C18C8E600F8B0D9 /* MapOverlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlayListViewController.h; sourceTree = "<group>"; };
 		901F13CB1C18C8E600F8B0D9 /* MapOverlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOverlayListViewController.m; sourceTree = "<group>"; };
 		901F13CC1C18C8E600F8B0D9 /* DismissView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissView.h; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		08674E3392C85DE17AB6CDA747824A66 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				9003D77D1C18E2CA008A3AF0 /* Main.storyboard */,
+				9003D77D1C18E2CA008A3AF0 /* Map.storyboard */,
 				A7193BA73EEEE97D67CC052BF854EC2B /* Pod */,
 				CA00560BDFC919DCC86A511C1BEBD91D /* Support Files */,
 			);
@@ -233,8 +233,8 @@
 				901F139C1C18C8BB00F8B0D9 /* SaxKmlParserDelegate.h */,
 				901F13B71C18C8DB00F8B0D9 /* StyleButton.h */,
 				901F13B81C18C8DB00F8B0D9 /* StyleButton.m */,
-				901F13C81C18C8E600F8B0D9 /* ViewController.h */,
-				901F13C91C18C8E600F8B0D9 /* ViewController.m */,
+				901F13C81C18C8E600F8B0D9 /* MapViewController.h */,
+				901F13C91C18C8E600F8B0D9 /* MapViewController.m */,
 				901F13CA1C18C8E600F8B0D9 /* MapOverlayListViewController.h */,
 				901F13CB1C18C8E600F8B0D9 /* MapOverlayListViewController.m */,
 				901F13CC1C18C8E600F8B0D9 /* DismissView.h */,
@@ -326,7 +326,7 @@
 				901F13D71C18C8E600F8B0D9 /* OverlayCell.h in Headers */,
 				901F138D1C18C8B200F8B0D9 /* MKImageOverlayRenderer.h in Headers */,
 				901F137B1C18C8A900F8B0D9 /* MKOffscreenFeatureRendererDelegate.h in Headers */,
-				901F13D11C18C8E600F8B0D9 /* ViewController.h in Headers */,
+				901F13D11C18C8E600F8B0D9 /* MapViewController.h in Headers */,
 				901F13731C18C8A300F8B0D9 /* MKUserTracker.h in Headers */,
 				901F13D51C18C8E600F8B0D9 /* DismissView.h in Headers */,
 				901F138B1C18C8B200F8B0D9 /* MKImageOverlay.h in Headers */,
@@ -432,7 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				704E3B61ECD600E6DC5A331A917792A2 /* Map.bundle in Resources */,
-				9003D77E1C18E2CA008A3AF0 /* Main.storyboard in Resources */,
+				9003D77E1C18E2CA008A3AF0 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +471,7 @@
 				407095119C654AD16568EB3BCAC96D7B /* Map-dummy.m in Sources */,
 				901F13991C18C8B200F8B0D9 /* MockPolylineRenderer.m in Sources */,
 				901F13741C18C8A300F8B0D9 /* MKUserTracker.m in Sources */,
-				901F13D21C18C8E600F8B0D9 /* ViewController.m in Sources */,
+				901F13D21C18C8E600F8B0D9 /* MapViewController.m in Sources */,
 				901F13961C18C8B200F8B0D9 /* MKPolylineTapDetector.m in Sources */,
 				901F13901C18C8B200F8B0D9 /* MKPhotoAnnotation.m in Sources */,
 				901F13941C18C8B200F8B0D9 /* MKStyledPolyline.m in Sources */,

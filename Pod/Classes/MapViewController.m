@@ -6,7 +6,7 @@
 //  Copyright © 2015 Nick Blackwell. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MapViewController.h"
 #import "SaxKmlParser.h"
 
 #import "MKImageOverlay.h"
@@ -22,7 +22,7 @@
 #import "OverlayCell.h"
 #import "MockPolylineRenderer.h"
 
-@interface ViewController ()
+@interface MapViewController ()
 
 
 @property MKUserTracker *tracker;
@@ -32,7 +32,7 @@
 
 @end
 
-@implementation ViewController
+@implementation MapViewController
 
 
 #pragma mark Initialization

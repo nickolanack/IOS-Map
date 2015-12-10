@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    #'Map' => ['Pod/Assets/*.png']
+    'Map' => ['Pod/Assets/*.xcf']
   }
  
   s.resources = ["*.storyboard", "Pod/Assets/*.png"] 

@@ -47,6 +47,7 @@
 		901F13D61C18C8E600F8B0D9 /* DismissView.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CD1C18C8E600F8B0D9 /* DismissView.m */; };
 		901F13D71C18C8E600F8B0D9 /* OverlayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */; };
 		901F13D81C18C8E600F8B0D9 /* OverlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */; };
+		906792DD1C5598AB004C6CBC /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 906792DC1C5598AB004C6CBC /* Assets */; };
 		9074A1161C18A81D0050C945 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9074A1151C18A81D0050C945 /* MapKit.framework */; };
 		C2338B54FD2596A886203ED84A48A6E5 /* Pods-Map_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B9532EC3F8CC250B42CE3533828CAD /* Pods-Map_Tests-dummy.m */; };
 		DC86D22AFDFC831075E8F61105AD35F8 /* Map-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 275C6D90C56AE99FD0437CE177AEF790 /* Map-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -120,6 +121,7 @@
 		901F13CD1C18C8E600F8B0D9 /* DismissView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissView.m; sourceTree = "<group>"; };
 		901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayCell.h; sourceTree = "<group>"; };
 		901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayCell.m; sourceTree = "<group>"; };
+		906792DC1C5598AB004C6CBC /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		9074A1151C18A81D0050C945 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		A66F375FA295E973564421D2814604CE /* Pods-Map_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Map_Tests-resources.sh"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -267,6 +269,7 @@
 		A7193BA73EEEE97D67CC052BF854EC2B /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				906792DC1C5598AB004C6CBC /* Assets */,
 				4F73C0375FB02D04DB95CACCF66791E0 /* Classes */,
 			);
 			path = Pod;
@@ -432,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				704E3B61ECD600E6DC5A331A917792A2 /* Map.bundle in Resources */,
+				906792DD1C5598AB004C6CBC /* Assets in Resources */,
 				9003D77E1C18E2CA008A3AF0 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

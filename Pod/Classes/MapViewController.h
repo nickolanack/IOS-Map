@@ -44,6 +44,7 @@
 @property (weak, nonatomic) IBOutlet StyleButton *lockLocationButton;
 @property (weak, nonatomic) IBOutlet StyleButton *usersOverlaysButton;
 @property (weak, nonatomic) IBOutlet StyleButton *overlaysListButton;
+@property (weak, nonatomic) IBOutlet StyleButton *trackUserButton;
 
 
 @property (weak, nonatomic) IBOutlet UIView *trackInfoBar;

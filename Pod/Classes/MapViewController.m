@@ -22,6 +22,8 @@
 #import "OverlayCell.h"
 #import "MockPolylineRenderer.h"
 
+#import "TileButtons.h"
+
 @interface MapViewController ()
 
 
@@ -29,6 +31,8 @@
 @property MKOffscreenFeatureRenderer *offscreenRenderer;
 @property MKPolylineTapDetector *tapDetector;
 @property UITableView *tableView;
+
+@property TileButtons *tileButtons;
 
 @end
 
@@ -38,9 +42,8 @@
 #pragma mark Initialization
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    
-    
     
     [self.mapView setDelegate:self];
     self.tracker=[[MKUserTracker alloc] initWithMap:self.mapView];
@@ -57,10 +60,21 @@
     
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     
-    
     _tapDetector=[[MKPolylineTapDetector alloc] initWithMap:self.mapView];
     [_tapDetector setDelegate:self];
     
+    [self initTiles];
+    
+}
+
+
+-(void)initTiles{
+    _tileButtons=[[TileButtons alloc] init];
+    
+    [_tileButtons addButtons:@[self.trackUserButton] ToRow:@"paths"];
+    [_tileButtons addButtons:@[self.markerDropButton, self.takePhotoButton] ToRow:@"placemarks" Toggler:self.waypointButton];
+    [_tileButtons addButtons:@[self.usersOverlaysButton, self.overlaysListButton] ToRow:@"overlays" Toggler:self.overlaysButton];
+    [_tileButtons addButtons:@[self.lockLocationButton, self.addUserLocationButton] ToRow:@"location" Toggler:self.locatonButton];
     
 }
 
@@ -254,28 +268,18 @@
         [self.tracker stopTrackingLocation];
     }
     
-    [self.trackInfoBar setHidden:!self.trackButton.selected];
+    //[self.trackInfoBar setHidden:!self.trackButton.selected];
 }
 
 - (IBAction)onWaypointButtonClick:(id)sender {
-    [self toggleWaypointMenu];
+   
 }
 
 
--(void)toggleWaypointMenu{
-    
-    [self.waypointButton setSelected:!self.waypointButton.isSelected];
-    [self.markerDropButton setHidden:!self.waypointButton.isSelected];
-    [self.takePhotoButton setHidden:!self.waypointButton.isSelected];
-    
-    
-    
-}
+
 
 - (IBAction)onOverlaysButtonClick:(id)sender {
-    [self.overlaysButton setSelected:!self.overlaysButton.selected];
-    [self.usersOverlaysButton setHidden:!self.overlaysButton.selected];
-    [self.overlaysListButton setHidden:!self.overlaysButton.selected];
+    
 }
 
 - (IBAction)onUsersOverlaysButtonClick:(id)sender {
@@ -295,8 +299,6 @@
 
 - (IBAction)onUserLocationClick:(id)sender {
     
-    [self.locatonButton setSelected:!self.locatonButton.selected];
-    
     if(self.locatonButton.selected){
         
         
@@ -310,8 +312,7 @@
     }
     
     
-    [self.lockLocationButton setHidden:!self.locatonButton.selected];
-    [self.addUserLocationButton setHidden:!self.locatonButton.selected];
+
     
 }
 
@@ -324,7 +325,7 @@
     
     //[self.points addObject:point];
     [self.mapView addAnnotation:point];
-    [self toggleWaypointMenu];
+    [_tileButtons hide:@"placemarks"];
 }
 - (IBAction)onTakePhotoButtonClick:(id)sender {
     
@@ -341,12 +342,12 @@
     
     [picker setDelegate:self];
     
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     [self presentViewController:picker animated:false completion:^{
         NSLog(@"Dismissed");
     }];
     
 }
+
 
 - (IBAction)onLockLocationButtonClick:(id)sender {
     

@@ -47,6 +47,11 @@
 		901F13D61C18C8E600F8B0D9 /* DismissView.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CD1C18C8E600F8B0D9 /* DismissView.m */; };
 		901F13D71C18C8E600F8B0D9 /* OverlayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */; };
 		901F13D81C18C8E600F8B0D9 /* OverlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */; };
+		901F8B961C568FFD00216360 /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063761670D10BDEBB42934124707FA9B /* Map.framework */; };
+		901F8BA01C56901A00216360 /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063761670D10BDEBB42934124707FA9B /* Map.framework */; };
+		901F8BA71C56907A00216360 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 901F8BA61C56907A00216360 /* Info.plist */; };
+		901F8BAC1C569C6700216360 /* MKUserTrackerInterpolator.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F8BA91C569C5100216360 /* MKUserTrackerInterpolator.m */; };
+		901F8BAD1C569C7600216360 /* MKUserTrackerInterpolator.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F8BA81C569C5100216360 /* MKUserTrackerInterpolator.h */; };
 		906792DD1C5598AB004C6CBC /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 906792DC1C5598AB004C6CBC /* Assets */; };
 		906792F71C559F3B004C6CBC /* MapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 906792F61C559F3B004C6CBC /* MapTests.m */; };
 		906792F91C559F3B004C6CBC /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063761670D10BDEBB42934124707FA9B /* Map.framework */; };
@@ -83,6 +88,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 624A7794981EC7F77029CB3B378E4DC8;
 			remoteInfo = "Map-Map";
+		};
+		901F8BA11C56901A00216360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E02CF1D71FCCCC9EB4CA430A9700E725;
+			remoteInfo = Map;
 		};
 		906792FA1C559F3B004C6CBC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -144,10 +156,13 @@
 		901F13CD1C18C8E600F8B0D9 /* DismissView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissView.m; sourceTree = "<group>"; };
 		901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayCell.h; sourceTree = "<group>"; };
 		901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayCell.m; sourceTree = "<group>"; };
+		901F8B9B1C56901A00216360 /* MapTestsTwo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapTestsTwo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		901F8BA61C56907A00216360 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		901F8BA81C569C5100216360 /* MKUserTrackerInterpolator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUserTrackerInterpolator.h; sourceTree = "<group>"; };
+		901F8BA91C569C5100216360 /* MKUserTrackerInterpolator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUserTrackerInterpolator.m; sourceTree = "<group>"; };
 		906792DC1C5598AB004C6CBC /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		906792F41C559F3B004C6CBC /* MapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		906792F61C559F3B004C6CBC /* MapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapTests.m; sourceTree = "<group>"; };
-		906792F81C559F3B004C6CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		906792FF1C55A099004C6CBC /* MockCLLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockCLLocationManager.h; sourceTree = "<group>"; };
 		906793001C55A099004C6CBC /* MockCLLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockCLLocationManager.m; sourceTree = "<group>"; };
 		906793021C55A0D9004C6CBC /* MapTrackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTrackTests.m; sourceTree = "<group>"; };
@@ -184,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				901F8B961C568FFD00216360 /* Map.framework in Frameworks */,
 				3E9D70B86776639CB49064E1C0FD69BF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +210,14 @@
 			files = (
 				9074A1161C18A81D0050C945 /* MapKit.framework in Frameworks */,
 				7F5753F2C997D69784E976624A49D644 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901F8B981C56901A00216360 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				901F8BA01C56901A00216360 /* Map.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +258,7 @@
 				063761670D10BDEBB42934124707FA9B /* Map.framework */,
 				65AC780754F804B661543E58A25ADE72 /* Pods_Map_Tests.framework */,
 				906792F41C559F3B004C6CBC /* MapTests.xctest */,
+				901F8B9B1C56901A00216360 /* MapTestsTwo.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,6 +286,8 @@
 			children = (
 				901F13701C18C8A300F8B0D9 /* MKUserTracker.h */,
 				901F13711C18C8A300F8B0D9 /* MKUserTracker.m */,
+				901F8BA81C569C5100216360 /* MKUserTrackerInterpolator.h */,
+				901F8BA91C569C5100216360 /* MKUserTrackerInterpolator.m */,
 				901F13721C18C8A300F8B0D9 /* MKUserTrackerDelegate.h */,
 				901F13761C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.h */,
 				901F13771C18C8A900F8B0D9 /* MKOffscreenFeatureRenderer.m */,
@@ -320,7 +347,7 @@
 				9067931A1C55A165004C6CBC /* MKPolylineTapDetectorTests.m */,
 				906792FF1C55A099004C6CBC /* MockCLLocationManager.h */,
 				906793001C55A099004C6CBC /* MockCLLocationManager.m */,
-				906792F81C559F3B004C6CBC /* Info.plist */,
+				901F8BA61C56907A00216360 /* Info.plist */,
 			);
 			path = MapTests;
 			sourceTree = "<group>";
@@ -412,6 +439,7 @@
 				901F13D71C18C8E600F8B0D9 /* OverlayCell.h in Headers */,
 				901F138D1C18C8B200F8B0D9 /* MKImageOverlayRenderer.h in Headers */,
 				901F137B1C18C8A900F8B0D9 /* MKOffscreenFeatureRendererDelegate.h in Headers */,
+				901F8BAD1C569C7600216360 /* MKUserTrackerInterpolator.h in Headers */,
 				901F13D11C18C8E600F8B0D9 /* MapViewController.h in Headers */,
 				901F13731C18C8A300F8B0D9 /* MKUserTracker.h in Headers */,
 				901F13D51C18C8E600F8B0D9 /* DismissView.h in Headers */,
@@ -446,6 +474,24 @@
 			productName = "Map-Map";
 			productReference = DD1006D52F6F85BEB934D1C80FEC8E62 /* Map.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		901F8B9A1C56901A00216360 /* MapTestsTwo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 901F8BA31C56901A00216360 /* Build configuration list for PBXNativeTarget "MapTestsTwo" */;
+			buildPhases = (
+				901F8B971C56901A00216360 /* Sources */,
+				901F8B981C56901A00216360 /* Frameworks */,
+				901F8B991C56901A00216360 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				901F8BA21C56901A00216360 /* PBXTargetDependency */,
+			);
+			name = MapTestsTwo;
+			productName = MapTestsTwo;
+			productReference = 901F8B9B1C56901A00216360 /* MapTestsTwo.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		906792F31C559F3B004C6CBC /* MapTests */ = {
 			isa = PBXNativeTarget;
@@ -511,6 +557,9 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
+					901F8B9A1C56901A00216360 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					906792F31C559F3B004C6CBC = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -532,6 +581,7 @@
 				624A7794981EC7F77029CB3B378E4DC8 /* Map-Map */,
 				BA1CFCF05B45E793D9CEC4B99595FCF0 /* Pods-Map_Tests */,
 				906792F31C559F3B004C6CBC /* MapTests */,
+				901F8B9A1C56901A00216360 /* MapTestsTwo */,
 			);
 		};
 /* End PBXProject section */
@@ -554,6 +604,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		901F8B991C56901A00216360 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		906792F21C559F3B004C6CBC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -566,6 +623,7 @@
 				906793101C55A134004C6CBC /* ok-mnt-park.kml in Resources */,
 				9067930F1C55A134004C6CBC /* ok-mnt-places.kml in Resources */,
 				906793141C55A134004C6CBC /* tracklog-1.json in Resources */,
+				901F8BA71C56907A00216360 /* Info.plist in Resources */,
 				906793131C55A134004C6CBC /* tracklog-0.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +659,7 @@
 				901F13D21C18C8E600F8B0D9 /* MapViewController.m in Sources */,
 				901F13961C18C8B200F8B0D9 /* MKPolylineTapDetector.m in Sources */,
 				901F13901C18C8B200F8B0D9 /* MKPhotoAnnotation.m in Sources */,
+				901F8BAC1C569C6700216360 /* MKUserTrackerInterpolator.m in Sources */,
 				901F13941C18C8B200F8B0D9 /* MKStyledPolyline.m in Sources */,
 				901F13D81C18C8E600F8B0D9 /* OverlayCell.m in Sources */,
 				901F13D41C18C8E600F8B0D9 /* MapOverlayListViewController.m in Sources */,
@@ -608,6 +667,13 @@
 				901F13D61C18C8E600F8B0D9 /* DismissView.m in Sources */,
 				901F13921C18C8B200F8B0D9 /* MKPlacemarkAnnotation.m in Sources */,
 				901F139E1C18C8BB00F8B0D9 /* SaxKmlParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901F8B971C56901A00216360 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +698,11 @@
 			name = "Map-Map";
 			target = 624A7794981EC7F77029CB3B378E4DC8 /* Map-Map */;
 			targetProxy = 8F5C0969BDEACE6F327E879B1403D7CB /* PBXContainerItemProxy */;
+		};
+		901F8BA21C56901A00216360 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E02CF1D71FCCCC9EB4CA430A9700E725 /* Map */;
+			targetProxy = 901F8BA11C56901A00216360 /* PBXContainerItemProxy */;
 		};
 		906792FB1C559F3B004C6CBC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -792,6 +863,49 @@
 			};
 			name = Release;
 		};
+		901F8BA41C56901A00216360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MapTestsTwo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Nick-Blackwell.MapTestsTwo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		901F8BA51C56901A00216360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MapTestsTwo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "Nick-Blackwell.MapTestsTwo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 		906792FD1C559F3B004C6CBC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -936,6 +1050,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		901F8BA31C56901A00216360 /* Build configuration list for PBXNativeTarget "MapTestsTwo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				901F8BA41C56901A00216360 /* Debug */,
+				901F8BA51C56901A00216360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		906792FC1C559F3B004C6CBC /* Build configuration list for PBXNativeTarget "MapTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -943,6 +1065,7 @@
 				906792FE1C559F3B004C6CBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E68D0C3BE279617C575618288ECF735E /* Build configuration list for PBXNativeTarget "Pods-Map_Tests" */ = {
 			isa = XCConfigurationList;

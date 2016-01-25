@@ -44,23 +44,7 @@
 }
 
 
--(void)run:(void (^)(BOOL finished))completion{
-    
-    CLLocationManager *lm=[[CLLocationManager alloc] init];
-    
-    int count=[self.locationSamples count];
-    
-    
-    for(CLLocation *l in self.locationSamples){
-        
-        
-        
-        [self.locationManagerDelegate locationManager:lm didUpdateLocations:@[l]];
-        
-    }
-    
-    
-}
+
 
 
 +(NSArray *)ReadSamplesFromFile:(NSString *)path{
@@ -76,7 +60,10 @@
     NSMutableArray *samples=[[NSMutableArray alloc] init];
     
     for(NSDictionary *data in rawSamples){
-        [samples addObject:[[CLLocation alloc] initWithCoordinate:CLLocationCoordinate2DMake([[data objectForKey:@"lat"] floatValue], [[data objectForKey:@"lng"] floatValue]) altitude:[[data objectForKey:@"alt"] floatValue] horizontalAccuracy:[[data objectForKey:@"h-ac"] floatValue] verticalAccuracy:[[data objectForKey:@"v-ac"] floatValue] course:[[data objectForKey:@"crs"] floatValue] speed:[[data objectForKey:@"spd"] floatValue] timestamp:[NSDate dateWithTimeIntervalSinceReferenceDate:[[data objectForKey:@"tms"] floatValue]]]];
+        
+        
+        
+        [samples addObject:[[CLLocation alloc] initWithCoordinate:CLLocationCoordinate2DMake([[data objectForKey:@"lat"] doubleValue], [[data objectForKey:@"lng"] doubleValue]) altitude:[[data objectForKey:@"alt"] doubleValue] horizontalAccuracy:[[data objectForKey:@"h-ac"] doubleValue] verticalAccuracy:[[data objectForKey:@"v-ac"] doubleValue] course:[[data objectForKey:@"crs"] doubleValue] speed:[[data objectForKey:@"spd"] doubleValue] timestamp:[NSDate dateWithTimeIntervalSinceReferenceDate:[[data objectForKey:@"tms"] doubleValue]]]];
         
     }
     

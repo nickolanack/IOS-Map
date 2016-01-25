@@ -34,7 +34,10 @@
 -(void)startRotatingWithHeading;
 -(void)stopRotatingWithHeading;
 
-
+/**
+ 
+ @return double interval in seconds between first and last sample
+ */
 -(NSTimeInterval) getTimeInterval;
 
 -(bool)isTracking;

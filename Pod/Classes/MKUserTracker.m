@@ -9,6 +9,7 @@
 #import "MKUserTracker.h"
 #import "SaxKmlParser.h"
 #import "MKStyledPolyline.h"
+#import "MKUserTrackerInterpolator.h"
 
 @interface MKUserTracker()
 
@@ -31,6 +32,8 @@
 @property bool isRotatingWithLocation;
 
 @property NSDate *startDate;
+
+@property MKUserTrackerInterpolator *interpolator;
 
 
 @property float distance;
@@ -60,6 +63,8 @@
     // location samples to file. which can be used for debuging, or for generating unit tests.
     _isLogging=true;
     
+    
+    
     return self;
     
 }
@@ -70,6 +75,8 @@
     self.pathWidth=0.5;
     self.pathColor=[UIColor blueColor];
     
+    _interpolator = [[MKUserTrackerInterpolator alloc] init];
+    
     return self;
 }
 
@@ -78,7 +85,7 @@
     NSString *log;    NSFileManager *fm=[NSFileManager defaultManager];
     int i=0;
     do{
-    
+        
         log=[[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:[NSString stringWithFormat:@"locationlog-%d.json", i]];
         i++;
         
@@ -86,7 +93,7 @@
     
     [fm createFileAtPath:log contents:nil attributes:nil];
     _locationLogFileHandle = [NSFileHandle fileHandleForWritingAtPath:log];
-     [_locationLogFileHandle writeData:[@"[\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [_locationLogFileHandle writeData:[@"[\n" dataUsingEncoding:NSUTF8StringEncoding]];
     _logCount=0;
     
     
@@ -103,7 +110,7 @@
 -(void)stopLogging{
     [_locationLogFileHandle writeData:[@"\n]" dataUsingEncoding:NSUTF8StringEncoding]];
     [_locationLogFileHandle closeFile];
-       _locationLogFileHandle=nil;
+    _locationLogFileHandle=nil;
 }
 
 
@@ -165,19 +172,17 @@
     
     if(_isTrackingLocation){
         if(!self.currentPoints){
-            self.currentPoints=[[NSMutableArray alloc] initWithObjects:point, nil];
-        }else{
-            
-            if([self.currentPoints count]){
-                if([point distanceFromLocation:[self.currentPoints lastObject]]>self.precision){
-                    [self.currentPoints addObject:point];
-                    [self addedPointToPath];
-                }
-            }
+            self.currentPoints=[[NSMutableArray alloc] init];
         }
         
+        
+        [self.currentPoints addObject:point];
+        [self addedPointToPath];
+        
+        
+        
         if([self.currentPoints count]==1){
-           _startDate=point.timestamp;
+            _startDate=point.timestamp;
         }
         
     }else{
@@ -188,31 +193,22 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
-
+    
     NSLog(@"%@",newHeading);
     
-
+    
 }
 
 
 -(void)addedPointToPath{
     
-    // check for loops?
-    // redraw
     if(_currentPath&&self.mapView){
         [self.mapView removeOverlay:_currentPath];
     }
     
     
-    CLLocationCoordinate2D locations[[self.currentPoints count]];
+    _currentPath=[_interpolator polylineFromPath:self.currentPoints];
     
-    for (int i=0; i<[self.currentPoints count]; i++) {
-        CLLocation *l=[self.currentPoints objectAtIndex:i];
-        CLLocationCoordinate2D c=l.coordinate;
-        locations[i]= c;
-    }
-    
-    _currentPath=[MKStyledPolyline polylineWithCoordinates:locations count:[self.currentPoints count]];
     
     if(self.mapView){
         [self.mapView addOverlay:_currentPath];
@@ -236,7 +232,7 @@
         CLLocation *oldCoordinate = [self.currentPoints objectAtIndex:self.currentPoints.count-2];
         
         double meters=[newCoordinate distanceFromLocation:oldCoordinate];
-    
+        
         if(meters>0){
             _distance=_distance+meters;
             [self.delegate userTrackerDistanceDidChange:_distance From:oldDistance];
@@ -245,15 +241,15 @@
     }else if(_distance>0){
         _distance=0;
         [self.delegate userTrackerDistanceDidChange:_distance From:oldDistance];
-    
+        
     }
     
     
     
     
-
     
-
+    
+    
 }
 
 
@@ -311,15 +307,16 @@
 
 -(NSTimeInterval) getTimeInterval{
     if([self.currentPoints count]>1){
-            CLLocation *start=[self.currentPoints firstObject];
-            CLLocation *end=[self.currentPoints lastObject];
-        double di=[start.timestamp timeIntervalSinceReferenceDate];
-        double df=[end.timestamp timeIntervalSinceReferenceDate];
+        CLLocation *start=[self.currentPoints firstObject];
+        CLLocation *end=[self.currentPoints lastObject];
+        long double di=[start.timestamp timeIntervalSinceReferenceDate];
+        long double df=[end.timestamp timeIntervalSinceReferenceDate];
         
-        double dt=df-di;
-        return dt;
-
-        }else{
+        return (double) df-di;
+        
+        
+    }else{
+        
         return 0;
     }
 }
@@ -432,17 +429,17 @@
 -(void)startRotatingWithHeading{
     _isRotatingWithLocation=true;
     [self updateUserFollowMode];
-
+    
 }
 -(void)stopRotatingWithHeading{
     _isRotatingWithLocation=false;
     [self updateUserFollowMode];
-
+    
 }
 
 
 -(void)updateUserFollowMode{
-
+    
     if(!self.mapView){
         @throw [[NSException alloc] initWithName:@"Null MKMapView" reason:@"Attempted to update user tracking mode with nil MKMapView" userInfo:nil];
     }

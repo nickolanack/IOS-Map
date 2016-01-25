@@ -40,11 +40,11 @@
     [mock runAsync:^{
         
         //1446228893.405128 to 1446229088.185225
-        double interval=[tracker getTimeInterval];
-        double calc =1446229088.185225-1446228893.405128;
-        double delta=fabs(interval-calc);
+        long double interval=[tracker getTimeInterval];
+        long double calc =1446229088.185225l-1446228893.405128l;
+        double delta=(double)fabsl(interval-calc);
         
-         XCTAssert(delta<0.1);
+         XCTAssert(delta<0.001);
         
         
          [tracker stopTrackingLocation];

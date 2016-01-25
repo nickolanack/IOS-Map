@@ -37,6 +37,7 @@
 
 
 @property float distance;
+@property float speed;
 
 @end
 
@@ -202,56 +203,73 @@
 
 -(void)addedPointToPath{
     
-    if(_currentPath&&self.mapView){
-        [self.mapView removeOverlay:_currentPath];
-    }
     
-    
-    _currentPath=[_interpolator polylineFromPath:self.currentPoints];
-    
-    
-    if(self.mapView){
-        [self.mapView addOverlay:_currentPath];
-    }
-    int c=(int)[self.currentPoints count];
-    NSLog(@" Draw line with %d point",c);
-    
-    
+    [self updatePath];
     [self updateDistance];
+    [self updateSpeed];
     
+    
+}
+
+-(void)updatePath{
+    
+    MKStyledPolyline *oldPath=_currentPath;
+    
+//    if(oldPath&&self.mapView){
+//        [self.mapView removeOverlay:_currentPath];
+//    }
+    
+    
+    MKStyledPolyline *newPath=[_interpolator polylineFromPoints:self.currentPoints];
+    _currentPath=newPath;
+    if(self.delegate&&[self.delegate respondsToSelector:@selector(userTrackerDistanceDidChange:From:)]){
+        [self.delegate userTrackerPathDidChange:newPath From:oldPath];
+    }
+    
+//    if(self.mapView){
+//        [self.mapView addOverlay:newPath];
+//    }
+
+
+}
+
+
+-(void)updateSpeed{
+
+    double oldSpeed=_speed;
+    double newSpeed=[_interpolator speedFromPoints:self.currentPoints];
+    
+    if(fabs(newSpeed-oldSpeed)>0.1){
+        _speed=newSpeed;
+        if(self.delegate&&[self.delegate respondsToSelector:@selector(userTrackerSpeedDidChangeTo:From:)]){
+            [self.delegate userTrackerSpeedDidChangeTo:_speed From:oldSpeed];
+        }
+    }
     
 }
 
 -(void)updateDistance{
     
     double oldDistance=_distance;
+    double newDistance=[_interpolator distanceFromPoints:self.currentPoints];
     
-    if(self.currentPoints&&self.currentPoints.count>1){
-        
-        CLLocation *newCoordinate = [self.currentPoints objectAtIndex:self.currentPoints.count-1];
-        CLLocation *oldCoordinate = [self.currentPoints objectAtIndex:self.currentPoints.count-2];
-        
-        double meters=[newCoordinate distanceFromLocation:oldCoordinate];
-        
-        if(meters>0){
-            _distance=_distance+meters;
+    if(fabs(newDistance-oldDistance)>0.1){
+        _distance=newDistance;
+        if(self.delegate&&[self.delegate respondsToSelector:@selector(userTrackerDistanceDidChange:From:)]){
             [self.delegate userTrackerDistanceDidChange:_distance From:oldDistance];
         }
-        
-    }else if(_distance>0){
-        _distance=0;
-        [self.delegate userTrackerDistanceDidChange:_distance From:oldDistance];
-        
     }
-    
-    
-    
-    
-    
     
     
 }
 
+-(double)getDistance{
+    return _distance;
+}
+
+-(double)getSpeed{
+    return _speed;
+}
 
 -(void)startMonitoringLocation{
     

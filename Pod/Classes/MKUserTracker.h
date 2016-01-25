@@ -41,5 +41,7 @@
 -(NSTimeInterval) getTimeInterval;
 
 -(bool)isTracking;
+-(double)getDistance;
+-(double)getSpeed;
 
 @end

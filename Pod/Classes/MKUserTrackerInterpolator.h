@@ -12,6 +12,8 @@
 @interface MKUserTrackerInterpolator : NSObject
 
 
--(MKStyledPolyline *)polylineFromPath:(NSArray *)points;
+-(MKStyledPolyline *)polylineFromPoints:(NSArray *)points;
+-(double)distanceFromPoints:(NSArray *)points;
+-(double)speedFromPoints:(NSArray *)points;
 
 @end

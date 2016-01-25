@@ -217,13 +217,15 @@
     
     [_offscreenRenderer startUpdating];
     
-    
 }
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    
     [_offscreenRenderer stopUpdating];
+    
 }
 
 -(void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated{
+    
     if(mode==MKUserTrackingModeFollowWithHeading){
         [self.lockLocationButton setSelected:true];
     }else{
@@ -456,9 +458,20 @@
 
 #pragma mark Tracking
 
--(void)userTrackerPaceDidChangeTo:(float) pace From:(float) previousPace{}
+
 -(void)userTrackerDistanceDidChange:(float) distance From:(float) previousDistance{
     [self.trackDistance setText:[NSString stringWithFormat:@"%im", (int)(distance)]];
+}
+-(void)userTrackerPathDidChange:(MKStyledPolyline *)path From:(MKStyledPolyline *)previousPath{
+    
+    if(previousPath&&self.mapView){
+        [self.mapView removeOverlay:previousPath];
+    }
+    
+    if(self.mapView){
+        [self.mapView addOverlay:path];
+    }
+    
 }
 
 #pragma mark Device
@@ -503,7 +516,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
     return 2;
-
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -535,9 +548,9 @@
     NSString *detailTextLabel=@"";
     UIImage *image;
     
-
-       
-        
+    
+    
+    
     if(section==0){
         
         
@@ -580,45 +593,45 @@
         }
         
     }else if(section==1){
-            MKPointAnnotation *a=[_mapView.annotations objectAtIndex:row];
+        MKPointAnnotation *a=[_mapView.annotations objectAtIndex:row];
         
-            textLabel= @"Point";
-            //cell.detailTextLabel.text= a.title;
-            
-            if([a isKindOfClass:[MKPhotoAnnotation class]]){
-                MKPhotoAnnotation *phA=(MKPhotoAnnotation *)a;
-                image=[phA getIcon];
-            }
-            
-            if([a isKindOfClass:[MKPlacemarkAnnotation class]]){
-                MKPlacemarkAnnotation *plA=(MKPlacemarkAnnotation *)a;
-                image=[plA getIcon];
-            }
-            
-            if([a isKindOfClass:[MKUserLocation class]]){
-                image=[UIImage imageNamed:@"userlocation-offscreen-15.png"];
-            }
+        textLabel= @"Point";
+        //cell.detailTextLabel.text= a.title;
         
-            if([a isKindOfClass:[MKPointAnnotation class]]){
-                image=[UIImage imageNamed:@"waypoint-offscreen-15.png"];
-            }
-            
-            
-            detailTextLabel=a.title;
-            
+        if([a isKindOfClass:[MKPhotoAnnotation class]]){
+            MKPhotoAnnotation *phA=(MKPhotoAnnotation *)a;
+            image=[phA getIcon];
+        }
+        
+        if([a isKindOfClass:[MKPlacemarkAnnotation class]]){
+            MKPlacemarkAnnotation *plA=(MKPlacemarkAnnotation *)a;
+            image=[plA getIcon];
+        }
+        
+        if([a isKindOfClass:[MKUserLocation class]]){
+            image=[UIImage imageNamed:@"userlocation-offscreen-15.png"];
+        }
+        
+        if([a isKindOfClass:[MKPointAnnotation class]]){
+            image=[UIImage imageNamed:@"waypoint-offscreen-15.png"];
         }
         
         
+        detailTextLabel=a.title;
         
-        cell = [tableView dequeueReusableCellWithIdentifier:@"MapOverlayCell"];
+    }
+    
+    
+    
+    cell = [tableView dequeueReusableCellWithIdentifier:@"MapOverlayCell"];
+    
+    if (cell == nil){
+        cell = [[OverlayCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MapOverlayCell"];
         
-        if (cell == nil){
-            cell = [[OverlayCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MapOverlayCell"];
-            
-            
-        }
         
-  
+    }
+    
+    
     
     cell.featureText.text=textLabel;
     cell.detailFeatureText.text=detailTextLabel;

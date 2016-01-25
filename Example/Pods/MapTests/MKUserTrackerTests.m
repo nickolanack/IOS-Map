@@ -9,8 +9,16 @@
 #import <XCTest/XCTest.h>
 #import "MKUserTracker.h"
 #import "MockCLLocationManager.h"
+#import "MKUserTrackerDelegate.h"
 
-@interface MKUserTrackerTests : XCTestCase
+@interface MKUserTrackerTests : XCTestCase<MKUserTrackerDelegate>
+
+@property (copy) void (^distanceDidChange)(float distance, float previousDistance);
+@property (copy) void (^speedDidChange)(float speed, float previousSpeed);
+@property (copy) void (^pathDidChange)(MKStyledPolyline *path, MKStyledPolyline * previousPath);
+
+
+//(copy) void (^blockProperty)(void);
 
 @end
 
@@ -26,6 +34,20 @@
     [super tearDown];
 }
 
+
+-(void)userTrackerDistanceDidChange:(float)distance From:(float)previousDistance{
+    if(_distanceDidChange){
+        _distanceDidChange(distance,previousDistance);
+    }
+}
+-(void)userTrackerPathDidChange:(MKStyledPolyline *)path From:(MKStyledPolyline *)previousPath{
+}
+-(void)userTrackerSpeedDidChangeTo:(float)speed From:(float)previousSpeed{
+    if(_speedDidChange){
+        _speedDidChange(speed,previousSpeed);
+    }
+}
+
 - (void)testUserTracker {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -37,6 +59,16 @@
     [mock setLocationSamples:[MockCLLocationManager ReadSamplesFromFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"tracklog-0.json" ofType:nil]]];
     [tracker startTrackingLocation];
     XCTAssert([tracker isTracking]==true);
+    
+    [tracker setDelegate:self];
+    _distanceDidChange=^(float distance, float previousDistance){
+        XCTAssertGreaterThanOrEqual(distance, previousDistance);
+    };
+    
+    _speedDidChange=^(float speed, float previousSpeed){
+        XCTAssertGreaterThanOrEqual(speed, 0);
+    };
+    
     [mock runAsync:^{
         
         //1446228893.405128 to 1446229088.185225
@@ -44,13 +76,17 @@
         long double calc =1446229088.185225l-1446228893.405128l;
         double delta=(double)fabsl(interval-calc);
         
-         XCTAssert(delta<0.001);
+        XCTAssertLessThan(delta, 0.001);
+        XCTAssertGreaterThan([tracker getDistance], 0);
+        XCTAssertGreaterThanOrEqual([tracker getSpeed], 0);
         
         
-         [tracker stopTrackingLocation];
-         XCTAssert([tracker isTracking]==false);
+        [tracker stopTrackingLocation];
+        XCTAssert([tracker isTracking]==false);
     }];
-   
+    
+    _distanceDidChange=nil;
+    _speedDidChange=nil;
     
     
     [mock setLocationSamples:[MockCLLocationManager ReadSamplesFromFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"tracklog-1.json" ofType:nil]]];
@@ -71,7 +107,7 @@
     [tracker stopTrackingLocation];
     
     
-
+    
     
     [mock setLocationSamples:[MockCLLocationManager ReadSamplesFromFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"locationlog-16.json" ofType:nil]]];
     [tracker startTrackingLocation];

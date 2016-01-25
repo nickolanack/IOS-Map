@@ -16,6 +16,7 @@
 
 
 -(void)run;
+-(void)runAsync:(void (^)())completion;
 +(NSArray *)ReadSamplesFromFile:(NSString *)path;
 
 @end

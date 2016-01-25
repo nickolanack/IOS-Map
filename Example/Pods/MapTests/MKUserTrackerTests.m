@@ -36,8 +36,21 @@
     [mock setLocationManagerDelegate:tracker];
     [mock setLocationSamples:[MockCLLocationManager ReadSamplesFromFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"tracklog-0.json" ofType:nil]]];
     [tracker startTrackingLocation];
-    [mock run];
-    [tracker stopTrackingLocation];
+    XCTAssert([tracker isTracking]==true);
+    [mock runAsync:^{
+        
+        //1446228893.405128 to 1446229088.185225
+        double interval=[tracker getTimeInterval];
+        double calc =1446229088.185225-1446228893.405128;
+        double delta=fabs(interval-calc);
+        
+         XCTAssert(delta<0.1);
+        
+        
+         [tracker stopTrackingLocation];
+         XCTAssert([tracker isTracking]==false);
+    }];
+   
     
     
     [mock setLocationSamples:[MockCLLocationManager ReadSamplesFromFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"tracklog-1.json" ofType:nil]]];

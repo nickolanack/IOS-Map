@@ -37,4 +37,6 @@
 
 -(NSTimeInterval) getTimeInterval;
 
+-(bool)isTracking;
+
 @end

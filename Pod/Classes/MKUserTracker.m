@@ -175,6 +175,11 @@
                 }
             }
         }
+        
+        if([self.currentPoints count]==1){
+           _startDate=point.timestamp;
+        }
+        
     }else{
         
     }
@@ -245,7 +250,6 @@
     
     
     
-   
     
 
     
@@ -306,10 +310,16 @@
 }
 
 -(NSTimeInterval) getTimeInterval{
-    if(_startDate!=nil){
+    if([self.currentPoints count]>1){
+            CLLocation *start=[self.currentPoints firstObject];
+            CLLocation *end=[self.currentPoints lastObject];
+        double di=[start.timestamp timeIntervalSinceReferenceDate];
+        double df=[end.timestamp timeIntervalSinceReferenceDate];
         
-        return -[_startDate timeIntervalSinceNow];
-    }else{
+        double dt=df-di;
+        return dt;
+
+        }else{
         return 0;
     }
 }
@@ -449,6 +459,9 @@
 }
 
 
+-(bool)isTracking{
+    return _isTrackingLocation;
+}
 
 
 @end

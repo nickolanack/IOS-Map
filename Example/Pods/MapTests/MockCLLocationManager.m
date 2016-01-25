@@ -17,22 +17,49 @@
 
 @synthesize locationManagerDelegate, locationSamples;
 
--(void)run{
+-(void)runAsync:(void (^)())completion{
 
+    [self run];
+    completion();
+    
+
+}
+
+-(void)run{
+    
     CLLocationManager *lm=[[CLLocationManager alloc] init];
     
     int count=[self.locationSamples count];
     
     
     for(CLLocation *l in self.locationSamples){
-    
-    
+        
+        
         
         [self.locationManagerDelegate locationManager:lm didUpdateLocations:@[l]];
         
     }
     
+    
+}
 
+
+-(void)run:(void (^)(BOOL finished))completion{
+    
+    CLLocationManager *lm=[[CLLocationManager alloc] init];
+    
+    int count=[self.locationSamples count];
+    
+    
+    for(CLLocation *l in self.locationSamples){
+        
+        
+        
+        [self.locationManagerDelegate locationManager:lm didUpdateLocations:@[l]];
+        
+    }
+    
+    
 }
 
 
@@ -49,9 +76,11 @@
     NSMutableArray *samples=[[NSMutableArray alloc] init];
     
     for(NSDictionary *data in rawSamples){
-        [samples addObject:[[CLLocation alloc] initWithCoordinate:CLLocationCoordinate2DMake([[data objectForKey:@"lat"] floatValue], [[data objectForKey:@"lng"] floatValue]) altitude:[[data objectForKey:@"alt"] floatValue] horizontalAccuracy:[[data objectForKey:@"h-ac"] floatValue] verticalAccuracy:[[data objectForKey:@"v-ac"] floatValue] course:[[data objectForKey:@"crs"] floatValue] speed:[[data objectForKey:@"spd"] floatValue] timestamp:[NSDate dateWithTimeIntervalSince1970:[[data objectForKey:@"tms"] floatValue]]]];
+        [samples addObject:[[CLLocation alloc] initWithCoordinate:CLLocationCoordinate2DMake([[data objectForKey:@"lat"] floatValue], [[data objectForKey:@"lng"] floatValue]) altitude:[[data objectForKey:@"alt"] floatValue] horizontalAccuracy:[[data objectForKey:@"h-ac"] floatValue] verticalAccuracy:[[data objectForKey:@"v-ac"] floatValue] course:[[data objectForKey:@"crs"] floatValue] speed:[[data objectForKey:@"spd"] floatValue] timestamp:[NSDate dateWithTimeIntervalSinceReferenceDate:[[data objectForKey:@"tms"] floatValue]]]];
+        
     }
     
+    //[NSDate dateWithTimeIntervalSinceReferenceDate:<#(NSTimeInterval)#>]
     return samples;
 }
 

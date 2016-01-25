@@ -48,6 +48,22 @@
 		901F13D71C18C8E600F8B0D9 /* OverlayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */; };
 		901F13D81C18C8E600F8B0D9 /* OverlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */; };
 		906792DD1C5598AB004C6CBC /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 906792DC1C5598AB004C6CBC /* Assets */; };
+		906792F71C559F3B004C6CBC /* MapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 906792F61C559F3B004C6CBC /* MapTests.m */; };
+		906792F91C559F3B004C6CBC /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063761670D10BDEBB42934124707FA9B /* Map.framework */; };
+		906793011C55A099004C6CBC /* MockCLLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 906793001C55A099004C6CBC /* MockCLLocationManager.m */; };
+		906793031C55A0D9004C6CBC /* MapTrackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 906793021C55A0D9004C6CBC /* MapTrackTests.m */; };
+		906793051C55A0EF004C6CBC /* MKUserTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 906793041C55A0EF004C6CBC /* MKUserTrackerTests.m */; };
+		9067930F1C55A134004C6CBC /* ok-mnt-places.kml in Resources */ = {isa = PBXBuildFile; fileRef = 906793061C55A134004C6CBC /* ok-mnt-places.kml */; };
+		906793101C55A134004C6CBC /* ok-mnt-park.kml in Resources */ = {isa = PBXBuildFile; fileRef = 906793071C55A134004C6CBC /* ok-mnt-park.kml */; };
+		906793111C55A134004C6CBC /* ok-mnt-park.png in Resources */ = {isa = PBXBuildFile; fileRef = 906793081C55A134004C6CBC /* ok-mnt-park.png */; };
+		906793121C55A134004C6CBC /* ok-mnt-wild-horse-canyon.kml in Resources */ = {isa = PBXBuildFile; fileRef = 906793091C55A134004C6CBC /* ok-mnt-wild-horse-canyon.kml */; };
+		906793131C55A134004C6CBC /* tracklog-0.json in Resources */ = {isa = PBXBuildFile; fileRef = 9067930A1C55A134004C6CBC /* tracklog-0.json */; };
+		906793141C55A134004C6CBC /* tracklog-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 9067930B1C55A134004C6CBC /* tracklog-1.json */; };
+		906793151C55A134004C6CBC /* tracklog-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 9067930C1C55A134004C6CBC /* tracklog-2.json */; };
+		906793161C55A134004C6CBC /* locationlog-0.json in Resources */ = {isa = PBXBuildFile; fileRef = 9067930D1C55A134004C6CBC /* locationlog-0.json */; };
+		906793171C55A134004C6CBC /* locationlog-16.json in Resources */ = {isa = PBXBuildFile; fileRef = 9067930E1C55A134004C6CBC /* locationlog-16.json */; };
+		9067931B1C55A165004C6CBC /* SaxParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 906793191C55A165004C6CBC /* SaxParserTests.m */; };
+		9067931C1C55A165004C6CBC /* MKPolylineTapDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9067931A1C55A165004C6CBC /* MKPolylineTapDetectorTests.m */; };
 		9074A1161C18A81D0050C945 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9074A1151C18A81D0050C945 /* MapKit.framework */; };
 		C2338B54FD2596A886203ED84A48A6E5 /* Pods-Map_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B9532EC3F8CC250B42CE3533828CAD /* Pods-Map_Tests-dummy.m */; };
 		DC86D22AFDFC831075E8F61105AD35F8 /* Map-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 275C6D90C56AE99FD0437CE177AEF790 /* Map-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,6 +83,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 624A7794981EC7F77029CB3B378E4DC8;
 			remoteInfo = "Map-Map";
+		};
+		906792FA1C559F3B004C6CBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E02CF1D71FCCCC9EB4CA430A9700E725;
+			remoteInfo = Map;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -122,6 +145,24 @@
 		901F13CE1C18C8E600F8B0D9 /* OverlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayCell.h; sourceTree = "<group>"; };
 		901F13CF1C18C8E600F8B0D9 /* OverlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayCell.m; sourceTree = "<group>"; };
 		906792DC1C5598AB004C6CBC /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		906792F41C559F3B004C6CBC /* MapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		906792F61C559F3B004C6CBC /* MapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapTests.m; sourceTree = "<group>"; };
+		906792F81C559F3B004C6CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		906792FF1C55A099004C6CBC /* MockCLLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockCLLocationManager.h; sourceTree = "<group>"; };
+		906793001C55A099004C6CBC /* MockCLLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockCLLocationManager.m; sourceTree = "<group>"; };
+		906793021C55A0D9004C6CBC /* MapTrackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTrackTests.m; sourceTree = "<group>"; };
+		906793041C55A0EF004C6CBC /* MKUserTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUserTrackerTests.m; sourceTree = "<group>"; };
+		906793061C55A134004C6CBC /* ok-mnt-places.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ok-mnt-places.kml"; sourceTree = "<group>"; };
+		906793071C55A134004C6CBC /* ok-mnt-park.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ok-mnt-park.kml"; sourceTree = "<group>"; };
+		906793081C55A134004C6CBC /* ok-mnt-park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok-mnt-park.png"; sourceTree = "<group>"; };
+		906793091C55A134004C6CBC /* ok-mnt-wild-horse-canyon.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ok-mnt-wild-horse-canyon.kml"; sourceTree = "<group>"; };
+		9067930A1C55A134004C6CBC /* tracklog-0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tracklog-0.json"; sourceTree = "<group>"; };
+		9067930B1C55A134004C6CBC /* tracklog-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tracklog-1.json"; sourceTree = "<group>"; };
+		9067930C1C55A134004C6CBC /* tracklog-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tracklog-2.json"; sourceTree = "<group>"; };
+		9067930D1C55A134004C6CBC /* locationlog-0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "locationlog-0.json"; sourceTree = "<group>"; };
+		9067930E1C55A134004C6CBC /* locationlog-16.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "locationlog-16.json"; sourceTree = "<group>"; };
+		906793191C55A165004C6CBC /* SaxParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaxParserTests.m; sourceTree = "<group>"; };
+		9067931A1C55A165004C6CBC /* MKPolylineTapDetectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPolylineTapDetectorTests.m; sourceTree = "<group>"; };
 		9074A1151C18A81D0050C945 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		A66F375FA295E973564421D2814604CE /* Pods-Map_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Map_Tests-resources.sh"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -156,6 +197,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		906792F11C559F3B004C6CBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				906792F91C559F3B004C6CBC /* Map.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -184,6 +233,7 @@
 				DD1006D52F6F85BEB934D1C80FEC8E62 /* Map.bundle */,
 				063761670D10BDEBB42934124707FA9B /* Map.framework */,
 				65AC780754F804B661543E58A25ADE72 /* Pods_Map_Tests.framework */,
+				906792F41C559F3B004C6CBC /* MapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,10 +302,43 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				2A8C78C163F1F47479688812D6985B7D /* Development Pods */,
+				906792F51C559F3B004C6CBC /* MapTests */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				329D0EBD15D3C74CEC66347CA7AA4FF8 /* Products */,
 				92657D33F235A73EF0696B1535A06C79 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		906792F51C559F3B004C6CBC /* MapTests */ = {
+			isa = PBXGroup;
+			children = (
+				906793181C55A137004C6CBC /* sampledata */,
+				906792F61C559F3B004C6CBC /* MapTests.m */,
+				906793041C55A0EF004C6CBC /* MKUserTrackerTests.m */,
+				906793021C55A0D9004C6CBC /* MapTrackTests.m */,
+				906793191C55A165004C6CBC /* SaxParserTests.m */,
+				9067931A1C55A165004C6CBC /* MKPolylineTapDetectorTests.m */,
+				906792FF1C55A099004C6CBC /* MockCLLocationManager.h */,
+				906793001C55A099004C6CBC /* MockCLLocationManager.m */,
+				906792F81C559F3B004C6CBC /* Info.plist */,
+			);
+			path = MapTests;
+			sourceTree = "<group>";
+		};
+		906793181C55A137004C6CBC /* sampledata */ = {
+			isa = PBXGroup;
+			children = (
+				906793061C55A134004C6CBC /* ok-mnt-places.kml */,
+				906793071C55A134004C6CBC /* ok-mnt-park.kml */,
+				906793081C55A134004C6CBC /* ok-mnt-park.png */,
+				906793091C55A134004C6CBC /* ok-mnt-wild-horse-canyon.kml */,
+				9067930A1C55A134004C6CBC /* tracklog-0.json */,
+				9067930B1C55A134004C6CBC /* tracklog-1.json */,
+				9067930C1C55A134004C6CBC /* tracklog-2.json */,
+				9067930D1C55A134004C6CBC /* locationlog-0.json */,
+				9067930E1C55A134004C6CBC /* locationlog-16.json */,
+			);
+			name = sampledata;
 			sourceTree = "<group>";
 		};
 		92657D33F235A73EF0696B1535A06C79 /* Targets Support Files */ = {
@@ -364,6 +447,24 @@
 			productReference = DD1006D52F6F85BEB934D1C80FEC8E62 /* Map.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		906792F31C559F3B004C6CBC /* MapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 906792FC1C559F3B004C6CBC /* Build configuration list for PBXNativeTarget "MapTests" */;
+			buildPhases = (
+				906792F01C559F3B004C6CBC /* Sources */,
+				906792F11C559F3B004C6CBC /* Frameworks */,
+				906792F21C559F3B004C6CBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				906792FB1C559F3B004C6CBC /* PBXTargetDependency */,
+			);
+			name = MapTests;
+			productName = MapTests;
+			productReference = 906792F41C559F3B004C6CBC /* MapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BA1CFCF05B45E793D9CEC4B99595FCF0 /* Pods-Map_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E68D0C3BE279617C575618288ECF735E /* Build configuration list for PBXNativeTarget "Pods-Map_Tests" */;
@@ -409,6 +510,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0710;
+				TargetAttributes = {
+					906792F31C559F3B004C6CBC = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -425,6 +531,7 @@
 				E02CF1D71FCCCC9EB4CA430A9700E725 /* Map */,
 				624A7794981EC7F77029CB3B378E4DC8 /* Map-Map */,
 				BA1CFCF05B45E793D9CEC4B99595FCF0 /* Pods-Map_Tests */,
+				906792F31C559F3B004C6CBC /* MapTests */,
 			);
 		};
 /* End PBXProject section */
@@ -444,6 +551,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		906792F21C559F3B004C6CBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				906793151C55A134004C6CBC /* tracklog-2.json in Resources */,
+				906793121C55A134004C6CBC /* ok-mnt-wild-horse-canyon.kml in Resources */,
+				906793171C55A134004C6CBC /* locationlog-16.json in Resources */,
+				906793161C55A134004C6CBC /* locationlog-0.json in Resources */,
+				906793111C55A134004C6CBC /* ok-mnt-park.png in Resources */,
+				906793101C55A134004C6CBC /* ok-mnt-park.kml in Resources */,
+				9067930F1C55A134004C6CBC /* ok-mnt-places.kml in Resources */,
+				906793141C55A134004C6CBC /* tracklog-1.json in Resources */,
+				906793131C55A134004C6CBC /* tracklog-0.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +611,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		906792F01C559F3B004C6CBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				906792F71C559F3B004C6CBC /* MapTests.m in Sources */,
+				906793051C55A0EF004C6CBC /* MKUserTrackerTests.m in Sources */,
+				906793031C55A0D9004C6CBC /* MapTrackTests.m in Sources */,
+				9067931C1C55A165004C6CBC /* MKPolylineTapDetectorTests.m in Sources */,
+				906793011C55A099004C6CBC /* MockCLLocationManager.m in Sources */,
+				9067931B1C55A165004C6CBC /* SaxParserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -496,6 +632,11 @@
 			name = "Map-Map";
 			target = 624A7794981EC7F77029CB3B378E4DC8 /* Map-Map */;
 			targetProxy = 8F5C0969BDEACE6F327E879B1403D7CB /* PBXContainerItemProxy */;
+		};
+		906792FB1C559F3B004C6CBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E02CF1D71FCCCC9EB4CA430A9700E725 /* Map */;
+			targetProxy = 906792FA1C559F3B004C6CBC /* PBXContainerItemProxy */;
 		};
 		A41787C7F4966428366C839C7637C24A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -651,6 +792,49 @@
 			};
 			name = Release;
 		};
+		906792FD1C559F3B004C6CBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MapTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = NickBlackwell.MapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		906792FE1C559F3B004C6CBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MapTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = NickBlackwell.MapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 		B0DA75B7D1CC4C71A21FE0E7DAEEEB0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 20CBFE094E7E7DAD4473B73EC5448025 /* Map.xcconfig */;
@@ -751,6 +935,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		906792FC1C559F3B004C6CBC /* Build configuration list for PBXNativeTarget "MapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				906792FD1C559F3B004C6CBC /* Debug */,
+				906792FE1C559F3B004C6CBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		E68D0C3BE279617C575618288ECF735E /* Build configuration list for PBXNativeTarget "Pods-Map_Tests" */ = {
 			isa = XCConfigurationList;

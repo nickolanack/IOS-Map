@@ -78,6 +78,11 @@
     
 }
 
+-(void)userTapped:(StyleButton *)button InRow:(NSString *)name AtIndex:(int)i{
+    
+    NSLog(@"%@, %d", name, i);
+}
+
 -(void)onPolylineTap:(MKPolyline *)polyline atCoordinate:(CLLocationCoordinate2D)coord andTouch:(CGPoint)touchPt{
     //    NSLog(@"PolyTap: %f, %f", coord.latitude, coord.longitude);
     //

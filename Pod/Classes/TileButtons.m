@@ -16,9 +16,13 @@
 @property NSMutableArray *rows;
 
 
+
+
 @end
 
 @implementation TileButtons
+
+@synthesize delegate
 
 -(instancetype)init{
 
@@ -47,6 +51,8 @@
         if(![b isKindOfClass:[StyleButton class]]){
             @throw [[NSException alloc] initWithName:@"Tried to put non StyleButton into TileButtons" reason:nil userInfo:nil];
         }
+        
+        [b addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     [[_tiles objectForKey:name] addObjectsFromArray:buttons];
@@ -61,6 +67,30 @@
     [self addButtons:buttons ToRow:name];
     
     
+
+}
+
+-(void)tap:(id)sender{
+
+    StyleButton *tapped=(StyleButton *)sender;
+    for (NSString *row in _rows) {
+    
+        
+        NSMutableArray *tiles=[_tiles objectForKey:row];
+        
+        for (int i=0;i<[tiles count];i++) {
+            
+            StyleButton *button=[tiles objectAtIndex:i];
+            
+            if(button==tapped){
+               
+                if(self.delegate&&[self.delegate respondsToSelector:@selector(userTapped:InRow:AtIndex:)]){
+                    [self.delegate userTapped:button InRow:row AtIndex:i];
+                }
+                return;
+            }
+        }
+    }
 
 }
 
@@ -101,12 +131,18 @@
 
 -(void)hide:(NSString *) name{
     
-    [self toggle:[[_tiles objectForKey:name] firstObject]];
+    StyleButton *b=[[_tiles objectForKey:name] firstObject];
+    if(b.isSelected){
+        [self toggle:b];
+    }
 
 }
 -(void)show:(NSString *) name{
 
-    [self toggle:[[_tiles objectForKey:name] firstObject]];
+    StyleButton *b=[[_tiles objectForKey:name] firstObject];
+    if(!b.isSelected){
+        [self toggle:b];
+    }
     
 }
 

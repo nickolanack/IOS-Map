@@ -155,6 +155,45 @@
     if([CLLocationManager authorizationStatus]!=kCLAuthorizationStatusAuthorizedAlways){
         //exit(0);
         NSLog(@"%d", [CLLocationManager authorizationStatus]);
+        
+        if(status==kCLAuthorizationStatusAuthorizedWhenInUse){
+        
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@""
+                                              message:@"MapTracker can only access location while the app is open. which kinda sucks"
+                                             delegate:nil
+                                    cancelButtonTitle:@"Ok"
+                                    otherButtonTitles:nil, nil];
+            [alert show];
+            [self startMonitoringLocation];
+            
+        }
+        
+        if(status==kCLAuthorizationStatusDenied){
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@""
+                                                           message:@"MapTracker was denied access to location. you will have to go into the settings to enable it now"
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Ok"
+                                                 otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
+        if(status==kCLAuthorizationStatusNotDetermined){
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@""
+                                                           message:@"MapTracker might have access to location, not really sure what happened though because the phone was like \"I don't really know if you have access or not\" - so maybe it is working, but I doubt it"
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Ok"
+                                                 otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        if(status==kCLAuthorizationStatusRestricted){
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@""
+                                                           message:@"MapTracker was restricted from accessing location. you will have to go into the settings to enable it now"
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Ok"
+                                                 otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
     }else{
         [self startMonitoringLocation];
     }

@@ -318,8 +318,16 @@
         
         if(index==1){
             
-            if([self.mapView.overlays count]==0){
-            
+            int c=[self.mapView.overlays count];
+            if(c==0){
+        
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@""
+                                                  message:@"You don't have any layers, but can add your own spatial features through itunes"
+                                                 delegate:nil
+                                        cancelButtonTitle:@"Ok"
+                                        otherButtonTitles:nil, nil];
+                [alert show];
+                return;
             }
             
             //toggle users overlays

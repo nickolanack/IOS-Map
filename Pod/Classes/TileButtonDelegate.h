@@ -15,7 +15,7 @@
 
 @optional
 
--(void)userTapped:(StyleButton *)button InRow:(NSString *)name AtIndex:(int)i;
+-(void)userTappedButton:(StyleButton *)button InRow:(NSString *)row AtIndex:(int)index;
 
 
 @end

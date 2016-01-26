@@ -63,25 +63,14 @@
     _tapDetector=[[MKPolylineTapDetector alloc] initWithMap:self.mapView];
     [_tapDetector setDelegate:self];
     
-    [self initTiles];
+    [self initTileButtons];
     
 }
 
 
--(void)initTiles{
-    _tileButtons=[[TileButtons alloc] init];
-    
-    [_tileButtons addButtons:@[self.trackUserButton] ToRow:@"paths"];
-    [_tileButtons addButtons:@[self.markerDropButton, self.takePhotoButton] ToRow:@"placemarks" Toggler:self.waypointButton];
-    [_tileButtons addButtons:@[self.usersOverlaysButton, self.overlaysListButton] ToRow:@"overlays" Toggler:self.overlaysButton];
-    [_tileButtons addButtons:@[self.lockLocationButton, self.addUserLocationButton] ToRow:@"location" Toggler:self.locatonButton];
-    
-}
 
--(void)userTapped:(StyleButton *)button InRow:(NSString *)name AtIndex:(int)i{
-    
-    NSLog(@"%@, %d", name, i);
-}
+
+
 
 -(void)onPolylineTap:(MKPolyline *)polyline atCoordinate:(CLLocationCoordinate2D)coord andTouch:(CGPoint)touchPt{
     //    NSLog(@"PolyTap: %f, %f", coord.latitude, coord.longitude);
@@ -261,41 +250,150 @@
 
 #pragma mark Button Clicks
 
-- (IBAction)onTrackButtonClick:(id)sender {
+
+-(void)initTileButtons{
+    _tileButtons=[[TileButtons alloc] init];
     
-    if(!self.trackButton.isSelected){
-        [self.trackButton setSelected:true];
-        [self.tracker startTrackingLocation];
-        
-    }else{
-        
-        [self.trackButton setSelected:false];
-        [self.tracker stopTrackingLocation];
+    [_tileButtons addButtons:@[self.trackUserButton] ToRow:@"paths"];
+    [_tileButtons addButtons:@[self.markerDropButton, self.takePhotoButton] ToRow:@"placemarks" Toggler:self.waypointButton];
+    [_tileButtons addButtons:@[self.usersOverlaysButton, self.overlaysListButton] ToRow:@"overlays" Toggler:self.overlaysButton];
+    [_tileButtons addButtons:@[self.lockLocationButton, self.addUserLocationButton] ToRow:@"location" Toggler:self.locatonButton];
+    
+    [_tileButtons setDelegate:self];
+}
+-(void)userTappedButton:(StyleButton *)button InRow:(NSString *)row AtIndex:(int)index{
+    
+    NSLog(@"%@, %d", row, index);
+    
+    if([row isEqualToString:@"paths"]&&index==0){
+    
+        if(!self.trackButton.isSelected){
+            [self.trackButton setSelected:true];
+            [self.tracker startTrackingLocation];
+            
+        }else{
+            
+            [self.trackButton setSelected:false];
+            [self.tracker stopTrackingLocation];
+        }
     }
     
-    //[self.trackInfoBar setHidden:!self.trackButton.selected];
+    if([row isEqualToString:@"placemarks"]){
+        
+        if(index==1){
+            //marker drop
+            MKPointAnnotation *point=[[MKPointAnnotation alloc] init];
+            [point setCoordinate:self.mapView.centerCoordinate];
+            
+            
+            //[self.points addObject:point];
+            [self.mapView addAnnotation:point];
+            [_tileButtons hide:@"placemarks"];
+        
+        }
+        
+        if(index==2){
+            //photo drop
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            
+            //picker.wantsFullScreenLayout = YES;
+            picker.navigationBarHidden = YES;
+            picker.toolbarHidden = YES;
+            
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            //picker.showsCameraControls=YES;
+            
+            picker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+            
+            [picker setDelegate:self];
+            
+            [self presentViewController:picker animated:false completion:^{
+                NSLog(@"Dismissed");
+            }];
+        }
+
+    }
+    
+    if([row isEqualToString:@"overlays"]){
+        
+        if(index==1){
+            
+            if([self.mapView.overlays count]==0){
+            
+            }
+            
+            //toggle users overlays
+            [self.usersOverlaysButton setSelected:!self.usersOverlaysButton.selected];
+            for(id o in self.mapView.overlays) {
+                
+                [self.mapView removeOverlay:o];
+                [self.mapView addOverlay:o];
+                
+                //[o setNeedsDisplay];
+            }
+            
+        }
+        
+        if(index==2){
+            //show overlys list
+            
+        }
+        
+    }
+    
+    
+    if([row isEqualToString:@"location"]){
+        
+        if(index==0){
+            if(self.locatonButton.selected){
+                
+                MKMapRect mr=self.mapView.visibleMapRect;
+                
+                MKMapPoint p=MKMapPointForCoordinate(_tracker.currentLocation.coordinate);
+                if(!MKMapRectContainsPoint(mr, p)){
+                    [self.mapView setCenterCoordinate:_tracker.currentLocation.coordinate animated:true];
+                }
+            }
+        }
+        
+        if(index==1){
+            //toggle lock to users location
+            
+            [self.lockLocationButton setSelected:!self.lockLocationButton.selected];
+            if(self.lockLocationButton.selected){
+                
+                [_tracker startMovingWithLocation];
+                [_tracker startRotatingWithHeading];
+                
+            }else{
+                
+                [_tracker stopMovingWithLocation];
+                [_tracker stopRotatingWithHeading];
+  
+            }
+            
+        }
+        
+        if(index==2){
+            //add partners location
+        }
+    }
+}
+
+- (IBAction)onTrackButtonClick:(id)sender {
+    
 }
 
 - (IBAction)onWaypointButtonClick:(id)sender {
    
 }
 
-
-
-
 - (IBAction)onOverlaysButtonClick:(id)sender {
     
 }
 
 - (IBAction)onUsersOverlaysButtonClick:(id)sender {
-    [self.usersOverlaysButton setSelected:!self.usersOverlaysButton.selected];
-    for(id o in self.mapView.overlays) {
-        
-        [self.mapView removeOverlay:o];
-        [self.mapView addOverlay:o];
-        
-        //[o setNeedsDisplay];
-    }
+    
 }
 
 - (IBAction)onOverlaysListButtonClick:(id)sender{
@@ -304,71 +402,17 @@
 
 - (IBAction)onUserLocationClick:(id)sender {
     
-    if(self.locatonButton.selected){
-        
-        
-        
-        MKMapRect mr=self.mapView.visibleMapRect;
-        
-        MKMapPoint p=MKMapPointForCoordinate(_tracker.currentLocation.coordinate);
-        if(!MKMapRectContainsPoint(mr, p)){
-            [self.mapView setCenterCoordinate:_tracker.currentLocation.coordinate animated:true];
-        }
-    }
-    
-    
-
-    
 }
-
-
 
 - (IBAction)onMarkerDropButtonClick:(id)sender {
-    MKPointAnnotation *point=[[MKPointAnnotation alloc] init];
-    [point setCoordinate:self.mapView.centerCoordinate];
     
-    
-    //[self.points addObject:point];
-    [self.mapView addAnnotation:point];
-    [_tileButtons hide:@"placemarks"];
 }
+
 - (IBAction)onTakePhotoButtonClick:(id)sender {
     
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    
-    //picker.wantsFullScreenLayout = YES;
-    picker.navigationBarHidden = YES;
-    picker.toolbarHidden = YES;
-    
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    //picker.showsCameraControls=YES;
-    
-    picker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-    
-    [picker setDelegate:self];
-    
-    [self presentViewController:picker animated:false completion:^{
-        NSLog(@"Dismissed");
-    }];
-    
 }
 
-
 - (IBAction)onLockLocationButtonClick:(id)sender {
-    
-    [self.lockLocationButton setSelected:!self.lockLocationButton.selected];
-    if(self.lockLocationButton.selected){
-        
-        [_tracker startMovingWithLocation];
-        [_tracker startRotatingWithHeading];
-        
-    }else{
-        
-        [_tracker stopMovingWithLocation];
-        [_tracker stopRotatingWithHeading];
-        
-        
-    }
     
 }
 

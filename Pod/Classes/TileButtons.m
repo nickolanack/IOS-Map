@@ -22,7 +22,7 @@
 
 @implementation TileButtons
 
-@synthesize delegate
+@synthesize delegate;
 
 -(instancetype)init{
 
@@ -84,8 +84,8 @@
             
             if(button==tapped){
                
-                if(self.delegate&&[self.delegate respondsToSelector:@selector(userTapped:InRow:AtIndex:)]){
-                    [self.delegate userTapped:button InRow:row AtIndex:i];
+                if(self.delegate&&[self.delegate respondsToSelector:@selector(userTappedButton:InRow:AtIndex:)]){
+                    [self.delegate userTappedButton:button InRow:row AtIndex:i];
                 }
                 return;
             }

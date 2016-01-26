@@ -164,6 +164,8 @@
                                     cancelButtonTitle:@"Ok"
                                     otherButtonTitles:nil, nil];
             [alert show];
+            
+            
             [self startMonitoringLocation];
             
         }

@@ -37,54 +37,30 @@
                                         <color key="backgroundColor" red="0.38715277777777674" green="0.75010382620370364" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="icon-track-100.png"/>
-                                        <connections>
-                                            <action selector="onTrackButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z2Y-qC-IBV"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su8-lV-cRb" userLabel="Waypoint Button" customClass="StyleButton">
                                         <rect key="frame" x="8" y="51" width="35" height="35"/>
                                         <color key="backgroundColor" red="0.38715277777777674" green="0.55140590953703705" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="icon-waypointadd-100.png"/>
-                                        <connections>
-                                            <action selector="onWaypointButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EcW-gG-UWm"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJd-ou-Cad" userLabel="Drop Marker Button" customClass="StyleButton">
                                         <rect key="frame" x="51" y="51" width="35" height="35"/>
                                         <color key="backgroundColor" red="0.38715277777777674" green="0.55140590953703705" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="icon-waypointdrop-100.png"/>
-                                        <connections>
-                                            <action selector="onMarkerDropButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b7j-pe-0wV"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiY-MZ-Toz" userLabel="Take Photo Button" customClass="StyleButton">
                                         <rect key="frame" x="94" y="51" width="35" height="35"/>
                                         <color key="backgroundColor" red="0.38715277777777674" green="0.55140590953703705" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="icon-waypointcamera-100.png"/>
-                                        <connections>
-                                            <action selector="onTakePhotoButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rml-iC-LUe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcD-p5-tzU" userLabel="Overlays Button" customClass="StyleButton">
-                                        <rect key="frame" x="8" y="94" width="35" height="35"/>
-                                        <color key="backgroundColor" red="0.73532986111111009" green="0.55140590953703705" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
-                                        <gestureRecognizers/>
-                                        <state key="normal" image="icon-layers-100.png"/>
-                                        <connections>
-                                            <action selector="onOverlaysButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Daf-m7-KzV"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQJ-Yr-2k7" userLabel="Overlays Button" customClass="StyleButton">
                                         <rect key="frame" x="51" y="94" width="35" height="35"/>
                                         <color key="backgroundColor" red="0.73532986109999998" green="0.55140590950000001" blue="0.96808449070000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="icon-layers-userlayers-100.png"/>
-                                        <connections>
-                                            <action selector="onUsersOverlaysButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHH-qO-Bmn"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiB-st-2Hp" userLabel="Overlays Button" customClass="StyleButton">
                                         <rect key="frame" x="94" y="94" width="35" height="35"/>
@@ -92,7 +68,6 @@
                                         <gestureRecognizers/>
                                         <state key="normal" image="icon-layers-list-100.png"/>
                                         <connections>
-                                            <action selector="onOverlaysListButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uvg-dn-ERw"/>
                                             <segue destination="clA-JL-8tS" kind="presentation" id="YWT-z4-CcH"/>
                                         </connections>
                                     </button>
@@ -101,27 +76,24 @@
                                         <color key="backgroundColor" red="0.28561921296296189" green="0.86998229842592589" blue="0.6308449074074074" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="icon-userlocation-100.png"/>
-                                        <connections>
-                                            <action selector="onUserLocationClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hr4-NL-T4V"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMG-p8-6Yi" userLabel="Lock Userlocation Button" customClass="StyleButton">
                                         <rect key="frame" x="51" y="137" width="35" height="35"/>
                                         <color key="backgroundColor" red="0.28561921296296189" green="0.86998229842592589" blue="0.6308449074074074" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="icon-userlocationlock-100.png"/>
-                                        <connections>
-                                            <action selector="onLockLocationButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Cs-Oo-kIN"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GX-aX-Ftr" userLabel="Add Userlocation Button" customClass="StyleButton">
                                         <rect key="frame" x="94" y="137" width="35" height="35"/>
                                         <color key="backgroundColor" red="0.28561921299999998" green="0.86998229839999996" blue="0.63084490739999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="icon-userlocation-add-user-100.png"/>
-                                        <connections>
-                                            <action selector="onAddUserLocationButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="psy-Hi-JRE"/>
-                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcD-p5-tzU" userLabel="Overlays Button" customClass="StyleButton">
+                                        <rect key="frame" x="8" y="94" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.73532986111111009" green="0.55140590953703705" blue="0.96808449074074077" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <state key="normal" image="icon-layers-100.png"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -199,7 +171,6 @@
                         <outlet property="overlaysListButton" destination="hiB-st-2Hp" id="tCU-zA-gMH"/>
                         <outlet property="takePhotoButton" destination="FiY-MZ-Toz" id="lXb-W4-I5W"/>
                         <outlet property="topBar" destination="vta-YT-fw7" id="b8u-W9-waf"/>
-                        <outlet property="trackButton" destination="IJ4-k9-cVt" id="mVO-GZ-fhO"/>
                         <outlet property="trackDistance" destination="coI-gc-NuY" id="cVh-5f-Bra"/>
                         <outlet property="trackInfoBar" destination="a85-M8-HF2" id="Rnz-2a-0dy"/>
                         <outlet property="trackLabel" destination="4a3-hB-ctw" id="dnm-Va-06T"/>

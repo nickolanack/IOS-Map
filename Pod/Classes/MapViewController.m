@@ -267,13 +267,13 @@
     
     if([row isEqualToString:@"paths"]&&index==0){
     
-        if(!self.trackButton.isSelected){
-            [self.trackButton setSelected:true];
+        if(!self.trackUserButton.isSelected){
+            [self.trackUserButton setSelected:true];
             [self.tracker startTrackingLocation];
             
         }else{
             
-            [self.trackButton setSelected:false];
+            [self.trackUserButton setSelected:false];
             [self.tracker stopTrackingLocation];
         }
     }
@@ -387,48 +387,6 @@
         }
     }
 }
-
-- (IBAction)onTrackButtonClick:(id)sender {
-    
-}
-
-- (IBAction)onWaypointButtonClick:(id)sender {
-   
-}
-
-- (IBAction)onOverlaysButtonClick:(id)sender {
-    
-}
-
-- (IBAction)onUsersOverlaysButtonClick:(id)sender {
-    
-}
-
-- (IBAction)onOverlaysListButtonClick:(id)sender{
-    
-}
-
-- (IBAction)onUserLocationClick:(id)sender {
-    
-}
-
-- (IBAction)onMarkerDropButtonClick:(id)sender {
-    
-}
-
-- (IBAction)onTakePhotoButtonClick:(id)sender {
-    
-}
-
-- (IBAction)onLockLocationButtonClick:(id)sender {
-    
-}
-
-- (IBAction)onAddUserLocationButtonClick:(id)sender {
-}
-
-
-
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *) info{

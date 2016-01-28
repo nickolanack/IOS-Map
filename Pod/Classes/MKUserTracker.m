@@ -256,22 +256,13 @@
     
     MKStyledPolyline *oldPath=_currentPath;
     
-//    if(oldPath&&self.mapView){
-//        [self.mapView removeOverlay:_currentPath];
-//    }
-    
-    
+
     MKStyledPolyline *newPath=[_interpolator polylineFromPoints:self.currentPoints];
     _currentPath=newPath;
     if(self.delegate&&[self.delegate respondsToSelector:@selector(userTrackerDistanceDidChange:From:)]){
         [self.delegate userTrackerPathDidChange:newPath From:oldPath];
     }
     
-//    if(self.mapView){
-//        [self.mapView addOverlay:newPath];
-//    }
-
-
 }
 
 
@@ -503,6 +494,7 @@
         @throw [[NSException alloc] initWithName:@"Null MKMapView" reason:@"Attempted to update user tracking mode with nil MKMapView" userInfo:nil];
     }
     if(_isMovingWithLocation){
+        [self.mapView setShowsUserLocation:true];
         if(_isRotatingWithLocation){
             [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
         }else{

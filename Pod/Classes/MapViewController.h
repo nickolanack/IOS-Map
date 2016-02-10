@@ -14,8 +14,9 @@
 #import "MKUserTrackerDelegate.h"
 #import "MKPolylineTapDetectorDelegate.h"
 #import "TileButtonDelegate.h"
+#import "MapDelegate.h"
 
-@interface MapViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, UIAlertViewDelegate, SaxKmlParserDelegate, MKOffscreenFeatureRendererDelegate, UIImagePickerControllerDelegate, MKUserTrackerDelegate, UINavigationControllerDelegate, MKPolylineTapDetectorDelegate, UITableViewDelegate, UITableViewDataSource, TileButtonDelegate>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, UIAlertViewDelegate, SaxKmlParserDelegate, MKOffscreenFeatureRendererDelegate, UIImagePickerControllerDelegate, MKUserTrackerDelegate, UINavigationControllerDelegate, MKPolylineTapDetectorDelegate, UITableViewDelegate, UITableViewDataSource, TileButtonDelegate, MapDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 

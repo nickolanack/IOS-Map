@@ -179,6 +179,7 @@
 		906793191C55A165004C6CBC /* SaxParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaxParserTests.m; sourceTree = "<group>"; };
 		9067931A1C55A165004C6CBC /* MKPolylineTapDetectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPolylineTapDetectorTests.m; sourceTree = "<group>"; };
 		9074A1151C18A81D0050C945 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		908264701C6BC3C6009053AC /* MapDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapDelegate.h; sourceTree = "<group>"; };
 		A66F375FA295E973564421D2814604CE /* Pods-Map_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Map_Tests-resources.sh"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CED915DBFDDD5FCA525418A6B86AE6D3 /* Map-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Map-dummy.m"; sourceTree = "<group>"; };
@@ -314,6 +315,7 @@
 				901F13B81C18C8DB00F8B0D9 /* StyleButton.m */,
 				901F13C81C18C8E600F8B0D9 /* MapViewController.h */,
 				901F13C91C18C8E600F8B0D9 /* MapViewController.m */,
+				908264701C6BC3C6009053AC /* MapDelegate.h */,
 				901F13CA1C18C8E600F8B0D9 /* MapOverlayListViewController.h */,
 				901F13CB1C18C8E600F8B0D9 /* MapOverlayListViewController.m */,
 				901F13CC1C18C8E600F8B0D9 /* DismissView.h */,
@@ -1057,6 +1059,7 @@
 				901F8BA51C56901A00216360 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		906792FC1C559F3B004C6CBC /* Build configuration list for PBXNativeTarget "MapTests" */ = {
 			isa = XCConfigurationList;

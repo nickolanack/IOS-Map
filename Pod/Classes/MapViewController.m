@@ -24,6 +24,7 @@
 
 #import "TileButtons.h"
 
+
 @interface MapViewController ()
 
 
@@ -33,6 +34,7 @@
 @property UITableView *tableView;
 
 @property TileButtons *tileButtons;
+@property id<MapDelegate> delegate;
 
 @end
 
@@ -44,6 +46,15 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    if([[[UIApplication sharedApplication] delegate] conformsToProtocol:@protocol(MapDelegate)]){
+    
+        _delegate=[[UIApplication sharedApplication] delegate];
+        
+    }else{
+        _delegate=self;
+    }
+    
     
     [self.mapView setDelegate:self];
     self.tracker=[[MKUserTracker alloc] initWithMap:self.mapView];

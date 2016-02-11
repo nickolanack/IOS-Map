@@ -23,6 +23,7 @@
 #import "MockPolylineRenderer.h"
 
 #import "TileButtons.h"
+#import "MapDelegate.h"
 
 
 @interface MapViewController ()
@@ -51,10 +52,7 @@
     
         _delegate=[[UIApplication sharedApplication] delegate];
         
-    }else{
-        _delegate=self;
     }
-    
     
     [self.mapView setDelegate:self];
     self.tracker=[[MKUserTracker alloc] initWithMap:self.mapView];
@@ -259,19 +257,44 @@
     
 }
 
-#pragma mark Button Clicks
+#pragma mark Tile Button Configuration and Delegates
 
+-(bool)shouldShowTileGroup:(NSString *)name {
+    
+return true;
+}
+
+-(bool)shouldShowTileGroup:(NSString *)name item:(int)index default:(bool)showTileGroup{
+    
+    bool defaultValue=true;
+    
+    if(_delegate&&[_delegate respondsToSelector:@selector(shouldShowTileGroup:default:)]){
+        return [_delegate shouldShowTileGroup:name default:defaultValue];
+    }
+    return defaultValue;
+}
 
 -(void)initTileButtons{
     _tileButtons=[[TileButtons alloc] init];
     
-    [_tileButtons addButtons:@[self.trackUserButton] ToRow:@"paths"];
-    [_tileButtons addButtons:@[self.markerDropButton, self.takePhotoButton] ToRow:@"placemarks" Toggler:self.waypointButton];
-    [_tileButtons addButtons:@[self.usersOverlaysButton, self.overlaysListButton] ToRow:@"overlays" Toggler:self.overlaysButton];
-    [_tileButtons addButtons:@[self.lockLocationButton, self.addUserLocationButton] ToRow:@"location" Toggler:self.locatonButton];
+    if([self shouldShowTileGroup:@"paths"]){
+        [_tileButtons addButtons:@[self.trackUserButton] ToRow:@"paths"];
+    }
     
+    if([self shouldShowTileGroup:@"placemarks"]){
+        [_tileButtons addButtons:@[self.markerDropButton, self.takePhotoButton] ToRow:@"placemarks" Toggler:self.waypointButton];
+    }
+    if([self shouldShowTileGroup:@"overlays"]){
+        [_tileButtons addButtons:@[self.usersOverlaysButton, self.overlaysListButton] ToRow:@"overlays" Toggler:self.overlaysButton];
+    }
+    if([self shouldShowTileGroup:@"location"]){
+        [_tileButtons addButtons:@[self.lockLocationButton, self.addUserLocationButton] ToRow:@"location" Toggler:self.locatonButton];
+    }
     [_tileButtons setDelegate:self];
 }
+
+#pragma mark Tile Button Clicks
+
 -(void)userTappedButton:(StyleButton *)button InRow:(NSString *)row AtIndex:(int)index{
     
     NSLog(@"%@, %d", row, index);

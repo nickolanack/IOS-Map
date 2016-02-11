@@ -10,8 +10,8 @@
 
 @optional
 
--(bool)shouldShowTileGroup:(NSString *)name;
--(bool)shouldShowTileGroupItem:(int)index;
+-(bool)shouldShowTileGroup:(NSString *)name default:(bool)showTileGroup;
+-(bool)shouldShowTileGroup:(NSString *)name item:(int)index default:(bool)showTileGroup;
 
 
 

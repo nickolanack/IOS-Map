@@ -10,4 +10,11 @@
 
 @interface StyleButton : UIButton
 
+
+-(void)setDefaultColor:(UIColor *)color;
+-(void)setSelectedColor:(UIColor *)color;
+
+-(UIColor *)getDefaultColor;
+-(UIColor *)getSelectedColor;
+
 @end

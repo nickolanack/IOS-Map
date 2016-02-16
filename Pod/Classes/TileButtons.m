@@ -10,12 +10,16 @@
 
 
 
+
 @interface TileButtons ()
 
 @property NSMutableDictionary *tiles;
 @property NSMutableArray *rows;
 
+@property NSMutableArray *disabledRows;
 
+
+@property id<StyleProvider>styler;
 
 
 @end
@@ -24,13 +28,14 @@
 
 @synthesize delegate;
 
--(instancetype)init{
+-(instancetype)initWithStyler:(id<StyleProvider>)styler{
 
     self=[super init];
     
-    
+    _styler=styler;
     _tiles=[[NSMutableDictionary alloc] init];
     _rows=[[NSMutableArray alloc] init];
+    _disabledRows=[[NSMutableArray alloc] init];
     
     
     
@@ -51,6 +56,14 @@
         if(![b isKindOfClass:[StyleButton class]]){
             @throw [[NSException alloc] initWithName:@"Tried to put non StyleButton into TileButtons" reason:nil userInfo:nil];
         }
+        
+        UIColor *c=[_styler colorForNamedStyle:[NSString stringWithFormat:@"tilebutton.%@.%i", name, [buttons indexOfObject:b]] withDefault:[b getDefaultColor]];
+        [b setDefaultColor:c];
+        
+        UIColor *s=[_styler colorForNamedStyle:[NSString stringWithFormat:@"tilebutton.%@.%i.selected", name, [buttons indexOfObject:b]] withDefault:[b getSelectedColor]];
+        [b setSelectedColor:s];
+        
+        
         
         [b addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -83,6 +96,15 @@
             StyleButton *button=[tiles objectAtIndex:i];
             
             if(button==tapped){
+                
+                if([_disabledRows indexOfObject:row]!=NSNotFound){
+                    
+                    if(self.delegate&&[self.delegate respondsToSelector:@selector(userTappedDisabledButton:InRow:AtIndex:)]){
+                        [self.delegate userTappedDisabledButton:button InRow:row AtIndex:i];
+                    }
+                    
+                    return;
+                }
                
                 if(self.delegate&&[self.delegate respondsToSelector:@selector(userTappedButton:InRow:AtIndex:)]){
                     [self.delegate userTappedButton:button InRow:row AtIndex:i];
@@ -97,7 +119,7 @@
 -(void)toggle:(id)sender{
   
     StyleButton *toggler=(StyleButton *)sender;
-    [toggler setSelected:!toggler.isSelected];
+
     for (NSString *row in _rows) {
         
         bool isCurrentRow=false;
@@ -108,6 +130,10 @@
             
             if(button==toggler){
                 isCurrentRow=true;
+                if([_disabledRows indexOfObject:row]!=NSNotFound){
+                    return;
+                }
+                [toggler setSelected:!toggler.isSelected];
             }
             
             
@@ -126,6 +152,21 @@
     }
     
     
+}
+
+-(void)disableRow:(NSString *) name{
+    [_disabledRows addObject:name];
+    for (StyleButton *b in [_tiles objectForKey:name]) {
+        [b setAlpha:0.5];
+    }
+}
+
+
+-(void)hideRow:(NSString *) name{
+    [_disabledRows addObject:name];
+    for (StyleButton *b in [_tiles objectForKey:name]) {
+        [b setAlpha:0.5];
+    }
 }
 
 

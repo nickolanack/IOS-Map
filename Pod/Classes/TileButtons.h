@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "StyleButton.h"
 #import "TileButtonDelegate.h"
+#import "StyleProvider.h"
 
 /**
  A TileButtons instance manages the behavior of a number of StyledButton objects placed in a UIView, and
@@ -18,6 +19,8 @@
 @interface TileButtons : NSObject
 
 @property id<TileButtonDelegate> delegate;
+
+-(instancetype)initWithStyler:(id<StyleProvider>)styler;
 
 /**
  Adds buttons to an existing row, or creates a new row without a toggler. Usually only called with one button.
@@ -31,5 +34,9 @@
 
 -(void)hide:(NSString *) name;
 -(void)show:(NSString *) name;
+
+
+-(void)disableRow:(NSString *) name;
+-(void)hideRow:(NSString *) name;
 
 @end

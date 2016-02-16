@@ -16,6 +16,6 @@
 @optional
 
 -(void)userTappedButton:(StyleButton *)button InRow:(NSString *)row AtIndex:(int)index;
-
+-(void)userTappedDisabledButton:(StyleButton *)button InRow:(NSString *)row AtIndex:(int)index;
 
 @end

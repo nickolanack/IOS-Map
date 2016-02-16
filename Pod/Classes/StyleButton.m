@@ -11,6 +11,7 @@
 @interface StyleButton ()
 
 @property UIColor *defaultColor;
+@property UIColor *selectedColor;
 
 @end
 
@@ -37,19 +38,36 @@
     self.layer.borderColor = [UIColor blackColor].CGColor;
     self.layer.borderWidth=1.5;
     
-    self.defaultColor=self.backgroundColor;
+    _defaultColor=self.backgroundColor;
+    _selectedColor=[UIColor magentaColor];
     
     if(self.isSelected){
-        [self setBackgroundColor:[UIColor magentaColor]];
+        [self setBackgroundColor:_selectedColor];
     }
     return self;
     
 }
 
 -(void)setSelected:(BOOL)selected{
-    [self setBackgroundColor:(selected?[UIColor magentaColor]:self.defaultColor)];
+    [self setBackgroundColor:(selected?_selectedColor:_defaultColor)];
     [super setSelected:selected];
     
+}
+-(void)setDefaultColor:(UIColor *)color{
+    _defaultColor=color;
+    [self setSelected:self.selected];
+}
+-(void)setSelectedColor:(UIColor *)color{
+    _selectedColor=color;
+    [self setSelected:self.selected];
+}
+
+
+-(UIColor *)getDefaultColor{
+    return _defaultColor;
+}
+-(UIColor *)getSelectedColor{
+    return _selectedColor;
 }
 
 @end

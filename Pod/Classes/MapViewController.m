@@ -25,6 +25,8 @@
 #import "TileButtons.h"
 #import "MapDelegate.h"
 
+#import "StyleProvider.h"
+
 
 @interface MapViewController ()
 
@@ -36,6 +38,8 @@
 
 @property TileButtons *tileButtons;
 @property id<MapDelegate> delegate;
+
+@property id<StyleProvider> styler;
 
 @end
 
@@ -49,9 +53,11 @@
     [super viewDidLoad];
     
     if([[[UIApplication sharedApplication] delegate] conformsToProtocol:@protocol(MapDelegate)]){
-    
         _delegate=[[UIApplication sharedApplication] delegate];
-        
+    }
+    
+    if([[[UIApplication sharedApplication] delegate] conformsToProtocol:@protocol(StyleProvider)]){
+        _styler=[[UIApplication sharedApplication] delegate];
     }
     
     [self.mapView setDelegate:self];
@@ -261,11 +267,6 @@
 
 -(bool)shouldShowTileGroup:(NSString *)name {
     
-return true;
-}
-
--(bool)shouldShowTileGroup:(NSString *)name item:(int)index default:(bool)showTileGroup{
-    
     bool defaultValue=true;
     
     if(_delegate&&[_delegate respondsToSelector:@selector(shouldShowTileGroup:default:)]){
@@ -274,28 +275,105 @@ return true;
     return defaultValue;
 }
 
+-(bool)shouldEnableTileGroup:(NSString *)name {
+    
+    bool defaultValue=true;
+    
+    if(_delegate&&[_delegate respondsToSelector:@selector(shouldEnableTileGroup:default:)]){
+        return [_delegate shouldEnableTileGroup:name default:defaultValue];
+    }
+    return defaultValue;
+}
+
+-(bool)shouldShowTileGroup:(NSString *)name item:(int)index default:(bool)showTileGroup{
+    
+    bool defaultValue=true;
+    
+    if(_delegate&&[_delegate respondsToSelector:@selector(shouldShowTileGroup:item:default:)]){
+        return [_delegate shouldShowTileGroup:name item:index default:defaultValue];
+    }
+    return defaultValue;
+}
+
 -(void)initTileButtons{
-    _tileButtons=[[TileButtons alloc] init];
+    _tileButtons=[[TileButtons alloc] initWithStyler:_styler];
     
-    if([self shouldShowTileGroup:@"paths"]){
-        [_tileButtons addButtons:@[self.trackUserButton] ToRow:@"paths"];
+    
+    NSArray *paths=@[self.trackUserButton];
+    for (UIButton *b in paths) {
+
+    }
+    [_tileButtons addButtons:paths ToRow:@"paths"];
+    
+    
+    
+    NSArray *placemarks=@[self.markerDropButton, self.takePhotoButton];
+    for (UIButton *b in placemarks) {
+        [b setHidden:true];
+    }
+    [_tileButtons addButtons:placemarks ToRow:@"placemarks" Toggler:self.waypointButton];
+    
+    
+    
+    
+    NSArray *overlays=@[self.usersOverlaysButton, self.overlaysListButton];
+    for (UIButton *b in overlays) {
+        [b setHidden:true];
+    }
+    [_tileButtons addButtons:overlays ToRow:@"overlays" Toggler:self.overlaysButton];
+    
+    
+    
+    NSArray *location=@[self.lockLocationButton, self.addUserLocationButton];
+    for (UIButton *b in location) {
+        [b setHidden:true];
+    }
+    [_tileButtons addButtons:@[self.lockLocationButton, self.addUserLocationButton] ToRow:@"location" Toggler:self.locatonButton];
+    
+    
+    if(![self shouldEnableTileGroup:@"paths"]){
+        [_tileButtons disableRow:@"paths"];
+           }
+    if(![self shouldEnableTileGroup:@"placemarks"]){
+        [_tileButtons  disableRow:@"placemarks"];
+    }
+    if(![self shouldEnableTileGroup:@"overlays"]){
+        [_tileButtons  disableRow:@"overlays"];
+    }
+    if([self shouldEnableTileGroup:@"location"]){
+        [_tileButtons  disableRow:@"location"];
     }
     
-    if([self shouldShowTileGroup:@"placemarks"]){
-        [_tileButtons addButtons:@[self.markerDropButton, self.takePhotoButton] ToRow:@"placemarks" Toggler:self.waypointButton];
+    
+    if(![self shouldShowTileGroup:@"paths"]){
+        [_tileButtons hideRow:@"paths"];
     }
-    if([self shouldShowTileGroup:@"overlays"]){
-        [_tileButtons addButtons:@[self.usersOverlaysButton, self.overlaysListButton] ToRow:@"overlays" Toggler:self.overlaysButton];
+    if(![self shouldShowTileGroup:@"placemarks"]){
+        [_tileButtons  hideRow:@"placemarks"];
+    }
+    if(![self shouldShowTileGroup:@"overlays"]){
+        [_tileButtons  hideRow:@"overlays"];
     }
     if([self shouldShowTileGroup:@"location"]){
-        [_tileButtons addButtons:@[self.lockLocationButton, self.addUserLocationButton] ToRow:@"location" Toggler:self.locatonButton];
+        [_tileButtons  hideRow:@"location"];
     }
+    
+    
     [_tileButtons setDelegate:self];
 }
 
 #pragma mark Tile Button Clicks
 
 -(void)userTappedButton:(StyleButton *)button InRow:(NSString *)row AtIndex:(int)index{
+    
+    
+    if(_delegate&&[_delegate respondsToSelector:@selector(mapView:userTappedButton:InRow:AtIndex:)]){
+    
+        if(![_delegate mapView:self userTappedButton: button InRow: row AtIndex:index]){
+            return;
+        }
+        
+    }
     
     NSLog(@"%@, %d", row, index);
     

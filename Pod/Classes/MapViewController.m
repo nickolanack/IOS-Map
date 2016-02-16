@@ -116,6 +116,14 @@
     
 }
 
+-(bool)shouldLoadUsersKmlAtPath:(NSString *)path{
+    if([_delegate respondsToSelector:@selector(mapView:shouldLoadKmlAtPath:)]){
+        return [_delegate mapView:self shouldLoadKmlAtPath:path];
+    }
+    return true;
+}
+
+
 -(void)loadUsersKmlFiles{
     
     NSString *folder=[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
@@ -130,11 +138,35 @@
         if([ext isEqualToString:@".kml"]&&(![[NSCharacterSet characterSetWithCharactersInString:@"._"] characterIsMember:[path characterAtIndex:0]])){
             
             NSError *err;
-            NSString *kml=[NSString stringWithContentsOfFile:[folder stringByAppendingPathComponent:path] encoding:NSUTF8StringEncoding error:&err];
-            [[[SaxKmlParser alloc] initWithDelegate:self] parseString:kml];
+            NSString *absolutePath=[folder stringByAppendingPathComponent:path];
+            NSString *kml=[NSString stringWithContentsOfFile:absolutePath encoding:NSUTF8StringEncoding error:&err];
+            
+            if([self shouldLoadUsersKmlAtPath:absolutePath]){
+                [[[SaxKmlParser alloc] initWithDelegate:self] parseString:kml];
+            }
         }
     }
 }
+
+
+-(void)loadExternalKmlFiles{
+
+    if([_delegate respondsToSelector:@selector(numberOfExternalKmlDocuments)]){
+        
+        if(![_delegate respondsToSelector:@selector(kmlStringForExternalDocumentAtIndex:)]){
+            @throw [[NSException alloc] initWithName:@"Unimplemented kmlStringForExternalDocumentAtIndex" reason:@"Delegate must respode to selector kmlStringForExternalDocumentAtIndex: if it responds to selector numberOfExternalKmlDocuments" userInfo:nil];
+        }
+        
+        int c=[_delegate numberOfExternalKmlDocuments];
+        for(int i=0;i<c;i++){
+            [[[SaxKmlParser alloc] initWithDelegate:self] parseString:[_delegate kmlStringForExternalDocumentAtIndex:i]];
+        }
+        
+    }
+    
+
+}
+
 
 #pragma mark Map View
 
@@ -300,9 +332,9 @@
     
     
     NSArray *paths=@[self.trackUserButton];
-    for (UIButton *b in paths) {
-
-    }
+   // for (UIButton *b in paths) {
+ 
+   // }
     [_tileButtons addButtons:paths ToRow:@"paths"];
     
     

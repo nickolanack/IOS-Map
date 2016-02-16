@@ -23,4 +23,12 @@
 -(bool) mapView:(MapViewController *) view userTappedButton:(StyleButton *)button InRow:(NSString *)row AtIndex:(int)index;
 
 
+/**
+ Can filter the list of kml files
+ */
+-(bool) mapView:(MapViewController *) view shouldLoadKmlAtPath:(NSString *)path;
+
+-(int) numberOfExternalKmlDocuments;
+-(NSString *) kmlStringForExternalDocumentAtIndex:(int) i;
+
 @end

@@ -12,6 +12,8 @@
 
 @optional
 
+-(bool) mapViewDidLoad:(MapViewController *) view;
+
 -(bool)shouldShowTileGroup:(NSString *)name default:(bool)showTileGroup;
 -(bool)shouldShowTileGroup:(NSString *)name item:(int)index default:(bool)showTileGroup;
 

@@ -48,9 +48,11 @@
 
 #pragma mark Initialization
 
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+
     
     if([[[UIApplication sharedApplication] delegate] conformsToProtocol:@protocol(MapDelegate)]){
         _delegate=[[UIApplication sharedApplication] delegate];
@@ -60,11 +62,17 @@
         _styler=[[UIApplication sharedApplication] delegate];
     }
     
+    if([_delegate respondsToSelector:@selector(mapViewDidLoad:)]){
+        [_delegate mapViewDidLoad:self];
+    }
+    
+    
     [self.mapView setDelegate:self];
     self.tracker=[[MKUserTracker alloc] initWithMap:self.mapView];
     [self.tracker setDelegate:self];
     
     [self loadUsersKmlFiles];
+    [self loadExternalKmlFiles];
     
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
@@ -158,9 +166,11 @@
         }
         
         int c=[_delegate numberOfExternalKmlDocuments];
-        for(int i=0;i<c;i++){
-            [[[SaxKmlParser alloc] initWithDelegate:self] parseString:[_delegate kmlStringForExternalDocumentAtIndex:i]];
-        }
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            for(int i=0;i<c;i++){
+                [[[SaxKmlParser alloc] initWithDelegate:self] parseString:[_delegate kmlStringForExternalDocumentAtIndex:i]];
+            }
+        });
         
     }
     
@@ -570,6 +580,9 @@
     MKPlacemarkAnnotation *point=[[MKPlacemarkAnnotation alloc] init];
     [point setCoordinate:[SaxKmlParser ParseCoordinateString:[dictionary valueForKey:@"coordinates"]]];
     [point setTitle:[dictionary valueForKey:@"name"]];
+    
+    
+    
     [point setIconUrl:[dictionary valueForKey:@"href"]];
     
     [self.mapView addAnnotation:point];

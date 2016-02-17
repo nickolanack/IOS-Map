@@ -361,63 +361,70 @@
     
     NSString *styleUrl=[dictionary objectForKey:@"styleurl"];
     
-    if(styleUrl!=nil&&[[styleUrl substringToIndex:1] isEqualToString:@"#"]){
+    if(styleUrl!=nil){
+        
+        if([[styleUrl substringToIndex:1] isEqualToString:@"#"]){
     
-        NSDictionary *style=[self.styles objectForKey:styleUrl];
-        if(style!=nil){
-          
-            if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"marker"]){
-                [feature setValue:[style objectForKey:@"href"] forKey:@"href"];
-                [feature removeObjectForKey:@"styleurl"];
-            }
-            
-            if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"polyline"]){
-                [feature setValue:[style objectForKey:@"width"]  forKey:@"width"];
-                [feature setValue:[style objectForKey:@"color"]  forKey:@"color"];
-                [feature removeObjectForKey:@"styleurl"];
-            }
-            
-            if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"polygon"]){
-                [feature setValue:[style objectForKey:@"width"]  forKey:@"width"];
-                [feature setValue:[style objectForKey:@"color"]  forKey:@"color"];
-                [feature removeObjectForKey:@"styleurl"];
-            }
-            
-            
-        }else{
-            NSDictionary *stylemap=[self.styleMaps objectForKey:styleUrl];
-            if(stylemap!=nil){
-                
-                
-                
-                stylemap=[self prepareData:stylemap];
-                
+            NSDictionary *style=[self.styles objectForKey:styleUrl];
+            if(style!=nil){
+              
                 if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"marker"]){
-                    [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"href"] forKey:@"href"];
+                    [feature setValue:[style objectForKey:@"href"] forKey:@"href"];
                     [feature removeObjectForKey:@"styleurl"];
                 }
                 
                 if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"polyline"]){
-                    [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"width"]  forKey:@"width"];
-                    [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"color"]  forKey:@"color"];
+                    [feature setValue:[style objectForKey:@"width"]  forKey:@"width"];
+                    [feature setValue:[style objectForKey:@"color"]  forKey:@"color"];
                     [feature removeObjectForKey:@"styleurl"];
                 }
                 
                 if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"polygon"]){
-                    [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"width"]  forKey:@"width"];
-                    [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"color"]  forKey:@"color"];
+                    [feature setValue:[style objectForKey:@"width"]  forKey:@"width"];
+                    [feature setValue:[style objectForKey:@"color"]  forKey:@"color"];
                     [feature removeObjectForKey:@"styleurl"];
                 }
                 
-               
                 
-               
             }else{
+                NSDictionary *stylemap=[self.styleMaps objectForKey:styleUrl];
+                if(stylemap!=nil){
+                    
+                    
+                    
+                    stylemap=[self prepareData:stylemap];
+                    
+                    if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"marker"]){
+                        [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"href"] forKey:@"href"];
+                        [feature removeObjectForKey:@"styleurl"];
+                    }
+                    
+                    if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"polyline"]){
+                        [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"width"]  forKey:@"width"];
+                        [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"color"]  forKey:@"color"];
+                        [feature removeObjectForKey:@"styleurl"];
+                    }
+                    
+                    if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"polygon"]){
+                        [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"width"]  forKey:@"width"];
+                        [feature setValue:[[stylemap objectForKey:@"normal"] objectForKey:@"color"]  forKey:@"color"];
+                        [feature removeObjectForKey:@"styleurl"];
+                    }
+                    
+                   
+                    
+                   
+                }else{
+                    
+                    //error!
                 
-                //error!
-            
+                }
+                
             }
-        
+            
+        }else if([[styleUrl substringToIndex:4] isEqualToString:@"http"]){
+            [feature setValue:styleUrl forKey:@"href"];
+            [feature removeObjectForKey:@"styleurl"];
         }
     
     }else if([[dictionary objectForKey:@"mapitemtype"] isEqualToString:@"stylemap"]){

@@ -15,6 +15,10 @@
 
 -(UIImage *) getIcon{
     
+    if(!self.iconUrl){
+        @throw [[NSException alloc] initWithName:@"Expected Placemark Icon" reason:@"MKPlacemarkAnnotation has no placemark icon value" userInfo:nil];
+    }
+    
     NSRange r=[self.iconUrl rangeOfString:@"http://"];
     if(r.location==0){
         

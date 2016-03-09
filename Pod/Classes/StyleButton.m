@@ -31,9 +31,9 @@
     self.layer.cornerRadius = 4; // this value vary as per your desire
     //self.clipsToBounds = YES;
     
-    self.layer.shadowColor = [UIColor redColor].CGColor;
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = 0.4;
-    self.layer.shadowRadius = 10;
+    self.layer.shadowRadius = 5;
     
     self.layer.borderColor = [UIColor blackColor].CGColor;
     self.layer.borderWidth=1.5;

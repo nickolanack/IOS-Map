@@ -114,6 +114,13 @@
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" image="icon-track-100.png"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ze9-rX-8Ey">
+                                        <rect key="frame" x="564" y="6" width="28" height="32"/>
+                                        <gestureRecognizers/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="xsm_edit.png"/>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Path 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a3-hB-ctw" userLabel="Path Name">
                                         <rect key="frame" x="43" y="0.0" width="90" height="44"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
@@ -121,19 +128,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lg-ve-j8s">
-                                        <rect key="frame" x="543" y="0.0" width="56" height="44"/>
+                                        <rect key="frame" x="501" y="0.0" width="56" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="102" id="lCG-aT-MyC"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="tny-0k-yAj"/>
+                                            <constraint firstAttribute="width" constant="56" id="ij6-Au-e5Q"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" 0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coI-gc-NuY" userLabel="Track Distance">
-                                        <rect key="frame" x="467" y="0.0" width="77" height="44"/>
+                                        <rect key="frame" x="425" y="0.0" width="77" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="77" id="VuB-Ex-5lL"/>
+                                            <constraint firstAttribute="width" constant="77" id="CiU-vM-YUO"/>
+                                            <constraint firstAttribute="height" constant="44" id="lUT-9C-FxG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -143,13 +150,13 @@
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4UZ-Sm-O6H"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="9cg-hv-LJn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ze9-rX-8Ey" secondAttribute="trailing" id="QZf-4i-N6x"/>
                                     <constraint firstItem="4Lg-ve-j8s" firstAttribute="centerY" secondItem="a85-M8-HF2" secondAttribute="centerY" id="UGR-sa-EKB"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Lg-ve-j8s" secondAttribute="trailing" constant="8" id="Ujf-6M-YkH"/>
-                                    <constraint firstAttribute="trailing" secondItem="coI-gc-NuY" secondAttribute="trailing" constant="100" id="Xly-YW-2ON"/>
                                     <constraint firstItem="coI-gc-NuY" firstAttribute="centerY" secondItem="a85-M8-HF2" secondAttribute="centerY" id="cUI-nG-AEd"/>
                                     <constraint firstItem="4a3-hB-ctw" firstAttribute="centerY" secondItem="a85-M8-HF2" secondAttribute="centerY" id="eAP-QM-Fcy"/>
+                                    <constraint firstItem="Ze9-rX-8Ey" firstAttribute="leading" secondItem="coI-gc-NuY" secondAttribute="trailing" constant="62" id="koF-9Y-MCQ"/>
                                     <constraint firstItem="4a3-hB-ctw" firstAttribute="leading" secondItem="a85-M8-HF2" secondAttribute="leading" constant="43" id="l5m-Hw-VfW"/>
+                                    <constraint firstItem="Ze9-rX-8Ey" firstAttribute="leading" secondItem="4Lg-ve-j8s" secondAttribute="trailing" constant="7" id="nqF-da-9nf"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcj-Lh-Mdf" customClass="RoundButton">
@@ -159,7 +166,7 @@
                                     <constraint firstAttribute="width" constant="60" id="1G6-Np-mVo"/>
                                     <constraint firstAttribute="height" constant="60" id="I2e-Ac-MpW"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="icon-waypoint-100.png"/>
                                 <connections>
                                     <action selector="onBigButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hgd-x6-5sf"/>
@@ -167,6 +174,14 @@
                             </button>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lwu-Rd-Y4T" customClass="CrossHairs">
                                 <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5q5-OZ-V0f">
+                                        <rect key="frame" x="54" y="65" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -343,6 +358,7 @@
         <image name="icon-waypointadd-100.png" width="100" height="100"/>
         <image name="icon-waypointcamera-100.png" width="100" height="100"/>
         <image name="icon-waypointdrop-100.png" width="100" height="100"/>
+        <image name="xsm_edit.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YWT-z4-CcH"/>

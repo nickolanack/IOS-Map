@@ -20,6 +20,8 @@
 
 
 @property id<StyleProvider>styler;
+@property bool autoSpace;
+@property int space;
 
 
 @end
@@ -37,10 +39,14 @@
     _rows=[[NSMutableArray alloc] init];
     _disabledRows=[[NSMutableArray alloc] init];
     
-    
+    _space=-1;
     
     return self;
 
+}
+
+-(void)setAutoSpaceTiles:(bool)space{
+    _autoSpace=space;
 }
 
 -(void)addButtons:(NSArray *) buttons ToRow:(NSString *) name{
@@ -69,6 +75,16 @@
     }
     
     [[_tiles objectForKey:name] addObjectsFromArray:buttons];
+    
+    
+    if(_autoSpace&&[_rows count]==2){
+        StyleButton *a=[[_tiles objectForKey:[_rows objectAtIndex:0]] objectAtIndex:0];
+        StyleButton *b=[[_tiles objectForKey:[_rows objectAtIndex:1]] objectAtIndex:0];
+        
+        //TODO:
+        //measure tiles and set _space,
+        
+    }
 
 }
 -(void)addButtons:(NSArray *) buttons ToRow:(NSString *) name Toggler:(StyleButton *)button{
@@ -165,8 +181,14 @@
 -(void)hideRow:(NSString *) name{
     [_disabledRows addObject:name];
     for (StyleButton *b in [_tiles objectForKey:name]) {
-        [b setAlpha:0.5];
+        [b setHidden:true];
     }
+    
+    if(_autoSpace){
+        //TODO
+        //_space should be set. apply -offset to all rows after row[name]
+    }
+    
 }
 
 

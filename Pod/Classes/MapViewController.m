@@ -339,6 +339,7 @@
 
 -(void)initTileButtons{
     _tileButtons=[[TileButtons alloc] initWithStyler:_styler];
+    [_tileButtons setAutoSpaceTiles:true];
     
     
     NSArray *paths=@[self.trackUserButton];
@@ -396,7 +397,7 @@
     if(![self shouldShowTileGroup:@"overlays"]){
         [_tileButtons  hideRow:@"overlays"];
     }
-    if([self shouldShowTileGroup:@"location"]){
+    if(![self shouldShowTileGroup:@"location"]){
         [_tileButtons  hideRow:@"location"];
     }
     

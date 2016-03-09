@@ -39,4 +39,6 @@
 -(void)disableRow:(NSString *) name;
 -(void)hideRow:(NSString *) name;
 
+-(void)setAutoSpaceTiles:(bool)space;
+
 @end

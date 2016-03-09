@@ -33,7 +33,7 @@
     
     self.layer.shadowColor = [UIColor redColor].CGColor;
     self.layer.shadowOpacity = 0.4;
-    self.layer.shadowRadius = 20;
+    self.layer.shadowRadius = 10;
     
     self.layer.borderColor = [UIColor blackColor].CGColor;
     self.layer.borderWidth=1.5;

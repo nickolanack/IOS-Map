@@ -88,6 +88,8 @@
     
     [self initTileButtons];
     
+    
+    
 }
 
 
@@ -849,4 +851,13 @@
 }
 
 
+- (IBAction)onBigButtonClick:(id)sender {
+    
+    if(self.crossHairs.isHidden){
+        [self.crossHairs setHidden:false];
+    }else{
+        [self.crossHairs setHidden:true];
+    }
+    
+}
 @end

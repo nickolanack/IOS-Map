@@ -22,6 +22,7 @@
 
 
 
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *bigButton;
 
 
 @property (weak, nonatomic) IBOutlet StyleButton *overlaysButton;
@@ -35,6 +36,8 @@
 @property (weak, nonatomic) IBOutlet StyleButton *overlaysListButton;
 @property (weak, nonatomic) IBOutlet StyleButton *trackUserButton;
 
+- (IBAction)onBigButtonClick:(id)sender;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *crossHairs;
 
 @property (weak, nonatomic) IBOutlet UIView *trackInfoBar;
 @property (weak, nonatomic) IBOutlet UILabel *trackLabel;

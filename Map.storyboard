@@ -104,7 +104,7 @@
                                     <constraint firstItem="tFz-53-MLp" firstAttribute="leading" secondItem="L2G-Kj-Qvu" secondAttribute="leading" id="wf1-wd-6Bn"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a85-M8-HF2" userLabel="Bottom Bar">
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a85-M8-HF2" userLabel="Bottom Bar">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEg-bL-JQE">
@@ -114,12 +114,6 @@
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" image="icon-track-100.png"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" 0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coI-gc-NuY" userLabel="Track Distance">
-                                        <rect key="frame" x="227" y="0.0" width="146" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="26"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Path 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a3-hB-ctw" userLabel="Path Name">
                                         <rect key="frame" x="43" y="0.0" width="90" height="44"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
@@ -127,8 +121,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lg-ve-j8s">
-                                        <rect key="frame" x="463" y="0.0" width="129" height="44"/>
+                                        <rect key="frame" x="543" y="0.0" width="56" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="lCG-aT-MyC"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="tny-0k-yAj"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" 0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coI-gc-NuY" userLabel="Track Distance">
+                                        <rect key="frame" x="467" y="0.0" width="77" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="77" id="VuB-Ex-5lL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -137,21 +144,42 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4UZ-Sm-O6H"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="9cg-hv-LJn"/>
-                                    <constraint firstItem="coI-gc-NuY" firstAttribute="centerX" secondItem="a85-M8-HF2" secondAttribute="centerX" id="Pzg-lF-6QA"/>
                                     <constraint firstItem="4Lg-ve-j8s" firstAttribute="centerY" secondItem="a85-M8-HF2" secondAttribute="centerY" id="UGR-sa-EKB"/>
                                     <constraint firstAttribute="trailing" secondItem="4Lg-ve-j8s" secondAttribute="trailing" constant="8" id="Ujf-6M-YkH"/>
+                                    <constraint firstAttribute="trailing" secondItem="coI-gc-NuY" secondAttribute="trailing" constant="100" id="Xly-YW-2ON"/>
                                     <constraint firstItem="coI-gc-NuY" firstAttribute="centerY" secondItem="a85-M8-HF2" secondAttribute="centerY" id="cUI-nG-AEd"/>
                                     <constraint firstItem="4a3-hB-ctw" firstAttribute="centerY" secondItem="a85-M8-HF2" secondAttribute="centerY" id="eAP-QM-Fcy"/>
                                     <constraint firstItem="4a3-hB-ctw" firstAttribute="leading" secondItem="a85-M8-HF2" secondAttribute="leading" constant="43" id="l5m-Hw-VfW"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcj-Lh-Mdf" customClass="RoundButton">
+                                <rect key="frame" x="270" y="520" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1G6-Np-mVo"/>
+                                    <constraint firstAttribute="height" constant="60" id="I2e-Ac-MpW"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="icon-waypoint-100.png"/>
+                                <connections>
+                                    <action selector="onBigButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hgd-x6-5sf"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lwu-Rd-Y4T" customClass="CrossHairs">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Lwu-Rd-Y4T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5aP-qP-qZY"/>
+                            <constraint firstItem="Qcj-Lh-Mdf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Iu-vx-laN"/>
                             <constraint firstItem="a85-M8-HF2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HKr-AA-TFV"/>
                             <constraint firstItem="vta-YT-fw7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="HrN-cS-sNM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a85-M8-HF2" secondAttribute="trailing" constant="-20" id="JGu-We-6e8"/>
+                            <constraint firstItem="Lwu-Rd-Y4T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JxJ-aR-EhE"/>
                             <constraint firstItem="L2G-Kj-Qvu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="fvi-EH-Mu6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qcj-Lh-Mdf" secondAttribute="bottom" constant="20" id="hjE-TU-kxJ"/>
                             <constraint firstItem="vta-YT-fw7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iAb-f6-Ub1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="L2G-Kj-Qvu" secondAttribute="trailing" constant="-20" id="klh-Tm-w7C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vta-YT-fw7" secondAttribute="trailing" constant="-20" id="lMJ-iR-kH7"/>
@@ -163,6 +191,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="addUserLocationButton" destination="8GX-aX-Ftr" id="iLM-ED-8gT"/>
+                        <outlet property="bigButton" destination="Qcj-Lh-Mdf" id="FrM-Dk-euy"/>
+                        <outlet property="crossHairs" destination="Lwu-Rd-Y4T" id="FGp-Gt-Daj"/>
                         <outlet property="locatonButton" destination="3H8-EG-aEN" id="WA0-Xm-1bO"/>
                         <outlet property="lockLocationButton" destination="eMG-p8-6Yi" id="AA8-SY-c3C"/>
                         <outlet property="mapView" destination="tFz-53-MLp" id="mWv-7y-Lat"/>
@@ -309,6 +339,7 @@
         <image name="icon-userlocation-100.png" width="100" height="100"/>
         <image name="icon-userlocation-add-user-100.png" width="100" height="100"/>
         <image name="icon-userlocationlock-100.png" width="100" height="100"/>
+        <image name="icon-waypoint-100.png" width="100" height="100"/>
         <image name="icon-waypointadd-100.png" width="100" height="100"/>
         <image name="icon-waypointcamera-100.png" width="100" height="100"/>
         <image name="icon-waypointdrop-100.png" width="100" height="100"/>

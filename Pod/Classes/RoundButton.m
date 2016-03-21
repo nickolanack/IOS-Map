@@ -14,7 +14,9 @@
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     
     self=[super initWithCoder:aDecoder];
-    self.layer.cornerRadius = 30; // this value vary as per your desire
+   
+
+    self.layer.cornerRadius =  MIN(self.frame.size.width/2, self.frame.size.height/2); // this value vary as per your desire
     //self.clipsToBounds = YES;
     
     self.layer.shadowColor = [UIColor blackColor].CGColor;

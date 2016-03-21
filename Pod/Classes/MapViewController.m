@@ -92,7 +92,9 @@
     
 }
 
-
+-(void)viewDidLayoutSubviews{
+    //[self.tileButtons alignTiles];
+}
 
 
 
@@ -385,7 +387,7 @@
     if(![self shouldEnableTileGroup:@"overlays"]){
         [_tileButtons  disableRow:@"overlays"];
     }
-    if([self shouldEnableTileGroup:@"location"]){
+    if(![self shouldEnableTileGroup:@"location"]){
         [_tileButtons  disableRow:@"location"];
     }
     

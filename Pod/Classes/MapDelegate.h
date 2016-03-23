@@ -4,7 +4,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import "MapViewController.h"
-#import "StyleButton.h"
+
 
 
 @protocol MapDelegate <NSObject>
@@ -22,8 +22,11 @@
 -(bool)shouldEnableTileGroup:(NSString *)name item:(int)index default:(bool)enableTileItem;
 
 // return false to disable default behavour
--(bool) mapView:(MapViewController *) view userTappedButton:(StyleButton *)button InRow:(NSString *)row AtIndex:(int)index;
+-(bool) mapView:(MapViewController *) view userTappedButton:(UIButton *)button InRow:(NSString *)row AtIndex:(int)index;
 
+
+// return false to disable default behavour
+-(bool) mapView:(MapViewController *) view userTappedPrimaryButton:(UIButton *)button;
 
 /**
  Can filter the list of kml files

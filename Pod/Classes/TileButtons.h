@@ -41,5 +41,6 @@
 
 -(void)setAutoSpaceTiles:(bool)space;
 -(void)alignTiles;
+-(void)horizontalAlign:(int)offset;
 
 @end

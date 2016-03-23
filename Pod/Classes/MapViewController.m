@@ -41,6 +41,11 @@
 
 @property id<StyleProvider> styler;
 
+@property UIBarButtonItem *cancelButton;
+@property UIBarButtonItem *backButton;
+
+@property bool showOverlaysSideBar;
+
 @end
 
 @implementation MapViewController
@@ -86,10 +91,32 @@
     _tapDetector=[[MKPolylineTapDetector alloc] initWithMap:self.mapView];
     [_tapDetector setDelegate:self];
     
+    _showOverlaysSideBar=true;//if false overlays tile will display subtiles instead.
+    
+    
+    
     [self initTileButtons];
+    [self hideSideBar];
     
     
     
+}
+
+
+-(void)hideSideBar{
+    CGRect sb=self.sideBar.frame;
+   NSLog(@"show sidebar %f to %f", self.sideBarContraint.constant, -sb.size.width);
+    self.sideBarContraint.constant=+44;
+    [_tileButtons horizontalAlign:-44];
+
+
+}
+-(void)showSideBar{
+  CGRect sb=self.sideBar.frame;
+    NSLog(@"show sidebar %f to %f", self.sideBarContraint.constant, sb.size.width);
+    self.sideBarContraint.constant=-44;
+    [_tileButtons horizontalAlign:44];
+  
 }
 
 -(void)viewDidLayoutSubviews{
@@ -362,13 +389,20 @@
     
     
     
-    
     NSArray *overlays=@[self.usersOverlaysButton, self.overlaysListButton];
+    
     for (UIButton *b in overlays) {
         [b setHidden:true];
     }
-    [_tileButtons addButtons:overlays ToRow:@"overlays" Toggler:self.overlaysButton];
-    
+    if(!_showOverlaysSideBar){
+         [_tileButtons addButtons:overlays ToRow:@"overlays" Toggler:self.overlaysButton];
+        
+    }else{
+        overlays=@[self.overlaysButton];
+        [_tileButtons addButtons:overlays ToRow:@"overlays"];
+        
+       
+     }
     
     
     NSArray *location=@[self.lockLocationButton, self.addUserLocationButton];
@@ -475,6 +509,20 @@
     
     if([row isEqualToString:@"overlays"]){
         
+        //if(index==0){
+        if(_showOverlaysSideBar){
+        
+            
+            [self.overlaysButton setSelected:!self.overlaysButton.selected];
+            if(self.overlaysButton.selected){
+                [self showSideBar];
+            }else{
+                [self hideSideBar];
+            }
+        
+        }
+        
+        
         if(index==1){
             
             int c=[self.mapView.overlays count];
@@ -492,6 +540,8 @@
             //toggle users overlays
             [self.usersOverlaysButton setSelected:!self.usersOverlaysButton.selected];
             for(id o in self.mapView.overlays) {
+                
+                //this is basically redraw overlays. it depends on the selected state of usersOverlaysButton
                 
                 [self.mapView removeOverlay:o];
                 [self.mapView addOverlay:o];
@@ -852,13 +902,38 @@
     }
 }
 
-
+-(void)cancelBigButtonClick{
+    self.navigationItem.leftBarButtonItem =_backButton;
+    [self.crossHairs setHidden:true];
+    [self.bigButton setBackgroundColor:[UIColor whiteColor]];
+}
 - (IBAction)onBigButtonClick:(id)sender {
     
+    if(!_backButton){
+       _backButton=self.navigationItem.backBarButtonItem;
+       _cancelButton=[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelBigButtonClick)];
+
+    }
+
+    
+    
     if(self.crossHairs.isHidden){
+        
+        self.navigationItem.leftBarButtonItem =_cancelButton;
         [self.crossHairs setHidden:false];
+        
+        [self.bigButton setBackgroundColor:self.bigButton.tintColor];
+        [self.bigButton setBackgroundImage:nil forState:UIControlStateNormal];
+        
     }else{
-        [self.crossHairs setHidden:true];
+        [self cancelBigButtonClick];
+        
+        if(![_delegate mapView:self userTappedPrimaryButton:self.bigButton]){
+            return;
+        }
+                                                                            
+        //TODO: default behavior
+        
     }
     
 }

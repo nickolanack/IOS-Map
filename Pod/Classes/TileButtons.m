@@ -23,6 +23,8 @@
 @property id<StyleProvider>styler;
 @property bool autoSpace;
 @property int space;
+@property int top;
+@property int margin;
 
 
 @end
@@ -42,6 +44,7 @@
     _disabledRows=[[NSMutableArray alloc] init];
     
     _space=-1;
+    
     
     return self;
 
@@ -70,7 +73,7 @@
         if(![b isKindOfClass:[StyleButton class]]){
             @throw [[NSException alloc] initWithName:@"Tried to put non StyleButton into TileButtons" reason:nil userInfo:nil];
         }
-        
+       // NSLog(@"%@", b.superview.constraints);
         b.translatesAutoresizingMaskIntoConstraints=true;
         
         UIColor *c=[_styler colorForNamedStyle:[NSString stringWithFormat:@"tilebutton.%@.%i", name, [buttons indexOfObject:b]] withDefault:[b getDefaultColor]];
@@ -91,6 +94,8 @@
         StyleButton *a=[[_tiles objectForKey:[_rows objectAtIndex:0]] objectAtIndex:0];
         StyleButton *b=[[_tiles objectForKey:[_rows objectAtIndex:1]] objectAtIndex:0];
         _space=b.frame.origin.y-a.frame.origin.y;
+        _top=a.frame.origin.y;
+        _margin=_space-a.frame.size.height;
         //TODO:
         //measure tiles and set _space,
         
@@ -208,6 +213,22 @@
     //[self performSelector:@selector(_alignTiles:) withObject:nil afterDelay:0.1];
     
 }
+-(void)horizontalAlign:(int)offset{
+    for(int i=0;i<_rows.count;i++){
+        
+        //increase offset;
+        NSString *row=[_rows objectAtIndex:i];
+        
+  
+            for (StyleButton *b in [_tiles objectForKey:row]) {
+                
+                CGRect r=b.frame;
+                [b setFrame:CGRectMake(r.origin.x+offset, r.origin.y, r.size.width, r.size.height)];
+            }
+       
+    }
+
+}
 
 -(void)_alignTiles:(id)object{
     
@@ -219,13 +240,13 @@
         for(int i=0;i<_rows.count;i++){
             
             //increase offset;
-            
+            NSString *row=[_rows objectAtIndex:i];
             
             if(offset>0){
-                for (StyleButton *b in [_tiles objectForKey:[_rows objectAtIndex:i]]) {
+                for (StyleButton *b in [_tiles objectForKey:row]) {
                   
                     CGRect r=b.frame;
-                    [b setFrame:CGRectMake(r.origin.x, r.origin.y-offset, r.size.width, r.size.height)];
+                    [b setFrame:CGRectMake(r.origin.x, (_top+(i*_space))-offset, r.size.width, r.size.height)];
                 }
             }
             

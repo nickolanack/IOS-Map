@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "StyleButton.h"
 #import "SaxKmlParserDelegate.h"
 #import "MKOffscreenFeatureRendererDelegate.h"
 #import "MKUserTrackerDelegate.h"
@@ -36,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet StyleButton *overlaysListButton;
 @property (weak, nonatomic) IBOutlet StyleButton *trackUserButton;
 
+
 - (IBAction)onBigButtonClick:(id)sender;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *crossHairs;
 
@@ -44,5 +44,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *trackTime;
 @property (weak, nonatomic) IBOutlet UIView *topBar;
 @property (weak, nonatomic) IBOutlet UILabel *trackDistance;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *sideBar;
+
+@property (unsafe_unretained, nonatomic) IBOutlet NSLayoutConstraint *sideBarContraint;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *rightDetailButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *leftDetailButton;
 
 @end

@@ -49,5 +49,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet NSLayoutConstraint *sideBarContraint;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *rightDetailButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *leftDetailButton;
+- (IBAction)onRightButtonTap:(id)sender;
+- (IBAction)onLeftButtonTap:(id)sender;
 
 @end

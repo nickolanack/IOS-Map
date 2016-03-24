@@ -96,7 +96,7 @@
     
     
     [self initTileButtons];
-    //[self hideSideBar];
+    [self hideSideBar];
     
     
     
@@ -936,5 +936,47 @@
         
     }
     
+}
+- (IBAction)onRightButtonTap:(id)sender {
+    
+    [self.rightDetailButton setSelected:!self.rightDetailButton.selected];
+    
+    
+        
+        if(self.rightDetailButton.selected){
+            
+            MKMapRect mr=self.mapView.visibleMapRect;
+            
+            MKMapPoint p=MKMapPointForCoordinate(_tracker.currentLocation.coordinate);
+            if(!MKMapRectContainsPoint(mr, p)){
+                [self.mapView setCenterCoordinate:_tracker.currentLocation.coordinate animated:false];
+                
+            }
+        }
+    
+    
+   
+        //toggle lock to users location
+        
+        
+        
+        if(self.rightDetailButton.selected){
+            
+            [_tracker startMovingWithLocation];
+            [_tracker startRotatingWithHeading];
+            
+        }else{
+            
+            [_tracker stopMovingWithLocation];
+            [_tracker stopRotatingWithHeading];
+            
+        }
+        
+    
+    
+    
+}
+
+- (IBAction)onLeftButtonTap:(id)sender {
 }
 @end

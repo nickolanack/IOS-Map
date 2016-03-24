@@ -96,7 +96,7 @@
     
     
     [self initTileButtons];
-    [self hideSideBar];
+    //[self hideSideBar];
     
     
     

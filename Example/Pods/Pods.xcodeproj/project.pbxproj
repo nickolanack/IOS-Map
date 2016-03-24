@@ -70,6 +70,10 @@
 		9067931B1C55A165004C6CBC /* SaxParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 906793191C55A165004C6CBC /* SaxParserTests.m */; };
 		9067931C1C55A165004C6CBC /* MKPolylineTapDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9067931A1C55A165004C6CBC /* MKPolylineTapDetectorTests.m */; };
 		9074A1161C18A81D0050C945 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9074A1151C18A81D0050C945 /* MapKit.framework */; };
+		908ADE4C1CA3C2F800894291 /* CrossHairs.h in Headers */ = {isa = PBXBuildFile; fileRef = 908ADE4A1CA3C2F800894291 /* CrossHairs.h */; };
+		908ADE4D1CA3C2F800894291 /* CrossHairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 908ADE4B1CA3C2F800894291 /* CrossHairs.m */; };
+		908ADE501CA3C30A00894291 /* InsetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 908ADE4E1CA3C30A00894291 /* InsetView.h */; };
+		908ADE511CA3C30A00894291 /* InsetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 908ADE4F1CA3C30A00894291 /* InsetView.m */; };
 		C2338B54FD2596A886203ED84A48A6E5 /* Pods-Map_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B9532EC3F8CC250B42CE3533828CAD /* Pods-Map_Tests-dummy.m */; };
 		DC86D22AFDFC831075E8F61105AD35F8 /* Map-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 275C6D90C56AE99FD0437CE177AEF790 /* Map-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -180,6 +184,10 @@
 		9067931A1C55A165004C6CBC /* MKPolylineTapDetectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPolylineTapDetectorTests.m; sourceTree = "<group>"; };
 		9074A1151C18A81D0050C945 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		908264701C6BC3C6009053AC /* MapDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapDelegate.h; sourceTree = "<group>"; };
+		908ADE4A1CA3C2F800894291 /* CrossHairs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossHairs.h; sourceTree = "<group>"; };
+		908ADE4B1CA3C2F800894291 /* CrossHairs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrossHairs.m; sourceTree = "<group>"; };
+		908ADE4E1CA3C30A00894291 /* InsetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsetView.h; sourceTree = "<group>"; };
+		908ADE4F1CA3C30A00894291 /* InsetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsetView.m; sourceTree = "<group>"; };
 		A66F375FA295E973564421D2814604CE /* Pods-Map_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Map_Tests-resources.sh"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CED915DBFDDD5FCA525418A6B86AE6D3 /* Map-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Map-dummy.m"; sourceTree = "<group>"; };
@@ -285,6 +293,10 @@
 		4F73C0375FB02D04DB95CACCF66791E0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				908ADE4A1CA3C2F800894291 /* CrossHairs.h */,
+				908ADE4B1CA3C2F800894291 /* CrossHairs.m */,
+				908ADE4E1CA3C30A00894291 /* InsetView.h */,
+				908ADE4F1CA3C30A00894291 /* InsetView.m */,
 				901F13701C18C8A300F8B0D9 /* MKUserTracker.h */,
 				901F13711C18C8A300F8B0D9 /* MKUserTracker.m */,
 				901F8BA81C569C5100216360 /* MKUserTrackerInterpolator.h */,
@@ -447,7 +459,9 @@
 				901F13D51C18C8E600F8B0D9 /* DismissView.h in Headers */,
 				901F138B1C18C8B200F8B0D9 /* MKImageOverlay.h in Headers */,
 				901F13751C18C8A300F8B0D9 /* MKUserTrackerDelegate.h in Headers */,
+				908ADE501CA3C30A00894291 /* InsetView.h in Headers */,
 				901F138F1C18C8B200F8B0D9 /* MKPhotoAnnotation.h in Headers */,
+				908ADE4C1CA3C2F800894291 /* CrossHairs.h in Headers */,
 				DC86D22AFDFC831075E8F61105AD35F8 /* Map-umbrella.h in Headers */,
 				901F13951C18C8B200F8B0D9 /* MKPolylineTapDetector.h in Headers */,
 				901F13971C18C8B200F8B0D9 /* MKPolylineTapDetectorDelegate.h in Headers */,
@@ -660,8 +674,10 @@
 				901F13741C18C8A300F8B0D9 /* MKUserTracker.m in Sources */,
 				901F13D21C18C8E600F8B0D9 /* MapViewController.m in Sources */,
 				901F13961C18C8B200F8B0D9 /* MKPolylineTapDetector.m in Sources */,
+				908ADE4D1CA3C2F800894291 /* CrossHairs.m in Sources */,
 				901F13901C18C8B200F8B0D9 /* MKPhotoAnnotation.m in Sources */,
 				901F8BAC1C569C6700216360 /* MKUserTrackerInterpolator.m in Sources */,
+				908ADE511CA3C30A00894291 /* InsetView.m in Sources */,
 				901F13941C18C8B200F8B0D9 /* MKStyledPolyline.m in Sources */,
 				901F13D81C18C8E600F8B0D9 /* OverlayCell.m in Sources */,
 				901F13D41C18C8E600F8B0D9 /* MapOverlayListViewController.m in Sources */,

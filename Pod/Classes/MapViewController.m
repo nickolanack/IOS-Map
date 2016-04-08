@@ -872,12 +872,12 @@
     
 }
 
--(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views{
+-(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
     if(_tableView){
         [_tableView reloadData];
     }
 }
--(void)mapView:(MKMapView *)mapView didAddOverlayRenderers:(NSArray<MKOverlayRenderer *> *)renderers{
+-(void)mapView:(MKMapView *)mapView didAddOverlayRenderers:(NSArray *)renderers{
     if(_tableView){
         [_tableView reloadData];
     }

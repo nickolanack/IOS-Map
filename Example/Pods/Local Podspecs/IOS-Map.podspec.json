@@ -1,0 +1,38 @@
+{
+  "name": "IOS-Map",
+  "version": "0.1.0",
+  "summary": "An IOS Mapping tool with storyboard",
+  "description": "a collection of IOS mapping tools including a storyboard with configurable map and mapping tools",
+  "homepage": "https://github.com/nickolanack/IOS-Map",
+  "license": "MIT",
+  "authors": {
+    "nickolanack": "nickblackwell82@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/nickolanack/IOS-Map.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "Map": [
+      "Pod/Assets/*.xcf"
+    ]
+  },
+  "dependencies": {
+    "IOS-Styler": [
+
+    ]
+  },
+  "resources": [
+    "*.storyboard",
+    "Pod/Assets/*.png"
+  ],
+  "frameworks": [
+    "UIKit",
+    "MapKit"
+  ]
+}

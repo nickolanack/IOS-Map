@@ -84,8 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Map_Tests/IOS_Map.framework"
+  install_framework "Pods-IOS-Map-Example/IOS_Map.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Map_Tests/IOS_Map.framework"
+  install_framework "Pods-IOS-Map-Example/IOS_Map.framework"
 fi

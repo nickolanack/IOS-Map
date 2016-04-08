@@ -3,7 +3,13 @@ use_frameworks!
 
 
 target 'Map_Tests', :exclusive => true do
-  pod "Map", :path => "../"
+  pod "IOS-Map", :path => "../"
 
   
+end
+
+target 'IOS-Map-Example', :exclusive => true do
+  pod "IOS-Map", :path => "../"
+
+
 end

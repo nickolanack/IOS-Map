@@ -1,14 +1,17 @@
 PODS:
-  - Map (0.1.0)
+  - IOS-Map (0.1.0):
+    - IOS-Styler
+  - IOS-Styler (0.1.1)
 
 DEPENDENCIES:
-  - Map (from `../`)
+  - IOS-Map (from `../`)
 
 EXTERNAL SOURCES:
-  Map:
+  IOS-Map:
     :path: ../
 
 SPEC CHECKSUMS:
-  Map: 105a02907800deef8320f9f8116c4839811f7692
+  IOS-Map: 26e1ae9a092d3c09a795fc9fd5318c4c46cbb691
+  IOS-Styler: e05b64920357916807529ab84e96b7df13e26e0e
 
 COCOAPODS: 0.39.0

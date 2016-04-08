@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "Map"
+  s.name             = "IOS-Map"
   s.version          = "0.1.0"
   s.summary          = "An IOS Mapping tool with storyboard"
 
@@ -35,6 +35,7 @@ Pod::Spec.new do |s|
     'Map' => ['Pod/Assets/*.xcf']
   }
  
+  s.dependency 'IOS-Styler'
   s.resources = ["*.storyboard", "Pod/Assets/*.png"] 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

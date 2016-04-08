@@ -36,6 +36,10 @@ Pod::Spec.new do |s|
   }
  
   s.dependency 'IOS-Styler'
+  s.dependency 'UnwindSegue'
+  s.dependency 'IOSQlite'
+  
+
   s.resources = ["*.storyboard", "Pod/Assets/*.png"] 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

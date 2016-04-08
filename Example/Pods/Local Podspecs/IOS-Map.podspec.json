@@ -25,6 +25,12 @@
   "dependencies": {
     "IOS-Styler": [
 
+    ],
+    "UnwindSegue": [
+
+    ],
+    "IOSQlite": [
+
     ]
   },
   "resources": [

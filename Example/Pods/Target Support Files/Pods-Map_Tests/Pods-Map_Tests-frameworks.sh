@@ -85,7 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Map_Tests/IOS_Map.framework"
+  install_framework "Pods-Map_Tests/IOSQlite.framework"
+  install_framework "Pods-Map_Tests/UnwindSegue.framework"
+  install_framework "Pods-Map_Tests/sqlite3.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Map_Tests/IOS_Map.framework"
+  install_framework "Pods-Map_Tests/IOSQlite.framework"
+  install_framework "Pods-Map_Tests/UnwindSegue.framework"
+  install_framework "Pods-Map_Tests/sqlite3.framework"
 fi

@@ -1,6 +1,6 @@
 # Map
 
-[![CI Status](http://img.shields.io/travis/nickolanack/Map.svg?style=flat)](https://travis-ci.org/nickolanack/Map)
+[![CI Status](http://img.shields.io/travis/nickolanack/IOS-Map.svg?style=flat)](https://travis-ci.org/nickolanack/IOS-Map)
 [![Version](https://img.shields.io/cocoapods/v/Map.svg?style=flat)](http://cocoapods.org/pods/Map)
 [![License](https://img.shields.io/cocoapods/l/Map.svg?style=flat)](http://cocoapods.org/pods/Map)
 [![Platform](https://img.shields.io/cocoapods/p/Map.svg?style=flat)](http://cocoapods.org/pods/Map)

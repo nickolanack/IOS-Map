@@ -9,6 +9,23 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+
+To transition to map within a project 
+```ObjC
+
+	
+	- (IBAction)onTapMapButton:(id)sender {
+    
+	    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Map" bundle:nil];
+	    UIViewController *myController = [storyboard instantiateInitialViewController];
+	    [self.navigationController pushViewController: myController animated:YES];
+    
+	}
+
+
+
+```
+
 ## Requirements
 
 ## Installation

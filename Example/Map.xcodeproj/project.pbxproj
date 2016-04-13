@@ -571,6 +571,8 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lsqlite3",
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Nick-Blackwell.IOS-Map-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -595,6 +597,8 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lsqlite3",
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Nick-Blackwell.IOS-Map-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";

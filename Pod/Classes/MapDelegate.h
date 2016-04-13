@@ -36,4 +36,8 @@
 -(int) numberOfExternalKmlDocuments;
 -(NSString *) kmlStringForExternalDocumentAtIndex:(int) i;
 
+
+// return false to disable default behavour
+-(bool) mapView:(MapViewController *) view userTappedFeatureDetailView:(NSDictionary*) feature;
+
 @end

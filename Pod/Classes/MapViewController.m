@@ -286,6 +286,16 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     
+    if([_delegate respondsToSelector:@selector(mapView:userTappedFeatureDetailView:)]){
+        
+        if(![_delegate mapView:self userTappedFeatureDetailView:@{}]){
+            return;
+        }
+    
+    }
+    
+    //TODO: default detail view behavior
+    
     NSLog(@"Callout Tapped");
     
 }

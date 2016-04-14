@@ -286,9 +286,17 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     
+    
+  
+    id<MKAnnotation> annotation=view.annotation;
+    NSDictionary *data=@{};
+    if([annotation isKindOfClass:[MKPlacemarkAnnotation class]]){
+        data=((MKPlacemarkAnnotation *)annotation).data;
+    }
+    
     if([_delegate respondsToSelector:@selector(mapView:userTappedFeatureDetailView:)]){
         
-        if(![_delegate mapView:self userTappedFeatureDetailView:@{}]){
+        if(![_delegate mapView:self userTappedFeatureDetailView:data]){
             return;
         }
     
@@ -646,6 +654,7 @@
     [point setCoordinate:[SaxKmlParser ParseCoordinateString:[dictionary valueForKey:@"coordinates"]]];
     [point setTitle:[dictionary valueForKey:@"name"]];
     
+    [point setData:dictionary];
     
     
     [point setIconUrl:[dictionary valueForKey:@"href"]];

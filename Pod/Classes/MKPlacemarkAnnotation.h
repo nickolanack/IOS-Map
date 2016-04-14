@@ -11,6 +11,7 @@
 @interface MKPlacemarkAnnotation : MKPointAnnotation
 
 @property NSString *iconUrl;
+@property NSDictionary *data;
 
 -(UIImage*)getIcon;
 

@@ -11,7 +11,7 @@
 @implementation MKPlacemarkAnnotation
 
 
-@synthesize iconUrl;
+@synthesize iconUrl, data;
 
 -(UIImage *) getIcon{
     

@@ -976,7 +976,9 @@
 -(void)cancelBigButtonClick{
     self.navigationItem.leftBarButtonItem =_backButton;
     [self.crossHairs setHidden:true];
+    [self.bigButton setTintColor:self.bigButton.backgroundColor];
     [self.bigButton setBackgroundColor:[UIColor whiteColor]];
+
 }
 - (IBAction)onBigButtonClick:(id)sender {
     
@@ -994,6 +996,7 @@
         [self.crossHairs setHidden:false];
         
         [self.bigButton setBackgroundColor:self.bigButton.tintColor];
+        [self.bigButton setTintColor:[UIColor whiteColor]];
         [self.bigButton setBackgroundImage:nil forState:UIControlStateNormal];
         
     }else{

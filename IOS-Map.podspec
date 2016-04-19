@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
   s.dependency 'IOS-Styler'
   s.dependency 'UnwindSegue'
   s.dependency 'IOSQlite'
-  
+  s.dependency 'KMLSaxParser'
 
   s.resources = ["*.storyboard", "Pod/Assets/*.png"] 
 

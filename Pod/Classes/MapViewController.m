@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "SaxKmlParser.h"
+#import "Kml.h"
 
 #import "MKImageOverlay.h"
 #import "MKImageOverlayRenderer.h"
@@ -181,7 +182,32 @@
             NSString *kml=[NSString stringWithContentsOfFile:absolutePath encoding:NSUTF8StringEncoding error:&err];
             
             if([self shouldLoadUsersKmlAtPath:absolutePath]){
-                [[[SaxKmlParser alloc] initWithDelegate:self] parseString:kml];
+                //[[[SaxKmlParser alloc] initWithDelegate:self] parseString:kml];
+                
+                /**
+                 * TODO provide delegate notifications for users local kml with some sort of id
+                 * and add items to layer a layer object.
+                 */
+                
+                Kml *parser=[[Kml alloc]initWithKmlString:kml];
+                
+                [parser onPlacemark:^(NSDictionary *dictionary) {
+                    [self onKmlPlacemark:dictionary];
+                }];
+                
+                [parser onPolygon:^(NSDictionary *dictionary) {
+                    [self onKmlPolygon:dictionary];
+                }];
+                
+                [parser onPolyline:^(NSDictionary *dictionary) {
+                    [self onKmlPolyline:dictionary];
+                }];
+                
+                [parser onGroundOverlay:^(NSDictionary *dictionary) {
+                    [self onKmlGroundOverlay:dictionary];
+                }];
+                
+                [parser parse];
             }
         }
     }
@@ -199,7 +225,34 @@
         int c=[_delegate numberOfExternalKmlDocuments];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             for(int i=0;i<c;i++){
-                [[[SaxKmlParser alloc] initWithDelegate:self] parseString:[_delegate kmlStringForExternalDocumentAtIndex:i]];
+                //[[[SaxKmlParser alloc] initWithDelegate:self] parseString:[_delegate kmlStringForExternalDocumentAtIndex:i]];
+                
+                /**
+                 * TODO provide delegate notifications for external kml with some sort of id
+                 * and add items to layer a layer object.
+                 */
+                
+                Kml *parser=[[Kml alloc]initWithKmlString:[_delegate kmlStringForExternalDocumentAtIndex:i]];
+                             
+                [parser onPlacemark:^(NSDictionary *dictionary) {
+                    [self onKmlPlacemark:dictionary];
+                }];
+                
+                [parser onPolygon:^(NSDictionary *dictionary) {
+                    [self onKmlPolygon:dictionary];
+                }];
+                
+                [parser onPolyline:^(NSDictionary *dictionary) {
+                    [self onKmlPolyline:dictionary];
+                }];
+                
+                [parser onGroundOverlay:^(NSDictionary *dictionary) {
+                    [self onKmlGroundOverlay:dictionary];
+                }];
+                
+                [parser parse];
+  
+                
             }
         });
         
@@ -664,8 +717,7 @@
     
     
 }
--(void) onKmlStyle:(NSDictionary *)dictionary{}
--(void) onKmlFolder:(NSDictionary *)dictionary{}
+
 -(void) onKmlGroundOverlay:(NSDictionary *)dictionary{
     
     NSLog(@"Ground Overlay: %@", dictionary);

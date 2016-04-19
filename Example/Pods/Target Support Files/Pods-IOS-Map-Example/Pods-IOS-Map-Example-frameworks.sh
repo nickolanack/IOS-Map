@@ -86,12 +86,14 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-IOS-Map-Example/IOS_Map.framework"
   install_framework "Pods-IOS-Map-Example/IOSQlite.framework"
+  install_framework "Pods-IOS-Map-Example/KMLSaxParser.framework"
   install_framework "Pods-IOS-Map-Example/UnwindSegue.framework"
   install_framework "Pods-IOS-Map-Example/sqlite3.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-IOS-Map-Example/IOS_Map.framework"
   install_framework "Pods-IOS-Map-Example/IOSQlite.framework"
+  install_framework "Pods-IOS-Map-Example/KMLSaxParser.framework"
   install_framework "Pods-IOS-Map-Example/UnwindSegue.framework"
   install_framework "Pods-IOS-Map-Example/sqlite3.framework"
 fi

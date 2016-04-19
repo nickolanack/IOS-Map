@@ -2,14 +2,16 @@ PODS:
   - IOS-Map (0.1.0):
     - IOS-Styler
     - IOSQlite
+    - KMLSaxParser
     - UnwindSegue
   - IOS-Styler (0.1.1)
   - IOSQlite (0.1.1):
     - sqlite3
-  - sqlite3 (3.12.0):
-    - sqlite3/common (= 3.12.0)
-  - sqlite3/common (3.12.0)
-  - UnwindSegue (0.1.0)
+  - KMLSaxParser (0.1.0)
+  - sqlite3 (3.12.1):
+    - sqlite3/common (= 3.12.1)
+  - sqlite3/common (3.12.1)
+  - UnwindSegue (0.1.1)
 
 DEPENDENCIES:
   - IOS-Map (from `../`)
@@ -19,10 +21,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  IOS-Map: 0854b83e35029b6e36370cfa3acfd0b92ad8a1c2
+  IOS-Map: 677c42cc0893e54002adaa4769b21227e206ebf0
   IOS-Styler: e05b64920357916807529ab84e96b7df13e26e0e
   IOSQlite: 933c0a254a8eadec5bf3e02bf86cf6947713bf0e
-  sqlite3: 5dfa7d57e21fd5137ef19de10ccb0aeea2b33f8f
-  UnwindSegue: 3a36446958718ed8cafb0adbe9f20a5d8a0afc1c
+  KMLSaxParser: c0cd1394235614bd7848fda0e89e713e77bb4527
+  sqlite3: a955159cd989b1bd67984d49578aefca7b04f719
+  UnwindSegue: 5f6fff9d458245e47a3038e9f79c1704a76c8eb2
 
 COCOAPODS: 0.39.0

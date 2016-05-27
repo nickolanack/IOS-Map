@@ -21,8 +21,8 @@
    //(context, CGSizeMake(0, 0), 10);
     CGContextSetShadowWithColor(context, CGSizeMake(0, 0), 10,[UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.3].CGColor);
 
-    CGContextMoveToPoint(context, self.frame.size.width-10, 0);
-    CGContextAddLineToPoint(context, self.frame.size.width-10, self.frame.size.height);
+    CGContextMoveToPoint(context, self.frame.size.width, 0);
+    CGContextAddLineToPoint(context, self.frame.size.width, self.frame.size.height);
     
     CGContextStrokePath(context);
 }

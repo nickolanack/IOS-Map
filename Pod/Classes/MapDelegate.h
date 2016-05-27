@@ -40,4 +40,8 @@
 // return false to disable default behavour
 -(bool) mapView:(MapViewController *) view userTappedFeatureDetailView:(NSDictionary*) feature;
 
+
+-(int) numberOfSideBarCells;
+-(bool)cellForSideBarCellAtIndex:(int)index;
+
 @end

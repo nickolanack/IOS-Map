@@ -105,26 +105,74 @@
 
 
 -(void)hideSideBar{
-    CGRect sb=self.sideBar.frame;
-   NSLog(@"show sidebar %f to %f", self.sideBarContraint.constant, -sb.size.width);
-    self.sideBarContraint.constant=+44;
-    [_tileButtons horizontalAlign:-44];
 
+    CGRect sb=_sideBar.frame;
+
+  
+    
+    
+    [self.view.superview layoutIfNeeded];
+    [UIView animateWithDuration:0.3 animations:^{
+          self.sideBarLeftConstraint.constant=-sb.size.width;
+        [self.view.superview layoutIfNeeded];
+    }];
+    
+ 
+    
+    
+    [self.overlaysButton setSelected:false];
+    [self.leftDetailButton setSelected:false];
 
 }
 -(void)showSideBar{
-  CGRect sb=self.sideBar.frame;
-    NSLog(@"show sidebar %f to %f", self.sideBarContraint.constant, sb.size.width);
-    self.sideBarContraint.constant=-44;
-    [_tileButtons horizontalAlign:44];
-  
+    
+   CGRect sb=_sideBar.frame;
+
+    
+    [self.view.superview layoutIfNeeded];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.sideBarLeftConstraint.constant=0;
+        [self.view.superview layoutIfNeeded];
+    }];
+
+    
+ 
+    [self.overlaysButton setSelected:true];
+    [self.leftDetailButton setSelected:true];
+    
 }
 
--(void)viewDidLayoutSubviews{
-    //[self.tileButtons alignTiles];
+-(bool)sideBarIsOpen{
+    
+    int x=_sideBar.frame.origin.x;
+    
+    if(x>=0){
+        return true;
+    }
+    return false;
+}
+
+-(void)toggleSideBar{
+
+    if([self sideBarIsOpen]){
+        [self hideSideBar];
+    }else{
+        [self showSideBar];
+    }
+
 }
 
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 3;
+}
+
+
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+        return [self.sideBarCollectionView dequeueReusableCellWithReuseIdentifier:@"testSidebarCell" forIndexPath:indexPath];
+
+}
 
 
 -(void)onPolylineTap:(MKPolyline *)polyline atCoordinate:(CLLocationCoordinate2D)coord andTouch:(CGPoint)touchPt{
@@ -583,12 +631,10 @@
         //if(index==0){
         if(_showOverlaysSideBar){
         
-            
-            [self.overlaysButton setSelected:!self.overlaysButton.selected];
-            if(self.overlaysButton.selected){
-                [self showSideBar];
-            }else{
+            if([self sideBarIsOpen]){
                 [self hideSideBar];
+            }else{
+                [self showSideBar];
             }
         
         }
@@ -1052,5 +1098,10 @@
 }
 
 - (IBAction)onLeftButtonTap:(id)sender {
+    
+    
+    
+    [self toggleSideBar];
+    
 }
 @end

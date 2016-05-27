@@ -16,17 +16,33 @@
     self=[super initWithCoder:aDecoder];
    
 
-    self.layer.cornerRadius =  MIN(self.frame.size.width/2, self.frame.size.height/2); // this value vary as per your desire
-    //self.clipsToBounds = YES;
+    self.layer.cornerRadius =  MIN(self.frame.size.width/2, self.frame.size.height/2);
     
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = 0.4;
     self.layer.shadowRadius = 5;
     
-    //self.layer.borderColor = [UIColor colorWithRed:0 green:122.0/255.0 blue:1.0 alpha:1.0].CGColor;
-    //self.layer.borderWidth=1.5;
+    self.layer.masksToBounds=true;
+
+    
+
     
     return self;
+    
+}
+
+
+- (void)setSelected:(BOOL)selected {
+    
+    self.layer.cornerRadius =  MIN(self.frame.size.width/2, self.frame.size.height/2);
+    
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOpacity = 0.4;
+    self.layer.shadowRadius = 5;
+    
+    [super setSelected:selected];
+    
+    
     
 }
 

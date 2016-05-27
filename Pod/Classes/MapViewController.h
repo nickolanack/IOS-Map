@@ -15,7 +15,7 @@
 #import "TileButtonDelegate.h"
 
 
-@interface MapViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, UIAlertViewDelegate, SaxKmlParserDelegate, MKOffscreenFeatureRendererDelegate, UIImagePickerControllerDelegate, MKUserTrackerDelegate, UINavigationControllerDelegate, MKPolylineTapDetectorDelegate, UITableViewDelegate, UITableViewDataSource, TileButtonDelegate>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, UIAlertViewDelegate, SaxKmlParserDelegate, MKOffscreenFeatureRendererDelegate, UIImagePickerControllerDelegate, MKUserTrackerDelegate, UINavigationControllerDelegate, MKPolylineTapDetectorDelegate, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, TileButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
@@ -46,10 +46,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *trackDistance;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *sideBar;
 
-@property (unsafe_unretained, nonatomic) IBOutlet NSLayoutConstraint *sideBarContraint;
+
+@property (unsafe_unretained, nonatomic) IBOutlet NSLayoutConstraint *sideBarLeftConstraint;
+@property (unsafe_unretained, nonatomic) IBOutlet NSLayoutConstraint *sideBarWidthConstraint;
+
+
+
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *rightDetailButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *leftDetailButton;
 - (IBAction)onRightButtonTap:(id)sender;
 - (IBAction)onLeftButtonTap:(id)sender;
+@property (unsafe_unretained, nonatomic) IBOutlet UICollectionView *sideBarCollectionView;
 
 @end

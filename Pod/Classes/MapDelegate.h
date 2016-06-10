@@ -4,6 +4,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import "MapViewController.h"
+#import "ImageTileOverlay.h"
 
 
 
@@ -46,5 +47,13 @@
 
 -(int) numberOfSideBarCells;
 -(bool)cellForSideBarCellAtIndex:(int)index;
+
+
+
+-(void)mapView:(MapViewController *) view willAddBaseMapTileOverlay:(ImageTileOverlay *) overlay;
+-(void)mapView:(MapViewController *) view didAddBaseMapTileOverlay:(ImageTileOverlay *) overlay;
+
+-(void)mapView:(MapViewController *) view willAddTileOverlay:(ImageTileOverlay *) overlay forLayerId:(int) index;
+-(void)mapView:(MapViewController *) view didAddTileOverlay:(ImageTileOverlay *) overlay forLayerId:(int) index;
 
 @end

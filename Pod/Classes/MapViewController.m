@@ -296,7 +296,16 @@
     
     ImageTileOverlay *tileOverlay = [[ImageTileOverlay alloc] initWithURLTemplate:@"http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"];
     tileOverlay.canReplaceMapContent=YES;
+    
+    if([_delegate respondsToSelector:@selector(mapView:willAddBaseMapTileOverlay:)]){
+        [_delegate mapView:self willAddBaseMapTileOverlay:tileOverlay];
+    }
+    
     [self.mapView addOverlay:tileOverlay];
+    
+    if([_delegate respondsToSelector:@selector(mapView:didAddBaseMapTileOverlay:)]){
+        [_delegate mapView:self didAddBaseMapTileOverlay:tileOverlay];
+    }
     
 }
 
@@ -364,7 +373,18 @@
                     ImageTileOverlay *tileOverlay = [[ImageTileOverlay alloc] initWithURLTemplate:[_delegate tileUrlTemplateForLayerAtIndex:i]];
                     tileOverlay.canReplaceMapContent=NO;
                     if(self.mapView&&tileOverlay){
+                        
+                        if([_delegate respondsToSelector:@selector(mapView:willAddTileOverlay:forLayerId:)]){
+                            [_delegate mapView:self willAddTileOverlay:tileOverlay forLayerId:i];
+                        }
+                        
                         [self.mapView addOverlay:tileOverlay];
+                        
+                        if([_delegate respondsToSelector:@selector(mapView:didAddTileOverlay:forLayerId:)]){
+                            [_delegate mapView:self didAddTileOverlay:tileOverlay forLayerId:i];
+                        }
+                        
+                        
                     }
                     
                     continue;

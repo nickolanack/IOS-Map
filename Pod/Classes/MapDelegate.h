@@ -33,9 +33,12 @@
  */
 -(bool) mapView:(MapViewController *) view shouldLoadKmlAtPath:(NSString *)path;
 
--(int) numberOfExternalKmlDocuments;
--(NSString *) kmlStringForExternalDocumentAtIndex:(int) i;
+-(int) numberOfLayers;
 
+
+-(NSString *) layerTypeForLayerAtIndex:(int) i;
+-(NSString *) kmlStringForLayerAtIndex:(int) i;
+-(NSString *) tileUrlTemplateForLayerAtIndex:(int) i;
 
 // return false to disable default behavour
 -(bool) mapView:(MapViewController *) view userTappedFeatureDetailView:(NSDictionary*) feature;

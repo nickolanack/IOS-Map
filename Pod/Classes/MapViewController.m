@@ -17,6 +17,7 @@
 #import "MKPhotoAnnotation.h"
 #import "MKPlacemarkAnnotation.h"
 #import "MKStyledPolyline.h"
+#import "MKStyledPolygon.h"
 #import "MKPolylineTapDetector.h"
 
 #import "MapOverlayListViewController.h"
@@ -27,6 +28,13 @@
 #import "MapDelegate.h"
 
 #import "StyleProvider.h"
+
+
+#import "GridTileOverlay.h"
+#import "GridTileOverlayRenderer.h"
+
+#import "ImageTileOverlay.h"
+#import "ImageTileOverlayRenderer.h"
 
 
 @interface MapViewController ()
@@ -47,6 +55,9 @@
 
 @property bool showOverlaysSideBar;
 
+
+@property int debugNumPoly;
+
 @end
 
 @implementation MapViewController
@@ -58,7 +69,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
+    
+    _debugNumPoly=0;
     
     if([[[UIApplication sharedApplication] delegate] conformsToProtocol:@protocol(MapDelegate)]){
         _delegate=[[UIApplication sharedApplication] delegate];
@@ -76,9 +88,17 @@
     [self.mapView setDelegate:self];
     self.tracker=[[MKUserTracker alloc] initWithMap:self.mapView];
     [self.tracker setDelegate:self];
-    
+    [self drawGoogleMapTiles];
     [self loadUsersKmlFiles];
-    [self loadExternalKmlFiles];
+    
+    
+     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+         [self loadExternalLayers];
+    // });
+    
+    
+    
+    //[self drawLabledGrid];
     
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
@@ -92,7 +112,7 @@
     _tapDetector=[[MKPolylineTapDetector alloc] initWithMap:self.mapView];
     [_tapDetector setDelegate:self];
     
-    _showOverlaysSideBar=true;//if false overlays tile will display subtiles instead.
+    _showOverlaysSideBar=true; // if false overlays tile will display subtiles instead.
     
     
     
@@ -261,48 +281,104 @@
     }
 }
 
+-(void)drawLabledGrid{
+  
+    GridTileOverlay *gridOverlay = [[GridTileOverlay alloc] init];
+    gridOverlay.canReplaceMapContent=NO;
+    [self.mapView addOverlay:gridOverlay level:MKOverlayLevelAboveLabels];
+    
 
--(void)loadExternalKmlFiles{
 
-    if([_delegate respondsToSelector:@selector(numberOfExternalKmlDocuments)]){
+}
+
+
+-(void)drawGoogleMapTiles{
+    
+    ImageTileOverlay *tileOverlay = [[ImageTileOverlay alloc] initWithURLTemplate:@"http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"];
+    tileOverlay.canReplaceMapContent=YES;
+    [self.mapView addOverlay:tileOverlay];
+    
+}
+
+-(void)loadExternalLayers{
+
+    if([_delegate respondsToSelector:@selector(numberOfLayers)]){
         
-        if(![_delegate respondsToSelector:@selector(kmlStringForExternalDocumentAtIndex:)]){
-            @throw [[NSException alloc] initWithName:@"Unimplemented kmlStringForExternalDocumentAtIndex" reason:@"Delegate must respode to selector kmlStringForExternalDocumentAtIndex: if it responds to selector numberOfExternalKmlDocuments" userInfo:nil];
-        }
+       
         
-        int c=[_delegate numberOfExternalKmlDocuments];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+       
+            
+            int c=[_delegate numberOfLayers];
             for(int i=0;i<c;i++){
-                //[[[SaxKmlParser alloc] initWithDelegate:self] parseString:[_delegate kmlStringForExternalDocumentAtIndex:i]];
+         
                 
-                /**
-                 * TODO provide delegate notifications for external kml with some sort of id
-                 * and add items to layer a layer object.
-                 */
+                NSString *type=@"kml";
                 
-                Kml *parser=[[Kml alloc]initWithKmlString:[_delegate kmlStringForExternalDocumentAtIndex:i]];
-                             
-                [parser onPlacemark:^(NSDictionary *dictionary) {
-                    [self onKmlPlacemark:dictionary];
-                }];
+                if([_delegate respondsToSelector:@selector(layerTypeForLayerAtIndex:)]){
+                    type = [_delegate layerTypeForLayerAtIndex:i];
+                }
                 
-                [parser onPolygon:^(NSDictionary *dictionary) {
-                    [self onKmlPolygon:dictionary];
-                }];
+                if([type isEqualToString:@"kml"]){
                 
-                [parser onPolyline:^(NSDictionary *dictionary) {
-                    [self onKmlPolyline:dictionary];
-                }];
+                    /**
+                     * TODO provide delegate notifications for external kml with some sort of id
+                     * and add items to layer a layer object.
+                     */
+                    
+                    if(![_delegate respondsToSelector:@selector(kmlStringForLayerAtIndex:)]){
+                        @throw [[NSException alloc] initWithName:@"Unimplemented kmlStringForLayerAtIndex" reason:@"Delegate must respode to selector kmlStringForLayerAtIndex: if it responds to selector layerTypeForLayerAtIndex with kml" userInfo:nil];
+                    }
+                    
+                    
+                    Kml *parser=[[Kml alloc]initWithKmlString:[_delegate kmlStringForLayerAtIndex:i]];
+                                 
+                    [parser onPlacemark:^(NSDictionary *dictionary) {
+                        [self onKmlPlacemark:dictionary];
+                    }];
+                    
+                    [parser onPolygon:^(NSDictionary *dictionary) {
+                        [self onKmlPolygon:dictionary];
+                    }];
+                    
+                    [parser onPolyline:^(NSDictionary *dictionary) {
+                        [self onKmlPolyline:dictionary];
+                    }];
+                    
+                    [parser onGroundOverlay:^(NSDictionary *dictionary) {
+                        [self onKmlGroundOverlay:dictionary];
+                    }];
+                    
+                    [parser parse];
+                    continue;
+                }
+                    
                 
-                [parser onGroundOverlay:^(NSDictionary *dictionary) {
-                    [self onKmlGroundOverlay:dictionary];
-                }];
+                if([type isEqualToString:@"tile"]){
+                    
+                    
+                    if(![_delegate respondsToSelector:@selector(tileUrlTemplateForLayerAtIndex:)]){
+                        @throw [[NSException alloc] initWithName:@"Unimplemented tileUrlTemplateForLayerAtIndex" reason:@"Delegate must respode to selector tileUrlTemplateForLayerAtIndex: if it responds to selector layerTypeForLayerAtIndex with kml" userInfo:nil];
+                    }
+                    
+                    ImageTileOverlay *tileOverlay = [[ImageTileOverlay alloc] initWithURLTemplate:[_delegate tileUrlTemplateForLayerAtIndex:i]];
+                    tileOverlay.canReplaceMapContent=NO;
+                    if(self.mapView&&tileOverlay){
+                        [self.mapView addOverlay:tileOverlay];
+                    }
+                    
+                    continue;
+                    
+                }
                 
-                [parser parse];
+              
+                    
+                 @throw [[NSException alloc] initWithName:@"Unknown type for layer" reason:[NSString stringWithFormat:@"Unknown type %@, at %i",type, i] userInfo:nil];
+                
   
                 
             }
-        });
+   
         
     }
     
@@ -313,17 +389,45 @@
 #pragma mark Map View
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
-    MKOverlayRenderer *r=nil;
+
     if([overlay isKindOfClass:[MKImageOverlay class] ]){
         // this is my custom image overlay class
         MKImageOverlayRenderer *p=[[MKImageOverlayRenderer alloc] initWithOverlay:overlay];
-        r=p;
+
         
         if([self.usersOverlaysButton isSelected]){
-            [r setAlpha:0.5];
+            [p setAlpha:0.5];
         }else{
-            [r setAlpha:0.1];
+            [p setAlpha:0.1];
         }
+        
+        return p;
+    }
+    
+    if([overlay isKindOfClass:[GridTileOverlay class] ]){
+        GridTileOverlayRenderer *p=[[GridTileOverlayRenderer alloc] initWithOverlay:overlay];
+        return p;
+    
+    }
+    
+    
+    if([overlay isKindOfClass:[MKTileOverlay class]]||[overlay isKindOfClass:[ImageTileOverlay class]]){
+        MKTileOverlayRenderer *p=[[MKTileOverlayRenderer alloc] initWithOverlay:overlay];
+        return p;
+        
+    }
+    
+    if([overlay isKindOfClass:[MKStyledPolygon class] ]){
+        MKPolygonRenderer *p=[[MKPolygonRenderer alloc] initWithOverlay:overlay];
+        [p setLineWidth:1.0];
+        [p setFillColor:[UIColor colorWithRed:1.0 green:0.2 blue:0.3 alpha:0.5]];
+        [p setStrokeColor:[UIColor blackColor]];
+        
+    
+        
+        
+        return p;
+        
     }else{
         MockPolylineRenderer *p= [[MockPolylineRenderer alloc]initWithOverlay:overlay];
         if([overlay isKindOfClass:[MKStyledPolyline class]]){
@@ -335,10 +439,10 @@
             [p setLineWidth:2.0f];
             
         }
-        r=p;
+        return p;
     }
     
-    return r;
+    return nil;
     
     
 }
@@ -799,7 +903,28 @@
     [self.mapView addOverlay:p];
     
 }
--(void)onKmlPolygon:(NSDictionary *)dictionary{}
+-(void)onKmlPolygon:(NSDictionary *)dictionary{
+    
+    _debugNumPoly++;
+    if(_debugNumPoly>20){
+        return;
+    }
+    
+    NSArray *coordinateStrings=[SaxKmlParser ParseCoordinateArrayString:[dictionary objectForKey:@"coordinates"]];
+    CLLocationCoordinate2D locations[[coordinateStrings count]];
+    
+    for (int i=0; i<[coordinateStrings count]; i++) {
+        locations[i]= [SaxKmlParser ParseCoordinateString:[coordinateStrings objectAtIndex:i]];
+    }
+    
+    
+    MKStyledPolygon * p= [MKStyledPolygon polygonWithCoordinates:locations count:[coordinateStrings count]];
+    [p setColor:[SaxKmlParser ParseColorString:[dictionary objectForKey:@"color"]]];
+    [p setWidth:[[dictionary objectForKey:@"width"] floatValue]];
+    [self.mapView addOverlay:p];
+
+
+}
 
 #pragma mark Tracking
 

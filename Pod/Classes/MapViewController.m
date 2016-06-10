@@ -55,8 +55,10 @@
 
 @property bool showOverlaysSideBar;
 
-
 @property int debugNumPoly;
+
+@property NSMutableDictionary *externalLayers;
+@property NSMutableDictionary *localLayers;
 
 @end
 
@@ -71,6 +73,10 @@
     [super viewDidLoad];
     
     _debugNumPoly=0;
+    
+    _externalLayers=[[NSMutableDictionary alloc] init];
+    _localLayers=[[NSMutableDictionary alloc] init];
+    
     
     if([[[UIApplication sharedApplication] delegate] conformsToProtocol:@protocol(MapDelegate)]){
         _delegate=[[UIApplication sharedApplication] delegate];
@@ -123,9 +129,14 @@
     
 }
 
+#pragma mark Sidebar
 
 -(void)hideSideBar{
 
+    if(![self sideBarIsOpen]){
+        return;
+    }
+    
     CGRect sb=_sideBar.frame;
 
   
@@ -145,6 +156,10 @@
 
 }
 -(void)showSideBar{
+    
+    if([self sideBarIsOpen]){
+        return;
+    }
     
    CGRect sb=_sideBar.frame;
 
@@ -184,14 +199,34 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    if([_delegate respondsToSelector:@selector(mapViewNumberOfSideBarCells:)]){
+        return [_delegate mapViewNumberOfSideBarCells:self];
+    }
+    
     return 3;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
+    if([_delegate respondsToSelector:@selector(mapView:userTappedSidebarCell:atIndex:)]){
+        [_delegate mapView:self userTappedSidebarCell:[collectionView cellForItemAtIndexPath:indexPath] atIndex:[indexPath item]];
+    }
 }
 
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-        return [self.sideBarCollectionView dequeueReusableCellWithReuseIdentifier:@"testSidebarCell" forIndexPath:indexPath];
-
+    
+        UICollectionView *cell=[self.sideBarCollectionView dequeueReusableCellWithReuseIdentifier:@"testSidebarCell" forIndexPath:indexPath];
+    
+        if([_delegate respondsToSelector:@selector(mapView:onDequeueReusableCell:ForSidebarAtIndex:)]){
+            [_delegate mapView:self onDequeueReusableCell:cell ForSidebarAtIndex:[indexPath item]];
+        }
+    
+        return cell;
 }
 
 
@@ -224,11 +259,15 @@
     
 }
 
--(bool)shouldLoadUsersKmlAtPath:(NSString *)path{
+#pragma mark Load Content
+
+-(bool)shouldLoadUsersKmlAtPath:(NSString *) path{
+    
     if([_delegate respondsToSelector:@selector(mapView:shouldLoadKmlAtPath:)]){
         return [_delegate mapView:self shouldLoadKmlAtPath:path];
     }
     return true;
+
 }
 
 
@@ -314,9 +353,6 @@
     if([_delegate respondsToSelector:@selector(numberOfLayers)]){
         
        
-        
-        
-       
             
             int c=[_delegate numberOfLayers];
             for(int i=0;i<c;i++){
@@ -372,19 +408,19 @@
                     
                     ImageTileOverlay *tileOverlay = [[ImageTileOverlay alloc] initWithURLTemplate:[_delegate tileUrlTemplateForLayerAtIndex:i]];
                     tileOverlay.canReplaceMapContent=NO;
+                    
+                    
+                    
                     if(self.mapView&&tileOverlay){
                         
-                        if([_delegate respondsToSelector:@selector(mapView:willAddTileOverlay:forLayerId:)]){
-                            [_delegate mapView:self willAddTileOverlay:tileOverlay forLayerId:i];
+                        [self addExternalOverlay:tileOverlay atIndex:i];
+                        
+                        if([self shouldShowExternalOverlay:tileOverlay atIndex:i]){
+                        
+                            [self showExternalOverlay:tileOverlay atIndex:i];
+                        
                         }
-                        
-                        [self.mapView addOverlay:tileOverlay];
-                        
-                        if([_delegate respondsToSelector:@selector(mapView:didAddTileOverlay:forLayerId:)]){
-                            [_delegate mapView:self didAddTileOverlay:tileOverlay forLayerId:i];
-                        }
-                        
-                        
+  
                     }
                     
                     continue;
@@ -403,6 +439,73 @@
     }
     
 
+}
+
+
+-(void)addExternalOverlay:(ImageTileOverlay *)overlay atIndex:(int)index{
+
+    if(!_externalLayers){
+        _externalLayers=[[NSMutableDictionary alloc] init];
+    }
+  
+   [_externalLayers setObject:overlay forKey:[NSString stringWithFormat:@"%i", index]];
+
+}
+
+-(bool)toggleExternalLayerAtIndex:(int) index{
+    
+    
+    
+    ImageTileOverlay *overlay= [_externalLayers objectForKey:[NSString stringWithFormat:@"%i", index]];
+    if([self.mapView.overlays indexOfObject:overlay]==NSNotFound){
+        [self showExternalOverlay:overlay atIndex:index];
+        return true;
+    }
+    
+    [self hideExternalOverlay:overlay atIndex:index];
+    return false;
+}
+
+
+
+
+
+-(bool)shouldShowExternalOverlay:(ImageTileOverlay *)overlay atIndex:(int)index{
+    
+    if([_delegate respondsToSelector:@selector(mapView:shouldShowTileOverlay:atIndex:)]){
+        return [_delegate mapView:self shouldShowTileOverlay:overlay atIndex:index];
+    }
+    
+    return true;
+}
+-(void)showExternalOverlay:(ImageTileOverlay *)overlay atIndex:(int)index{
+    
+    if([_delegate respondsToSelector:@selector(mapView:willAddTileOverlay:forLayerId:)]){
+        [_delegate mapView:self willAddTileOverlay:overlay forLayerId:index];
+    }
+    
+    [self.mapView addOverlay:overlay];
+    
+    if([_delegate respondsToSelector:@selector(mapView:didAddTileOverlay:forLayerId:)]){
+        [_delegate mapView:self didAddTileOverlay:overlay forLayerId:index];
+    }
+    
+    
+}
+
+-(void)hideExternalOverlay:(ImageTileOverlay *)overlay atIndex:(int)index{
+    
+    if([_delegate respondsToSelector:@selector(mapView:willRemoveTileOverlay:forLayerId:)]){
+        [_delegate mapView:self willRemoveTileOverlay:overlay forLayerId:index];
+    }
+    
+    [self.mapView removeOverlay:overlay];
+    
+    if([_delegate respondsToSelector:@selector(mapView:didRemoveTileOverlay:forLayerId:)]){
+        [_delegate mapView:self didRemoveTileOverlay:overlay forLayerId:index];
+    }
+    
+    
 }
 
 
@@ -1179,8 +1282,6 @@
 
     }
 
-    
-    
     if(self.crossHairs.isHidden){
         
         self.navigationItem.leftBarButtonItem =_cancelButton;

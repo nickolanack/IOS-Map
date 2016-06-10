@@ -45,15 +45,22 @@
 -(bool) mapView:(MapViewController *) view userTappedFeatureDetailView:(NSDictionary*) feature;
 
 
--(int) numberOfSideBarCells;
--(bool)cellForSideBarCellAtIndex:(int)index;
+-(int) mapViewNumberOfSideBarCells:(MapViewController *) view;
+-(void) mapView:(MapViewController *) view userTappedSidebarCell:(UICollectionViewCell *)cell atIndex:(int)index;
+-(UICollectionViewCell *) mapView:(MapViewController *) view cellForSideBarAtIndex:(int)index;
+-(void) mapView:(MapViewController *) view onDequeueReusableCell:(UICollectionViewCell *) cell ForSidebarAtIndex:(int)index;
 
-
+-(bool)mapView:(MapViewController *) view shouldShowTileOverlay:(ImageTileOverlay *) overlay atIndex:(int)index;
 
 -(void)mapView:(MapViewController *) view willAddBaseMapTileOverlay:(ImageTileOverlay *) overlay;
 -(void)mapView:(MapViewController *) view didAddBaseMapTileOverlay:(ImageTileOverlay *) overlay;
 
+
+//TODO rename forLayerId to forLayerIndex (becuase id is different.)
 -(void)mapView:(MapViewController *) view willAddTileOverlay:(ImageTileOverlay *) overlay forLayerId:(int) index;
 -(void)mapView:(MapViewController *) view didAddTileOverlay:(ImageTileOverlay *) overlay forLayerId:(int) index;
+
+-(void)mapView:(MapViewController *) view willRemoveTileOverlay:(ImageTileOverlay *) overlay forLayerId:(int) index;
+-(void)mapView:(MapViewController *) view didRemoveTileOverlay:(ImageTileOverlay *) overlay forLayerId:(int) index;
 
 @end

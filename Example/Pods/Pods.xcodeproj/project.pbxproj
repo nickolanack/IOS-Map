@@ -62,6 +62,8 @@
 		8BA2DE8584F86D543B1F9D038F0D55B1 /* MKPolylineTapDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 322462E230A6EB04FEA41A1C49015E1E /* MKPolylineTapDetector.m */; };
 		8C569569B41ED81FAD9C7CF7D903B6DA /* KMLSaxParser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFA616768FF41A8A5628D6777C4C6DD4 /* KMLSaxParser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9081562288F75AC2E5FD2EA34DC70D34 /* UnwindSegue-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A8E79794CD22B0812DC7FA504C4EF /* UnwindSegue-dummy.m */; };
+		90F96DA41D0B4464006FA48D /* SideBarCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 90F96DA21D0B4464006FA48D /* SideBarCollectionViewCell.h */; };
+		90F96DA51D0B4464006FA48D /* SideBarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F96DA31D0B4464006FA48D /* SideBarCollectionViewCell.m */; };
 		96DAF1FE9D8D62D073A7027042064290 /* waypoint-default-25x28.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B417DC43C4E154731EDEC1E7C18FEA /* waypoint-default-25x28.png */; };
 		971FFEF8365BCD3C53D94DC130B34BAB /* MKPolylineTapDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 585230A0B74A326F853D8575EB1C2E9D /* MKPolylineTapDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9835BA7710D1E4ED4274523E7BECD339 /* IOS-Map-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4528C3230892E27643142C9BD0BF82 /* IOS-Map-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -340,6 +342,8 @@
 		8FB7E1DB9D2A3FA3728EB6090EBD018E /* KMLSaxParser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KMLSaxParser.modulemap; sourceTree = "<group>"; };
 		8FDA6C971C9670AC521DC38E00B6835C /* IOS-Map-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IOS-Map-prefix.pch"; sourceTree = "<group>"; };
 		8FEE0B669B526BBF704832945935DAC1 /* IOSQlite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IOSQlite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90F96DA21D0B4464006FA48D /* SideBarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarCollectionViewCell.h; sourceTree = "<group>"; };
+		90F96DA31D0B4464006FA48D /* SideBarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarCollectionViewCell.m; sourceTree = "<group>"; };
 		914F189B50796ECF83228CBB4941E9B1 /* Pods-Map_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Map_Tests-umbrella.h"; sourceTree = "<group>"; };
 		92C6CC246C904C0D09F12C3DE7904B0F /* sqlite3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = "sqlite-amalgamation-3120100/sqlite3.h"; sourceTree = "<group>"; };
 		92E82845DD5D4F6136C74CC5330714E4 /* IOSQlite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IOSQlite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -770,6 +774,8 @@
 		C7AD3B691B409826E04CFDF720C625F1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				90F96DA21D0B4464006FA48D /* SideBarCollectionViewCell.h */,
+				90F96DA31D0B4464006FA48D /* SideBarCollectionViewCell.m */,
 				47D002BC39DCE399B69F0F1B7D4B9F14 /* CrossHairs.h */,
 				D610C295EDD26EF5FE96E4AA3E8FAB86 /* CrossHairs.m */,
 				7F2CC650368A5562D4755CF8A9272E1D /* DismissView.h */,
@@ -892,6 +898,7 @@
 				5F97B2B5293BD10A1893FCE30E650467 /* DismissView.h in Headers */,
 				5392D1CECA3FB53B894F9C1CFFFCAD23 /* InsetView.h in Headers */,
 				9835BA7710D1E4ED4274523E7BECD339 /* IOS-Map-umbrella.h in Headers */,
+				90F96DA41D0B4464006FA48D /* SideBarCollectionViewCell.h in Headers */,
 				442127EBCB8F1F3ECE8C6C9EEC499B0A /* MapDelegate.h in Headers */,
 				552B2CA6284FB88C35D80D559A1B26CC /* MapOverlayListViewController.h in Headers */,
 				C266D09A01FA260718C385D52130557D /* MapViewController.h in Headers */,
@@ -1362,6 +1369,7 @@
 				A559D29E2D2B0027B3CDD21CD79A0E16 /* MapViewController.m in Sources */,
 				3197A61E155D520F2034EE3EC852DBEC /* MKImageOverlay.m in Sources */,
 				F7A371B019C9A3013F1FD5B807B18DFD /* MKImageOverlayRenderer.m in Sources */,
+				90F96DA51D0B4464006FA48D /* SideBarCollectionViewCell.m in Sources */,
 				C44DD837E0DBFF028407716F523528D8 /* MKOffscreenFeatureRenderer.m in Sources */,
 				8846114054A3D9E6C166733A04D751A8 /* MKPhotoAnnotation.m in Sources */,
 				C0985972C9DD07988945FDF48974B4B6 /* MKPlacemarkAnnotation.m in Sources */,

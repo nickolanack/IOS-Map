@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="493"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-53-MLp" userLabel="MK Map View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="493"/>
                                     </mapView>
                                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lwu-Rd-Y4T" customClass="CrossHairs">
                                         <rect key="frame" x="225" y="172" width="150" height="150"/>
@@ -125,15 +125,33 @@
                                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="testSidebarCell" id="Drx-vq-d8v">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="testSidebarCell" id="Drx-vq-d8v" customClass="SideBarCollectionViewCell">
                                                         <rect key="frame" x="15" y="10" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIa-zi-HN0" customClass="RoundButton">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </button>
+                                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhB-bg-MBs" customClass="RoundButton">
+                                                                    <rect key="frame" x="3" y="3" width="44" height="44"/>
+                                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                    <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                                                    <state key="normal" title="1">
+                                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
-                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <outlet property="button" destination="KhB-bg-MBs" id="3eF-9r-uLP"/>
+                                                            <outlet property="indicator" destination="cIa-zi-HN0" id="nts-Gf-ZTn"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
@@ -168,38 +186,38 @@
                                     <constraint firstItem="rJd-ou-Cad" firstAttribute="leading" secondItem="Su8-lV-cRb" secondAttribute="trailing" constant="8" id="w2o-NB-xlV"/>
                                     <constraint firstItem="hiB-st-2Hp" firstAttribute="leading" secondItem="JQJ-Yr-2k7" secondAttribute="trailing" constant="8" id="w3q-iR-Uc3"/>
                                     <constraint firstItem="tFz-53-MLp" firstAttribute="leading" secondItem="L2G-Kj-Qvu" secondAttribute="leading" priority="750" id="wf1-wd-6Bn"/>
-                                    <constraint firstAttribute="bottom" secondItem="tFz-53-MLp" secondAttribute="bottom" constant="-63" id="zYb-g1-MA9"/>
+                                    <constraint firstAttribute="bottom" secondItem="tFz-53-MLp" secondAttribute="bottom" id="zYb-g1-MA9"/>
                                 </constraints>
                             </view>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a85-M8-HF2" userLabel="Bottom Bar">
                                 <rect key="frame" x="0.0" y="492" width="600" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6M-Vj-L31">
-                                        <rect key="frame" x="552" y="2" width="40" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="rKw-I6-9Cv"/>
-                                            <constraint firstAttribute="height" constant="40" id="vTu-qt-6ce"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" image="icon-userlocation-100.png"/>
-                                        <connections>
-                                            <action selector="onRightButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LNh-Up-uVC"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWI-K3-COX">
-                                        <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                        <rect key="frame" x="8" y="6" width="32" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="LTa-Ul-WrV"/>
-                                            <constraint firstAttribute="height" constant="40" id="WE1-Nj-jcz"/>
+                                            <constraint firstAttribute="width" constant="32" id="LTa-Ul-WrV"/>
+                                            <constraint firstAttribute="height" constant="32" id="WE1-Nj-jcz"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" image="icon-layers-list-100.png"/>
                                         <connections>
                                             <action selector="onLeftButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dpU-GX-f7n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6M-Vj-L31">
+                                        <rect key="frame" x="557" y="6" width="32" height="32"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="rKw-I6-9Cv"/>
+                                            <constraint firstAttribute="height" constant="32" id="vTu-qt-6ce"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="icon-userlocation-100.png"/>
+                                        <connections>
+                                            <action selector="onRightButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LNh-Up-uVC"/>
                                         </connections>
                                     </button>
                                 </subviews>

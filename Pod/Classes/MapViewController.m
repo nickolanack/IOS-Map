@@ -394,6 +394,7 @@
                         [self onKmlGroundOverlay:dictionary];
                     }];
                     
+                                    
                     [parser parse];
                     continue;
                 }
@@ -982,6 +983,10 @@
     
     [point setData:dictionary];
     
+    NSString *iconUrl=[dictionary valueForKey:@"href"];
+    if(!iconUrl){
+        [[NSException alloc] initWithName:@"Empty placmark icon" reason:@"Expected placemark dictionary value: href" userInfo:nil];
+    }
     
     [point setIconUrl:[dictionary valueForKey:@"href"]];
     

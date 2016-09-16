@@ -597,7 +597,12 @@
         [p setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeDetailDisclosure]];
         
     }
-    [p setDraggable:true];
+    
+    if(![_delegate respondsToSelector:@selector(mapView:shouldAllowDragging:)]||[_delegate mapView:self shouldAllowDragging:p]){
+        [p setDraggable:true];
+    }
+    
+    
     
     return p;
 }
@@ -643,9 +648,33 @@
 -(UIView *)viewForOffscreenPointFeature:(MKPointAnnotation *)point{
     
     if([point isKindOfClass:[MKUserLocation class]]){
-        return [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userlocation-offscreen-15.png"]];
+        
+        UIView *view= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        
+        view.layer.borderColor=[UIColor whiteColor].CGColor;
+        view.layer.borderWidth=4;
+        view.layer.cornerRadius=10;
+        view.layer.shadowColor=[UIColor blackColor].CGColor;
+        view.layer.shadowRadius=5;
+        
+        [view setBackgroundColor:[UIColor colorWithRed:11.0/255.0 green:96.0/255.0 blue:1.0 alpha:1.0]];
+        
+        return view;
+        
+        //return [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userlocation-offscreen-15.png"]];
     }else{
-        return [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"waypoint-offscreen-15.png"]];
+        UIView *view= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 14, 14)];
+        
+        view.layer.borderColor=[UIColor whiteColor].CGColor;
+        view.layer.borderWidth=2;
+        view.layer.cornerRadius=7;
+        view.layer.shadowColor=[UIColor blackColor].CGColor;
+        view.layer.shadowRadius=5;
+        
+        [view setBackgroundColor:[UIColor grayColor]];
+        
+        return view;
+        //return [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"waypoint-offscreen-15.png"]];
     }
     return nil;
     
@@ -979,7 +1008,11 @@
     
     MKPlacemarkAnnotation *point=[[MKPlacemarkAnnotation alloc] init];
     [point setCoordinate:[SaxKmlParser ParseCoordinateString:[dictionary valueForKey:@"coordinates"]]];
-    [point setTitle:[dictionary valueForKey:@"name"]];
+    NSString *title=[dictionary valueForKey:@"name"];
+    if(!title||[title isEqualToString:@""]){
+        title=@"<empty title>";
+    }
+    [point setTitle:title];
     
     [point setData:dictionary];
     

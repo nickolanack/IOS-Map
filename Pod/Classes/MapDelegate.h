@@ -52,6 +52,8 @@
 
 -(bool)mapView:(MapViewController *) view shouldShowTileOverlay:(ImageTileOverlay *) overlay atIndex:(int)index;
 
+-(bool)mapView:(MapViewController *) view shouldAllowDragging:(MKAnnotationView *)annotation;
+
 -(void)mapView:(MapViewController *) view willAddBaseMapTileOverlay:(ImageTileOverlay *) overlay;
 -(void)mapView:(MapViewController *) view didAddBaseMapTileOverlay:(ImageTileOverlay *) overlay;
 

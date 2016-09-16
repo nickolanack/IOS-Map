@@ -16,6 +16,7 @@
 @property UIView *offScreenUserLocaton;
 @property UIView *view;
 @property bool updating;
+@property UIEdgeInsets inset;
 
 @end
 
@@ -28,6 +29,8 @@
     self.mapView=map;
     self.offScreenViews=[[NSMutableArray alloc] init];
     _view=[self.mapView superview];
+    
+    _inset=UIEdgeInsetsMake(-1, 1, 1, -1);
     
     return self;
 }
@@ -77,6 +80,7 @@
                         image=[self.delegate viewForOffscreenPointFeature:a];
                         if(!image){
                             image=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"waypoint-offscreen-15.png"]];
+                            //image=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 15, 15)];
                         }
                         
                         [self.offScreenViews addObject:image];
@@ -160,7 +164,7 @@ if(_updating){
             x=x-((-r.size.height/2.0)/tan(angle));
             
         }
-        
+       y=y+_inset.top;
     }else if(bl_angle>angle&&tl_angle<=angle){
         //left
         //x=0;
@@ -169,6 +173,7 @@ if(_updating){
             y=y-(r.size.width/2.0)*tan(M_PI-angle);
         }
         
+         x=x+_inset.left;
     }else if(br_angle>angle&&bl_angle<=angle){
         //bottom
         y=r.size.height;
@@ -177,9 +182,11 @@ if(_updating){
             x=x-y*tan(3*M_PI_2-angle);
         }
         
+        y=y+_inset.bottom;
+        
     }else{
         //right
-        x=r.size.width-10;
+        x=r.size.width;
         y=r.size.height/2.0;
         if(angle!=0){
             if(angle>M_PI){
@@ -189,6 +196,7 @@ if(_updating){
             y=y-(r.size.width/2.0)*tan(angle);
             
         }
+        x=x+_inset.right;
     }
     
     

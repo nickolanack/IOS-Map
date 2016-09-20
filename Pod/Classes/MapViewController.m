@@ -37,6 +37,8 @@
 #import "ImageTileOverlayRenderer.h"
 
 
+
+
 @interface MapViewController ()
 
 
@@ -59,6 +61,9 @@
 
 @property NSMutableDictionary *externalLayers;
 @property NSMutableDictionary *localLayers;
+
+@property UIImage *bigButtonIcon;
+@property UIColor *bigButtonTint;
 
 @end
 
@@ -365,6 +370,10 @@
                 }
                 
                 if([type isEqualToString:@"kml"]){
+                    
+                    
+                    NSMutableArray *layer=[[NSMutableArray alloc] init];
+                    [self addExternalKmlLayer:layer atIndex:i];
                 
                     /**
                      * TODO provide delegate notifications for external kml with some sort of id
@@ -379,19 +388,19 @@
                     Kml *parser=[[Kml alloc]initWithKmlString:[_delegate kmlStringForLayerAtIndex:i]];
                                  
                     [parser onPlacemark:^(NSDictionary *dictionary) {
-                        [self onKmlPlacemark:dictionary];
+                        [layer addObject:[self decodeKmlPlacemark:dictionary]];
                     }];
                     
                     [parser onPolygon:^(NSDictionary *dictionary) {
-                        [self onKmlPolygon:dictionary];
+                        [layer addObject:[self decodeKmlPolygon:dictionary]];
                     }];
                     
                     [parser onPolyline:^(NSDictionary *dictionary) {
-                        [self onKmlPolyline:dictionary];
+                        [layer addObject:[self decodeKmlPolyline:dictionary]];
                     }];
                     
                     [parser onGroundOverlay:^(NSDictionary *dictionary) {
-                        [self onKmlGroundOverlay:dictionary];
+                        [layer addObject:[self decodeKmlGroundOverlay:dictionary]];
                     }];
                     
                                     
@@ -414,7 +423,7 @@
                     
                     if(self.mapView&&tileOverlay){
                         
-                        [self addExternalOverlay:tileOverlay atIndex:i];
+                        [self addExternalTileOverlay:tileOverlay atIndex:i];
                         
                         if([self shouldShowExternalOverlay:tileOverlay atIndex:i]){
                         
@@ -443,7 +452,7 @@
 }
 
 
--(void)addExternalOverlay:(ImageTileOverlay *)overlay atIndex:(int)index{
+-(void)addExternalTileOverlay:(ImageTileOverlay *)overlay atIndex:(int)index{
 
     if(!_externalLayers){
         _externalLayers=[[NSMutableDictionary alloc] init];
@@ -453,21 +462,92 @@
 
 }
 
+-(void)addExternalKmlLayer:(NSMutableArray *)overlay atIndex:(int)index{
+    
+    if(!_externalLayers){
+        _externalLayers=[[NSMutableDictionary alloc] init];
+    }
+    
+    [_externalLayers setObject:overlay forKey:[NSString stringWithFormat:@"%i", index]];
+    
+}
+
 -(bool)toggleExternalLayerAtIndex:(int) index{
     
     
+    id layer=[_externalLayers objectForKey:[NSString stringWithFormat:@"%i", index]];
     
-    ImageTileOverlay *overlay= [_externalLayers objectForKey:[NSString stringWithFormat:@"%i", index]];
-    if([self.mapView.overlays indexOfObject:overlay]==NSNotFound){
-        [self showExternalOverlay:overlay atIndex:index];
-        return true;
+    if(layer==nil){
+        @throw [[NSException alloc] initWithName:@"Invalid index for external layer" reason:[NSString stringWithFormat:@"Expected layer index to be one of: %@ but was: %i", [_externalLayers allKeys], index] userInfo:nil];
     }
     
-    [self hideExternalOverlay:overlay atIndex:index];
-    return false;
+    
+    if([layer isKindOfClass:[NSMutableArray class]]){
+        NSMutableArray *list=(NSMutableArray*)layer;
+        
+        if([self.mapView.annotations indexOfObject:[list objectAtIndex:0]]==NSNotFound){
+          
+            [self.mapView addAnnotations:list];
+            return true;
+        }
+      
+        [self.mapView removeAnnotations:list];
+        
+        return false;
+    
+    }
+    
+    
+    if([layer isKindOfClass:[ImageTileOverlay class]]){
+    
+    
+        ImageTileOverlay *overlay=(ImageTileOverlay*)layer;
+    
+        if([self.mapView.overlays indexOfObject:overlay]==NSNotFound){
+            [self showExternalOverlay:overlay atIndex:index];
+            return true;
+        }
+        
+        [self hideExternalOverlay:overlay atIndex:index];
+        return false;
+        
+    }
 }
 
+-(bool)isExternalLayerVisibleAtIndex:(int) index{
+    
+    id layer=[_externalLayers objectForKey:[NSString stringWithFormat:@"%i", index]];
+    
+    if(layer==nil){
+        @throw [[NSException alloc] initWithName:@"Invalid index for external layer" reason:[NSString stringWithFormat:@"Expected layer index to be one of: %@ but was: %i", [_externalLayers allKeys], index] userInfo:nil];
+    }
+    
+    
+    if([layer isKindOfClass:[NSMutableArray class]]){
+        NSMutableArray *list=(NSMutableArray*)layer;
+        
+        if([self.mapView.annotations indexOfObject:[list objectAtIndex:0]]==NSNotFound){
+            return true;
+        }
 
+        return false;
+        
+    }
+    
+    
+    if([layer isKindOfClass:[ImageTileOverlay class]]){
+        
+        
+        ImageTileOverlay *overlay=(ImageTileOverlay*)layer;
+        
+        if([self.mapView.overlays indexOfObject:overlay]==NSNotFound){
+            return true;
+        }
+        
+        return false;
+    }
+}
+    
 
 
 
@@ -1003,7 +1083,7 @@
 
 #pragma mark Kml Parser
 
--(void) onKmlPlacemark:(NSDictionary *)dictionary{
+-(MKPlacemarkAnnotation *) decodeKmlPlacemark:(NSDictionary *)dictionary{
     
     
     MKPlacemarkAnnotation *point=[[MKPlacemarkAnnotation alloc] init];
@@ -1025,11 +1105,11 @@
     
     [self.mapView addAnnotation:point];
     
-    
+    return point;
     
 }
 
--(void) onKmlGroundOverlay:(NSDictionary *)dictionary{
+-(MKImageOverlay *) decodeKmlGroundOverlay:(NSDictionary *)dictionary{
     
     NSLog(@"Ground Overlay: %@", dictionary);
     
@@ -1044,9 +1124,10 @@
     [o setNorth:[[dictionary valueForKey:@"north"] floatValue] South:[[dictionary valueForKey:@"south"] floatValue] East:[[dictionary valueForKey:@"east"] floatValue] West:[[dictionary valueForKey:@"west"] floatValue]];
     
     [self.mapView addOverlay:o];
+    return o;
     
 }
--(void)onKmlPolyline:(NSDictionary *)dictionary{
+-(MKStyledPolyline *)decodeKmlPolyline:(NSDictionary *)dictionary{
     
     
     
@@ -1062,14 +1143,15 @@
     [p setColor:[SaxKmlParser ParseColorString:[dictionary objectForKey:@"color"]]];
     [p setWidth:[[dictionary objectForKey:@"width"] floatValue]];
     [self.mapView addOverlay:p];
+    return p;
     
 }
--(void)onKmlPolygon:(NSDictionary *)dictionary{
+-(MKStyledPolygon *)decodeKmlPolygon:(NSDictionary *)dictionary{
     
-    _debugNumPoly++;
-    if(_debugNumPoly>20){
-        return;
-    }
+//    _debugNumPoly++;
+//    if(_debugNumPoly>20){
+//        return;
+//    }
     
     NSArray *coordinateStrings=[SaxKmlParser ParseCoordinateArrayString:[dictionary objectForKey:@"coordinates"]];
     CLLocationCoordinate2D locations[[coordinateStrings count]];
@@ -1084,6 +1166,7 @@
     [p setWidth:[[dictionary objectForKey:@"width"] floatValue]];
     [self.mapView addOverlay:p];
 
+    return p;
 
 }
 
@@ -1308,8 +1391,9 @@
 -(void)cancelBigButtonClick{
     self.navigationItem.leftBarButtonItem =_backButton;
     [self.crossHairs setHidden:true];
-    [self.bigButton setTintColor:self.bigButton.backgroundColor];
+    [self.bigButton setTintColor:_bigButtonTint];
     [self.bigButton setBackgroundColor:[UIColor whiteColor]];
+    [self.bigButton setImage:_bigButtonIcon forState:UIControlStateNormal];
 
 }
 - (IBAction)onBigButtonClick:(id)sender {
@@ -1319,15 +1403,24 @@
        _cancelButton=[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelBigButtonClick)];
 
     }
+    
+    if(!_bigButtonIcon){
+        _bigButtonIcon=[self.bigButton imageForState:UIControlStateNormal];
+        _bigButtonTint=self.bigButton.tintColor;
+    }
 
     if(self.crossHairs.isHidden){
         
         self.navigationItem.leftBarButtonItem =_cancelButton;
         [self.crossHairs setHidden:false];
         
-        [self.bigButton setBackgroundColor:self.bigButton.tintColor];
+        [self.bigButton setBackgroundColor:[UIColor redColor]];//self.bigButton.tintColor];
         [self.bigButton setTintColor:[UIColor whiteColor]];
-        [self.bigButton setBackgroundImage:nil forState:UIControlStateNormal];
+        //[self.bigButton setBackgroundImage:nil forState:UIControlStateNormal];
+        [self.bigButton setImage:nil forState:UIControlStateNormal];
+        [self.bigButton setTitle:@"OK" forState:UIControlStateNormal];
+        self.bigButton.layer.borderWidth=1.0;
+        self.bigButton.layer.borderColor=[UIColor whiteColor].CGColor;
         
     }else{
         [self cancelBigButtonClick];

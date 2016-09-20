@@ -179,9 +179,9 @@ if(_updating){
         y=r.size.height;
         x=r.size.width/2.0;
         if(angle!=(3*M_PI_2)){
-            x=x-y*tan(3*M_PI_2-angle);
+            x=x-(r.size.height/2.0)*tan(3*M_PI_2-angle);
         }
-        
+    
         y=y+_inset.bottom;
         
     }else{

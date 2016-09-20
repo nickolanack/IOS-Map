@@ -59,6 +59,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UICollectionView *sideBarCollectionView;
 
 -(bool)toggleExternalLayerAtIndex:(int) i;
+-(bool)isExternalLayerVisibleAtIndex:(int) i;
 
 -(void)hideSideBar;
 -(void)showSideBar;

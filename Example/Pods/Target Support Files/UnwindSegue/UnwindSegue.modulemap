@@ -1,6 +1,0 @@
-framework module UnwindSegue {
-  umbrella header "UnwindSegue-umbrella.h"
-
-  export *
-  module * { export * }
-}

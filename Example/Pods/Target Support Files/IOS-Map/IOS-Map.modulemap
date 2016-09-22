@@ -1,6 +1,0 @@
-framework module IOS_Map {
-  umbrella header "IOS-Map-umbrella.h"
-
-  export *
-  module * { export * }
-}
